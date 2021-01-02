@@ -8,4 +8,4 @@
  */
 
 rootProject.name = "activity-logbook"
-include("activity-logbook-app", "activity-logbook-domain", "activity-logbook-book", "activity-logbook-project")
+include("activity-logbook-app", "activity-logbook-core", "activity-logbook-domain", "activity-logbook-book", "activity-logbook-project")
