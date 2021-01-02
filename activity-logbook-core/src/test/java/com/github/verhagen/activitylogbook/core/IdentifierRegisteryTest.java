@@ -56,7 +56,7 @@ public class IdentifierRegisteryTest {
 			, "b:mazes, [book.mazes-for-programmers]"
 	})
 	void createQuery(String query, String expectedResult) throws Exception {
-		List<String> results = registery.find(query);
+		List<String> results = registery.search(query);
 		logger.info("Results for query '" + query + "': " + results.toString());
 		for (String expected : expectedResult.substring(1, expectedResult.length() -1).split(";")) {
 			assertTrue(results.contains(expected.trim()), "Expected result '" + expected.trim() 

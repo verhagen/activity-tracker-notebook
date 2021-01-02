@@ -46,7 +46,7 @@ public class IdentifierRegistery {
 		identifierTree.accept(visitor);
 	}
 
-	public List<String> find(String query) {
+	public List<String> search(String query) {
 		MatchFinder matchFinder = new MatchFinder(resolveAliases(query)); 
 		accept(matchFinder);
 		return matchFinder.getMatches();
