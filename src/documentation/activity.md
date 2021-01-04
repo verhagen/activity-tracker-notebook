@@ -40,7 +40,7 @@ is being red?
 `reading.book.mythical-man-month.chapter-6`
 
 By creating activities with the same identifier, one can see how many times, time has been spent on that activity. When
-duration is added also the total time spent on a activity can be extracted.
+duration is added also the total time spent on an activity can be extracted.
 By creating activities that start with the same identifier, say 'cooking'. The total amount of time spent on that type of
 activity can be calculated.
 
@@ -59,12 +59,12 @@ Duration of an activity can be given in hour and minutes, using the format `<hou
 `1:30` - 1 hour and 30 minutes
 `:90` - 90 minutes, could have been entered as `1:30` as well.
 
-In the end the time spent on an activity is the most important part. But maybe it's also interesting to record when the
-activity started and stopped. In that case use a time stamp, for starting and stopping the activity. Beginning and ending
-an activity can be given in `hour:minutes`.
+In the end the time spent on an activity is the most important part, but maybe it's also interesting to record when the
+activity started and stopped. In that case use a time stamp, for starting and stopping the activity. Starting and stopping
+an activity can be given as moment in `hour:minutes`.
 
-`9:30-10:15` - Started activity at 9:30 and ended activity at 10:15 in the morning.
-`17:45-18:30` - Started activity at 17:45 and ended activity at 18:30 in in afternoon / evening.
+`9:30-10:15` - Started at 9:30 and ended at 10:15 in the morning, working on an activity.
+`17:45-18:30` - Started at 17:45 and stopped at 18:30 in afternoon / evening, working on an activity.
 
 
 ## Activity Note
@@ -76,7 +76,7 @@ Additional information can be written as note with the activity.
 
 Once all kind of activities are written down, answers to certain questions can be found, like:
 
-- How much time has been spent on cooking or study this week / month / semester / etc
+- How much time has been spent on cooking or studying this week / month / semester / etc
 - How much time did it take to read the book *The Mythical Man-Month* (so far).  
   If additional information would be available about which chapters are in the book, one can even make an progress indication. Or
   maybe even make an estimate how much time it probably will take to finish reading the book.
@@ -84,11 +84,21 @@ Once all kind of activities are written down, answers to certain questions can b
 
 ## Some Examples
 
-To make recording activities quick, easy and readable and not related to a specific tool, they can be stored as plain text.
+To make entering activities quick, easy and readable and not related to a specific tool, they can be stored as plain text.
 
-- `:45 reading.book.mythical-man-month` - Reading the book, for 45 minutes.
-- `9:30-10:15 reading.book.mythical-man-month.chapter-6 Half way the chapter.` - Being more specific, about reading which chapter and when it was done.
-- ``
-- ``
-- ``
-- ``
+Some plain text, each row represents an Activity
+
+```
+2020.12.01 :45 reading.book.mythical-man-month
+2020.12.01 9:30-10:15 reading.book.mythical-man-month.chapter-6 Half way the chapter.
+```
+
+Some Markdown formatted text, containing activities as unordered list entries, where the duration or start-stop time and activity
+identifier is given between square brackets. After the brackets, the optional note. All activities are per day, entered under a
+heading 2, here `## 2020.12.01 Tuesday`.
+
+```
+## 2020.12.01 Tuesday
+- [:45 reading.book.mythical-man-month]
+- [9:30-10:15 reading.book.mythical-man-month.chapter-6] Half way the chapter.
+```
