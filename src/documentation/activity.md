@@ -7,31 +7,24 @@ An activity consists of four things:
 - :id: Identifier  
   This is required, and identifies where the activity is about.
 - :hourglass: Duration  
-  This is not required, but is very important! This tells how much time is spent on the activity.
+  This is optional, but very useful! It tells how much time is spent on the activity.
 - :clipboard: Description  
-  This is optional and can be used to give some more background about the activity.
+  This is optional and can be used to give some additional background about the activity.
 
 
 ### When
 
-When writing down activities, this is mostly done on a daily base. This makes it easy to remember as well as to see, if
+When writing down activities, this is mostly done on a daily base. This makes it easy to see, if
 a new entry was already made for a particular day.
 
-possible to easily look up
-when time was spent on what activities.
-
-To make 
-To know when time was spent on a certain activity, it's required to know 
-
-Although the duration is most important, the moment in time is also relevant. So when spending time on a activity, it is
-important on which day that was done! Each activity should therefore record 
+This makes it possible to lookup when time has been spent on a certain activity.
 
 
 ## Activity Identifier
 
-An activity must have an activity identifier. Some examples of an activity could be: `cooking`, `working`, `shopping`, `study`.
+An activity must have an activity identifier. Some examples of an activity could be: `cooking`, `working`, `running`, `study`.
 These are very generic activities, which is OK, but to make them more useful a more specific identifier is better.
-Maybe one like to read back what was cooked on a certain moment. Maybe it was 'goulash' or 'spätzle', these identifiers
+Maybe one likes to read back what was cooked on a certain moment. Maybe it was 'goulash' or 'spätzle', these identifiers
 would become `cooking.goulash` and `cooking.spätzle`. This way one can find back when what was cooked, but also how many times,
 it has been cooked this month,  this year or in the last 90 days.
 
@@ -43,6 +36,11 @@ For studying a certain subject, one is probable reading a particular book. Readi
 moments. Each of these moments can be seen as an activity item. Maybe one likes to record which chapters is being red?
 
 `reading.book.mythical-man-month.chapter-6`
+
+By creating activities with the same identifier, one can calculate how much time has been spent on that specific activity
+in total.
+By creating activities that start with the same identifier, say 'cooking'. The total amount of time spent on that type of
+activity can be calculated.
 
 
 ## Activity Duration
@@ -72,6 +70,16 @@ an activity can be given in `hour:minutes`.
 ## Activity Description
 
 Just an additional description. Useful when reading back later.
+
+
+## Why writing down activities is useful
+
+Once all kind of activities are written down, answers to certain questions can be found, like:
+
+- How much time has been spent on cooking or study this week / month / semester / etc
+- How much time did it take to read the book *The Mythical Man-Month* (so far).  
+  If additional information would be available about which chapters are in the book, one can even make an progress indication. Or
+  maybe even make an estimate how much time it probably will take to finish reading the book.
 
 
 ## Some Examples
