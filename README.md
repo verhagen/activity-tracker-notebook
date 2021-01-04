@@ -80,4 +80,28 @@ See the [progress](progress.md).
     - add identifier
     - deactivate identifier (no longer available for activity)
     - remove identifier (no longer available for activity)
-    
+- Use the activity identifier, to connect additional information.
+  An example could be cooking recipes. This way the recipe can be stored separately from the activity logbook, but easily found back.
+  Activity `cooking.recipe.hungarian-goulash`
+  Add the recipe file `recipe-hungarian-goulash.hjson`, with additional content:
+
+    {
+        identifier: hungarian-goulash
+        url: https://www.daringgourmet.com/traditional-hungarian-goulash-gulyas
+        ingredients: [
+            3 tablespoons pork lard, or butter (pork fat is traditionally used and highly recommended for the best flavor)
+            1 1/2 pounds yellow onions chopped
+            1/4 cup good quality sweet imported Hungarian paprika
+            etc, etc
+        ]
+        steps: [
+            Melt the lard or butter in a Dutch oven over medium high heat and cook the onions until beginning to brown, about 7-10 minutes. Remove from heat and stir in the paprika. Add the beef and garlic, return to the heat, and cook for about 10 minutes, or until the beef is no longer pink.
+            Add the bell peppers and cook for another 7-8 minutes. Add the carrots, tomatoes, potatoes, beef broth, bay leaf, salt and pepper. Bring to a boil, cover, reduce the heat to medium, and simmer for 40 minutes (see note). Add salt to taste.
+        ]
+        notes: [
+          	If you're using a tougher cut of beef like chuck or round, cook the beef first, without the carrots, tomatoes, potatoes and bell peppers, for 30-45 minutes, then add the vegetables and cook for another 40 minutes until the beef is tender.  A well-marbled cut like chuck will produce the most flavor while a leaner cut will cook faster.  Your choice.
+        ]
+    }
+
+
+  
