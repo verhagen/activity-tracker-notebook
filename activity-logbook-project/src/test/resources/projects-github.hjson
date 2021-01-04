@@ -1,5 +1,9 @@
 {
-	name: github.com
+	organisation:
+	{
+		url: github.com
+		name: GitHub
+	}
 	items: [ 
 		{
 			repository-url: https://github.com/dojo-java-programming/cargo-robot

@@ -22,7 +22,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.verhagen.activitylogbook.domain.Identifier;
 import com.github.verhagen.activitylogbook.domain.Organisation;
+import com.github.verhagen.activitylogbook.domain.Collection;
 
 public class BookTest {
 
@@ -36,9 +38,9 @@ public class BookTest {
 		System.out.println(jsonObject.toString(Stringify.FORMATTED));
 		
 		ObjectMapper objectMapper = new ObjectMapper();
-		Organisation<Book> organisation = objectMapper.readValue(jsonString, new TypeReference<Organisation<Book>>() {} );
-		assertEquals("manning.com", organisation.name);
-		assertEquals(2, organisation.items.size());
+		Collection<Organisation, String, Book> collection = objectMapper.readValue(jsonString, new TypeReference<Collection<Organisation, String, Book>>() {} );
+		assertEquals("manning.com", collection.organisation.name);
+		assertEquals(2, collection.items.size());
 	}
 
 	@ParameterizedTest
@@ -53,13 +55,16 @@ public class BookTest {
 		try (FileReader reader = new FileReader(path.toFile())) {
 			String jsonString = JsonValue.readHjson(reader).toString();
 			ObjectMapper objectMapper = new ObjectMapper();
-			Organisation<Book> organisation = objectMapper.readValue(jsonString, new TypeReference<Organisation<Book>>() {} );
+			Collection<Organisation, String, Book> collection = objectMapper.readValue(jsonString, new TypeReference<Collection<Organisation, String, Book>>() {} );
 
-			List<String> identifiers = organisation.getIdentifiers();
-			for (String expectedId : expectedIdentifiers.substring(1, expectedIdentifiers.length() -1).split(";")) {
-				assertTrue(identifiers.contains(expectedId.trim()), "Expected identifier '" + expectedId.trim() 
-						+ "' not found in item identifiers '" + identifiers + "'.");
+			for (Book book : collection.items) {
+				book.getIdentifier();
 			}
+//			List<String> identifiers = collection.getIdentifiers();
+//			for (String expectedId : expectedIdentifiers.substring(1, expectedIdentifiers.length() -1).split(";")) {
+//				assertTrue(identifiers.contains(expectedId.trim()), "Expected identifier '" + expectedId.trim() 
+//						+ "' not found in item identifiers '" + identifiers + "'.");
+//			}
 		}
 		catch (JsonMappingException e) {
 			fail(e.getMessage());
@@ -78,7 +83,11 @@ public class BookTest {
 	private static List<String> createProjectJson() {
 		List<String> text = new ArrayList<>();
 		text.add("{");
-		text.add("    name: manning.com");
+		text.add("    organisation:");
+		text.add("    {");
+		text.add("        name: manning.com");
+		text.add("        tags: [ 'publisher', 'book' ]");
+		text.add("    }");
 		text.add("    items:");
 		text.add("    [");
 		text.add("        {");
@@ -87,30 +96,8 @@ public class BookTest {
 		text.add("        {");
 		text.add("            book-url: https://livebook.manning.com/book/street-coder");
 		text.add("        }");
-//		text.add("        {");
-//		text.add("            book-url: https://livebook.manning.com/book/graph-databases-in-action");
-//		text.add("        }");
-//		text.add("        {");
-//		text.add("            book-url: https://livebook.manning.com/book/machine-learning-engineering");
-//		text.add("        }");
 		text.add("    ]");
 		text.add("}");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
-		text.add("");
 		return text;
 	}
 	

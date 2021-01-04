@@ -4,13 +4,13 @@ import java.net.URI;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.verhagen.activitylogbook.domain.ActivityIdentifier;
+import com.github.verhagen.activitylogbook.domain.Identifier;
 
-public class Project implements ActivityIdentifier {
+public class Project implements Identifier<String> {
 	@JsonProperty("repository-url")
 	public URI repositoryUrl;
 	public List<String> tags;
-	public String description;
+	public String note;
 
 	@Override
 	public String getIdentifier() {

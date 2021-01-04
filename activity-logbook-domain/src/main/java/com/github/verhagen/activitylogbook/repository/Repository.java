@@ -6,7 +6,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.verhagen.activitylogbook.domain.ActivityIdentifierValidation;
+import com.github.verhagen.activitylogbook.domain.IdentifierValidationImpl;
 
 public class Repository<T> {
 	private Logger logger = LoggerFactory.getLogger(Repository.class);
@@ -15,8 +15,8 @@ public class Repository<T> {
 
 	public T get(String identifier) {
 		if (! typeByIdentifier.containsKey(identifier)) {
-			if (! new ActivityIdentifierValidation().isValid(identifier)) {
-				logger.warn(ActivityIdentifierValidation.createMessage("identifier", identifier));
+			if (! new IdentifierValidationImpl().isValid(identifier)) {
+				logger.warn(IdentifierValidationImpl.createMessage("identifier", identifier));
 			}
 			logger.debug("No instance found for identifier '" + identifier + "'");
 		}

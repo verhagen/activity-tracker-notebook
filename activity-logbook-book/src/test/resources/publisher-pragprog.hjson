@@ -1,16 +1,20 @@
 {
+	organisation:
+	{
 		url: pragprog.com
-		name: The Pragmatic Bookshelf 
-		items:
-		[
-			{
-				title: Language Implementation Patterns
-			}
-			{
-				title: The Definitive ANTLR 4 Reference
-			}
-			{
-				title: Functional Programming in Java
-			}
+		name: The Pragmatic Bookshelf
+		tags: [ 'publisher', 'book' ]
+	}
+	items:
+	[
+		{
+			title: Language Implementation Patterns
+		}
+		{
+			title: The Definitive ANTLR 4 Reference
+		}
+		{
+			title: Functional Programming in Java
+		}
 	]
 }

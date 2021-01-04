@@ -3,6 +3,8 @@ package com.github.verhagen.activitylogbook.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.verhagen.activitylogbook.domain.Visitor;
+
 class BreadCrumbsExtractor implements Visitor<Node<String, String>> {
 	private List<String> breadCrumbs = new ArrayList<>();
 

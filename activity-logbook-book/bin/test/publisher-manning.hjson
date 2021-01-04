@@ -1,6 +1,9 @@
 {
-	url: manning.com
-	name: Manning
+	organisation:
+	{
+		url: manning.com
+		name: Manning
+	}
 	items:
 	[
 		{

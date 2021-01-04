@@ -1,6 +1,9 @@
 {
-	url: bitbucket.org
-	name: Atlassian BitBucket
+	organisation:
+	{
+		url: bitbucket.org
+		name: Atlassian BitBucket
+	}
 	items: [ 
 		{
 			repository-url: https://bitbucket.org/verhagen/world-actor-engine
@@ -8,7 +11,7 @@
 		{
 			repository-url: https://bitbucket.org/datecleancoder/codingame-engine
 			tags: [ 'java', 'codingame' ]
-			description: Codingame - Player and Game Engine
+			note: Codingame - Player and Game Engine
 		}
 		{
 			repository-url: https://bitbucket.org/datecleancoder/teads-sponsored-contest

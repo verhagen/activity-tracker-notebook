@@ -1,9 +1,9 @@
 package com.github.verhagen.activitylogbook.project;
 
-import com.github.verhagen.activitylogbook.domain.ActivityIdentifier;
-import com.github.verhagen.activitylogbook.domain.ActivityIdentifierValidation;
+import com.github.verhagen.activitylogbook.domain.Identifier;
+import com.github.verhagen.activitylogbook.domain.IdentifierValidationImpl;
 
-public class Project implements ActivityIdentifier {
+public class Project implements Identifier<String> {
 	private final String identifier;
 
 	
@@ -26,8 +26,8 @@ public class Project implements ActivityIdentifier {
 		}
 
 		public Builder add(String identifier) {
-			if (! new ActivityIdentifierValidation().isValidIdentifier(identifier)) {
-				ActivityIdentifierValidation.createIllegalArgumentException("identifier", identifier);
+			if (! new IdentifierValidationImpl().isValidIdentifier(identifier)) {
+				IdentifierValidationImpl.createIllegalArgumentException("identifier", identifier);
 			}
 			this.identifier = identifier;
 			return this;

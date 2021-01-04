@@ -3,9 +3,9 @@ package com.github.verhagen.activitylogbook.book;
 import java.net.URI;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.verhagen.activitylogbook.domain.ActivityIdentifier;
+import com.github.verhagen.activitylogbook.domain.Identifier;
 
-public class Book implements ActivityIdentifier {
+public class Book implements Identifier<String> {
 	@JsonProperty("book-url")
 	public URI bookUrl;
 	public String title;

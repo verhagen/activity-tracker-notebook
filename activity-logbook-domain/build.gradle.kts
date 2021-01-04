@@ -5,3 +5,7 @@
 plugins {
     id("com.github.verhagen.activitylogbook.java-library-conventions")
 }
+
+dependencies {
+    implementation("com.vladsch.flexmark:flexmark-all:0.62.2")
+}

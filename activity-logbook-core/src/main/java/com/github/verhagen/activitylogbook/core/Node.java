@@ -9,6 +9,8 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.github.verhagen.activitylogbook.domain.Visitor;
+
 public class Node<P, V> {
 	private Logger logger = LoggerFactory.getLogger(Node.class);
 	private final P breadCrumb;

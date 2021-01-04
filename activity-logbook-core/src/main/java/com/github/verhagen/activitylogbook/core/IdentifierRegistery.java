@@ -10,7 +10,8 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.verhagen.activitylogbook.domain.ActivityIdentifierValidation;
+import com.github.verhagen.activitylogbook.domain.IdentifierValidationImpl;
+import com.github.verhagen.activitylogbook.domain.Visitor;
 
 public class IdentifierRegistery {
 	private Logger logger = LoggerFactory.getLogger(IdentifierRegistery.class);
@@ -25,7 +26,7 @@ public class IdentifierRegistery {
 	}
 
 	public void add(List<String> identifiers) {
-		ActivityIdentifierValidation validation = new ActivityIdentifierValidation();
+		IdentifierValidationImpl validation = new IdentifierValidationImpl();
 		for (String identifier : identifiers) {
 			if (validation.isValid(identifier)) {
 				this.identifiers.put(identifier, identifier);

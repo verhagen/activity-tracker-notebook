@@ -20,6 +20,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.verhagen.activitylogbook.domain.Collection;
 import com.github.verhagen.activitylogbook.domain.Organisation;
 
 public class ProjectTest {
@@ -34,17 +35,17 @@ public class ProjectTest {
 		System.out.println(jsonObject.toString(Stringify.FORMATTED));
 
 		ObjectMapper objectMapper = new ObjectMapper();
-		Organisation<Project> organisation = objectMapper.readValue(jsonString, new TypeReference<Organisation<Project>>() {} );
-		assertEquals("bitbucket.com", organisation.name);
-		assertEquals(4, organisation.items.size());
+		Collection<Organisation, String, Project> collection = objectMapper.readValue(jsonString, new TypeReference<Collection<Organisation, String, Project>>() {} );
+		assertEquals("bitbucket.com", collection.organisation.name);
+		assertEquals(4, collection.items.size());
 
-		for (Project project : organisation.items) {
+		for (Project project : collection.items) {
 			System.out.println(project.repositoryUrl);
 			System.out.println(project.tags);
-			System.out.println(project.description);
+			System.out.println(project.note);
 			System.out.println("id: " + project.getIdentifier());
 		}
-		List<String> identifiers = organisation.getIdentifiers();
+		List<String> identifiers = collection.getIdentifiers();
 		assertEquals(4, identifiers.size());
 		assertTrue(identifiers.contains("world-actor-engine"));
 		assertTrue(identifiers.contains("codingame-engine"));
@@ -64,16 +65,16 @@ public class ProjectTest {
 		try (FileReader reader = new FileReader(path.toFile())) {
 			String jsonString = JsonValue.readHjson(reader).toString();
 			ObjectMapper objectMapper = new ObjectMapper();
-			Organisation<Project> organisation = objectMapper.readValue(jsonString, new TypeReference<Organisation<Project>>() {} );
+			Collection<Organisation, String, Project> collection = objectMapper.readValue(jsonString, new TypeReference<Collection<Organisation, String, Project>>() {} );
 
-			for (Project project : organisation.items) {
+			for (Project project : collection.items) {
 				System.out.println(project.repositoryUrl);
 				System.out.println(project.tags);
-				System.out.println(project.description);
+				System.out.println(project.note);
 				System.out.println("id: " + project.getIdentifier());
 			}
 
-			List<String> identifiers = organisation.getIdentifiers();
+			List<String> identifiers = collection.getIdentifiers();
 			for (String expectedId : expectedIdentifiers.substring(1, expectedIdentifiers.length() -1).split(";")) {
 				assertTrue(identifiers.contains(expectedId.trim()), "Expected identifier '" + expectedId.trim() 
 						+ "' not found in item identifiers '" + identifiers + "'.");
@@ -92,17 +93,17 @@ public class ProjectTest {
 	private static List<String> createProjectJson() {
 		List<String> text = new ArrayList<>();
 		text.add("{");
+		text.add("    organisation: {");
 		text.add("    name: bitbucket.com");
+		text.add("    }");
 		text.add("    items: [ ");
 		text.add(" 	      {");
 		text.add(" 	          repository-url: https://bitbucket.org/verhagen/world-actor-engine");
-//		text.add("       tags: ");
-//		text.add("       description: ");
 		text.add("        }");
 		text.add("        {");
 		text.add("            repository-url: https://bitbucket.org/datecleancoder/codingame-engine");
 		text.add("            tags: [ 'java', 'codingame' ]");
-		text.add("            description: Codingame - Player and Game Engine");
+		text.add("            note: Codingame - Player and Game Engine");
 		text.add("        }");
 		text.add("        {");
 		text.add("            repository-url: https://bitbucket.org/datecleancoder/teads-sponsored-contest");
@@ -114,7 +115,7 @@ public class ProjectTest {
 		text.add("                java   ");
 		text.add("                ,    codingame   ");
 		text.add("            ]");
-		text.add("            description:");
+		text.add("            note:");
 		text.add("            '''");
 		text.add("            # The Power of Thor");
 		text.add("            ");

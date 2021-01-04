@@ -1,6 +1,9 @@
 {
-	url: github.com/dojo-java-programming
-	name: Dojo Java Programming
+	organisation:
+	{
+		url: github.com/dojo-java-programming
+		name: Dojo Java Programming
+	}
 	items: [ 
 		{
 			repository-url: https://github.com/dojo-java-programming/ou-projects-java-1
