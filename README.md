@@ -66,7 +66,7 @@ See the [progress](progress.md).
     - TimeStamp end
     - BreadCrumbPath
 
-- 
+-
 
 
 
@@ -84,9 +84,9 @@ See the [progress](progress.md).
 - Use the activity identifier, to connect additional information.
   An example could be cooking recipes. This way the recipe can be stored separately from the activity logbook, but easily found back.
   Activity `cooking.recipe.hungarian-goulash`
-  Add the recipe file `recipe-hungarian-goulash.hjson`, with additional content:
+  Add the recipe file `recipe-hungarian-goulash.hjson`, with additional content:  
 
-    {
+        {
         identifier: hungarian-goulash
         url: https://www.daringgourmet.com/traditional-hungarian-goulash-gulyas
         ingredients: [
@@ -102,7 +102,29 @@ See the [progress](progress.md).
         notes: [
           	If you're using a tougher cut of beef like chuck or round, cook the beef first, without the carrots, tomatoes, potatoes and bell peppers, for 30-45 minutes, then add the vegetables and cook for another 40 minutes until the beef is tender.  A well-marbled cut like chuck will produce the most flavor while a leaner cut will cook faster.  Your choice.
         ]
-    }
+        }
 
 
+- Convert url to known activity  
+  When reading a book online, and quickly want to create an activity that represent that you start or stop reading,
+  it would be nice to just use the url as activity identifier.
+  The app needs to scan, what hostname is used, and what kind of activities are related to that. Here 'manning.com'
+  is specified in the file 'publisher-manning.hjson'. There are also all known book url's stored.
+  
+  `https://livebook.manning.com/book/testing-angular-applications/chapter-2`
+
+  `$  activity-logbook  https://livebook.manning.com/book/testing-angular-applications/chapter-2  start`
+
+- Start reading next chapter of a book
+  When reading a book, and tracking which chapters you've already red, then continue reading on the next chapter, 
+  should be made easy.
+
+  *Remark: this is allowed, because the book is known as url* `https://livebook.manning.com/book/testing-angular-applications` *so only the part `chapter-3` is new.*
+  
+  `$  activity-logbook  https://livebook.manning.com/book/testing-angular-applications/chapter-3  add`  
+  `$  created  new identifier  self.study.book.testing-angular-applications.chapter-3`  
+  `$  activity-logbook  https://livebook.manning.com/book/testing-angular-applications/chapter-3  start`  
+  
+  `$  activity-logbook  https://livebook.manning.com/book/testing-angular-applications/chapter-2  next`  
+  
   
