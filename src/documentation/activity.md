@@ -88,17 +88,13 @@ To make entering activities quick, easy and readable and not related to a specif
 
 Some plain text, each row represents an Activity
 
-```
-2020.12.01 :45 reading.book.mythical-man-month
-2020.12.01 9:30-10:15 reading.book.mythical-man-month.chapter-6 Half way the chapter.
-```
+    2020.12.01 :45 reading.book.mythical-man-month
+    2020.12.01 9:30-10:15 reading.book.mythical-man-month.chapter-6 Half way the chapter.
 
 Some Markdown formatted text, containing activities as unordered list entries, where the duration or start-stop time and activity
 identifier is given between square brackets. After the brackets, the optional note. All activities are per day, entered under a
 heading 2, here `## 2020.12.01 Tuesday`.
 
-```
-## 2020.12.01 Tuesday
-- [:45 reading.book.mythical-man-month]
-- [9:30-10:15 reading.book.mythical-man-month.chapter-6] Half way the chapter.
-```
+    ## 2020.12.01 Tuesday
+    - [:45 reading.book.mythical-man-month]
+    - [9:30-10:15 reading.book.mythical-man-month.chapter-6] Half way the chapter.

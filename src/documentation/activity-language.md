@@ -1,0 +1,106 @@
+# Activity Language
+
+
+## Introduction
+
+
+### Identifier Hierarchy
+
+Identifiers are build up of words. They may the following characters: `a..z`, `0..9`, dash `-` and dot `.`
+(The dash and dot should not be used as begin or end character of an identifier).
+
+The dot has a special meaning, as it does split up the identifier into identifier parts.
+
+    reading            An identifier with just one part
+    reading.book       An identifier with two parts `reading` and `book`
+    reading.article    An identifier with two parts `reading` and `article`
+
+These identifier parts, form a hierarchy. This hierarchy can be used to group identifiers, that use the same
+hierarchy parts.
+
+Just an example of some book titles. Just on their own, they do not say much.
+
+    roman-architecture-2nd-edition
+    ancient-greece-art-architecture-and-history
+    ancient-egyptian-construction-and-architecture
+
+When these titles are prefixed with the identifier part `book`, they form a kind of group (or collection).
+The example below shows the same book titles, but now with the identifier part `book`, in front of them.
+
+    book.roman-architecture-2nd-edition
+    book.ancient-greece-art-architecture-and-history
+    book.ancient-egyptian-construction-and-architecture
+
+The left identifier part is always more generic then the right part.
+The identifier part `book` is more generic, than a specific title.
+
+Most books contain chapters, these can be expressed as part of a book. This is more specific,
+so they follow on the right of the title.
+
+    book.roman-architecture-2nd-edition.republican-rome
+    book.roman-architecture-2nd-edition.roman-building-types
+    book.roman-architecture-2nd-edition.the-age-of-august
+
+Just placing the titles of the book title, works, but makes it not very clear, what they represent.
+Grouping the chapter titles under an identifier part `chapter` will make it much clearer.
+
+    book.roman-architecture-2nd-edition.chapter.republican-rome
+    book.roman-architecture-2nd-edition.chapter.roman-building-types
+    book.roman-architecture-2nd-edition.chapter.the-age-of-august
+
+This makes it also possible to add references to figures in the book. Under their own identifier part.
+
+
+### Time and duration
+
+Examples:
+
+    12:00-13:00  Start and end time
+    12:00-       Only start time given
+    -16:00       Only end time given
+    12-          Only start time given, as 12:00
+    -16          Only end time given, as 16:00
+
+    2            Duration in hours
+    10           Duration in hours
+    2h           Duration in hours
+    10h          Duration in hours
+    10m          Duration in minutes
+    90h          Duration in minutes
+    :30          Duration in minutes
+    :90          Duration in minutes
+    2:30         Duration in hours and minutes
+    
+    12:00- 40m   Start time given
+    -16:00 90m   End time given
+
+
+### Note
+
+Just anything
+
+
+## Validating Activities
+
+
+
+
+
+## Whiteboard
+
+Just some temporary text.
+
+
+    book.the-egyptian-world.chapter-1.the-nile-valley
+    book.the-egyptian-world.chapter-2.the-nile-delta
+    book.the-egyptian-world.chapter-3.the-deserts
+    book.the-egyptian-world.chapter-4.the-oases
+    book.the-egyptian-world.chapter-5.urban-life
+
+Examples:
+
+    identifier                        Minimal identifier, just a single word.
+    identifier-with-multiple-words    Another identifier.
+    top-level.sub-level     Activity with one sub level. There is no limit in levels.
+    reading.book
+    book.roman-architecture-2nd-edition
