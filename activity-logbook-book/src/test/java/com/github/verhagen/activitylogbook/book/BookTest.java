@@ -22,7 +22,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.verhagen.activitylogbook.domain.Identifier;
 import com.github.verhagen.activitylogbook.domain.Organisation;
 import com.github.verhagen.activitylogbook.domain.Collection;
 
