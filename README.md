@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/verhagen/activity-logbook.svg?branch=master)](https://travis-ci.com/verhagen/activity-logbook)
+
+
 # Activity Logbook
 
 :notebook: :date: :hourglass: :mag:
