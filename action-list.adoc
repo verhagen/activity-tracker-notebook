@@ -1,0 +1,113 @@
+= Action List
+
+----
+book  add  https://learning.oreilly.com/library/view/continuous-api-management/9781098103514/[Continuous API Management, 2nd Edition]
+book  add  https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/[Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems]
+book  add  https://learning.oreilly.com/library/view/continuous-api-management/9781098103514/[Continuous API Management, 2nd Edition]
+book  add  https://learning.oreilly.com/library/view/building-microservices-2nd/9781492034018/[Building Microservices, 2nd Edition]
+book  add  https://learning.oreilly.com/library/view/building-microservices/9781491950340/[Building Microservices]
+book  add  https://learning.oreilly.com/library/view/building-event-driven-microservices/9781492057888/[Building Event-Driven Microservices]
+article  add  {
+  title: "Learning Path: Building Reactive Microservices"
+  uri: "https://learning.oreilly.com/learning-paths/learning-path-building/9781492035268/"
+  chaptrs: [
+    {
+      title: "Chapter 2. What Is a Reactive Microservice?"
+      uri: "https://learning.oreilly.com/learning-paths/learning-path-building/9781492035268/9781491975664-/ch02.html"
+    }
+    {
+      title: "The Problem of Microservices and Data Consistency"
+      uri: "https://learning.oreilly.com/learning-paths/learning-path-building/9781492035268/9781491944165-video239921/"
+    }
+    {
+      title: "An Overview of Event Sourcing"
+      uri: "https://learning.oreilly.com/learning-paths/learning-path-building/9781492035268/9781491944165-video239923/"
+    }
+    {
+      title: "Reactive Microservice Design"
+      uri: "https://learning.oreilly.com/learning-paths/learning-path-building/9781492035268/9781491976203-video302660/"
+    }
+    {
+      title: "Chapter 5. Toward Reactive Microsystems"
+      uri: "https://learning.oreilly.com/learning-paths/learning-path-building/9781492035268/9781491994368-/ch05.html"
+    }
+  ]
+}
+
+video  add  https://learning.oreilly.com/videos/event-driven-microservices/9781491944165/  rating: ***
+book add https://learning.oreilly.com/library/view/monolith-to-microservices/9781492047834/[Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith
+book add https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/[Fundamentals of Software Architecture: An Engineering Approach. A Comprehensive Guide to Patterns, Characteristics, and Best Practices]
+book add https://learning.oreilly.com/library/view/designing-distributed-systems/9781491983638/[Designing Distributed Systems: Patterns and Paradigms for Scalable, Reliable Services]
+book add https://learning.oreilly.com/library/view/the-pragmatic-programmer/9780135956977/[The Pragmatic Programmer: journey to mastery, 20th Anniversary Edition, 2/e: your journey to mastery, 20th Anniversary Edition]
+book add https://learning.oreilly.com/library/view/principles-of-web/9780137355754/[Principles of Web API Design: Delivering Value with APIs and Microservices]
+book add https://learning.oreilly.com/library/view/site-reliability-engineering/9781491929117/[Site Reliability Engineering: How Google Runs Production Systems]
+book add https://learning.oreilly.com/library/view/building-secure-and/9781492083115/[Building Secure and Reliable Systems]
+book add https://learning.oreilly.com/library/view/building-event-driven-microservices/9781492057888/[Building Event-Driven Microservices: Leveraging Organizational Data at Scale]
+book add https://learning.oreilly.com/library/view/the-self-service-data/9781492075240/[Self-Service Data Roadmap, The: Democratize Data and Reduce Time to Insight]
+book add https://livebook.manning.com/book/grokking-simplicity/about-this-book/[Grokking Simplicity | Taming Complex Software with Functional Thinking]
+book add https://livebook.manning.com/book/grokking-algorithms/[Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People]
+book add https://learning.oreilly.com/library/view/mastering-kafka-streams/9781492062486/[Mastering Kafka Streams and ksqlDB|Building real-time data systems by example]
+book add https://learning.oreilly.com/library/view/kafka-the-definitive/9781492043072/[Kafka: The Definitive Guide, 2nd Edition|Real-Time Data and Stream Processing at Scale]
+book add https://learning.oreilly.com/library/view/effective-typescript/9781492053736/[Effective TypeScript|62 Specific Ways to Improve Your TypeScript]
+book add https://learning.oreilly.com/library/view/effective-java/9780134686097/[Effective Java|The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9]
+book add https://learning.oreilly.com/library/view/software-architecture-the/9781492086888/[Software Architecture| The Hard Parts| Modern Tradeoff Analysis for Distributed Architectures| Modern Trade-Off Analyses for Distributed Architectures]
+book add https://learning.oreilly.com/library/view/architecting-modern-data/9781491969267/[Architecting Modern Data Platforms: A Guide to Enterprise Hadoop at Scale]
+book add https://learning.oreilly.com/library/view/foundations-for-architecting/9781492038733/[Foundations for Architecting Data Solutions| Managing Successful Data Projects]
+book add https://www.amazon.nl/Crafting-Interpreters-Robert-Nystrom/dp/0990582930/[Crafting Interpreters]
+book add https://learning.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/[Building Evolutionary Architectures| Support Constant Change]
+book add https://learning.oreilly.com/library/view/business-model-generation/9780470876411/[Business Model Generation|A Handbook for Visionaries, Game Changers, and Challengers]
+book add https://learning.oreilly.com/library/view/testing-business-ideas/9781119551447/[Testing Business Ideas| A Field Guide for Rapid Experimentation]
+book add https://learning.oreilly.com/library/view/the-four-steps/9781119690351/[The Four Steps to the Epiphany|Successful Strategies for Products that Win]
+book add https://www.blinkist.com/en/nc/reader/the-four-steps-to-the-epiphany-en[The Four Steps to the Epiphany|Successful Strategies for Products that Win]
+book add https://learning.oreilly.com/library/view/user-story-mapping/9781491904893/[User Story Mapping: Discover the Whole Story, Build the Right Product]
+book add https://learning.oreilly.com/library/view/business-model-you/9781118156315/[Business Model You: A One-Page Method For Reinventing Your Career]
+book add https://learning.oreilly.com/library/view/value-proposition-design/9781118968062/[Value Proposition Design: How to Create Products and Services Customers Want]
+book add https://www.amazon.nl/High-Impact-Tools-Teams-Members-Results/dp/1119602386/[High-Impact Tools for Teams: 5 Tools to Align Team Members, Build Trust, and Get Results Fast]
+book add https://www.amazon.nl/Journey-Mapping-Playbook-Practical-Facilitating/dp/3110641119/[Ten Types of Innovation: The Discipline of Building Breakthroughs]
+book add https://learning.oreilly.com/library/view/the-customer-driven-playbook/9781491981269/[The Customer-Driven Playbook]
+book add [Think Like a Rocket Scientist: Simple Strategies You Can Use to Make Giant Leaps in Work and Life]
+book add https://learning.oreilly.com/library/view/java-to-kotlin/9781492082262/[Java to Kotlin|Refactoring cookbook]
+book add []
+
+book add https://www.amazon.nl/Become-Effective-Software-Engineering-Manager/dp/1680507249/[Become an Effective Software Engineering Manager: How to Be the Leader Your Development Team Needs]
+book add https://www.amazon.nl/Release-Design-Deploy-Production-Ready-Software/dp/1680502395/[Release It!: Design and Deploy Production-Ready Software]
+book add https://www.amazon.nl/Algorithm-Design-Manual-Steven-Skiena-dp-3030542556/dp/3030542556/[The Algorithm Design Manual]
+book add []
+book add []
+book add []
+
+
+book add https://learning.oreilly.com/library/view/clean-architecture-a/9780134494272/[Clean Architecture: A Craftsman's Guide to Software Structure and Design]
+book add https://www.amazon.nl/Building-Career-Software-Comprehensive-Industry/dp/1484261461/[Building a Career in Software: A Comprehensive Guide to Success in the Software Industry]
+book add []
+book add []
+book add []
+book add https://www.amazon.nl/Atomic-Habits-life-changing-bestseller-million-copy/dp/1847941834[Atomic Habits]
+book add https://www.amazon.nl/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/[Cracking the Coding Interview: 189 Programming Questions and Solutions]
+book add https://www.amazon.nl/System-Design-Interview-insiders-Second/dp/B08CMF2CQF[System Design Interview - An insider's guide, Second Edition]
+book add https://www.amazon.nl/Managers-Path-Leaders-Navigating-Growth/dp/1491973897[The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change]
+book add https://www.blinkist.com/en/nc/reader/atomic-habits-en[Atomic Habits]
+book add []
+book add []
+book add []
+book add []
+book add []
+book add []
+book add []
+
+
+
+
+
+
+
+
+
+bookmark https://docs.oracle.com/javase/tutorial/essential/io/notification.html[Watching a Directory for Changes]; tags:[inotify, file change notification, Watch Service API]
+bookmark https://vertx.io/docs/vertx-maven-service-factory/java/[Maven verticle factory] tags:[vertx, Maven verticle factory, Verticle Factory]
+bookmark https://www.levels.fyi/?compare=Google,Facebook,Microsoft&track=Software%20Engineer[]
+bookmark http://www.satori.org/game-programming-gems/[GAME PROGRAMMING GEMS]
+bookmark https://docs.readthedocs.io/en/stable/tutorial/[Read the Docs tutorial]
+
+
+----

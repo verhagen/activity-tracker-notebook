@@ -1,0 +1,24 @@
+= Idea - Class - LinkTask
+
+See also Architecture xref:../architecture/class-task.adoc[Class Task]
+
+*Store links* and extract as much details as possible automatically.
+
+A bit similar to `ArticleTask`
+
+
+== GoogleImageSearchLinkTask
+
+`*.link  add  <uri>`
+`*.link  add  "https://www.google.com/search?q=winter+drawing+houses+scandinavia&tbm=isch&oq=winter+drawing+houses+scandinavia"`
+`*.link  add  "https://www.google.com/search?q=tekenen+schilderen+en+illustreren&oq=tekenen+schilderen+&aqs=chrome.1.69i57j0i19l3j0i19i22i30l6.13840j0j7&sourceid=chrome&ie=UTF-8"`
+
+Action Plan
+- auto extract tags: "winter drawing houses scandinavia" - use uri parameter 'q' value, use plus '+' as separater (the plus is actually used as space)
+- extend tags with: [google-search, images]
+- create title: Google Image Search: ${tags}
+- simplify uri (remove / trim the uri parameters, which are not necessary) - keep-uri-parameters: [q, oq, tbm]
+- create an identifier (*.link.google-search.image.winter_drawing_houses_scandinavia)
+- add timestamp
+- add location
+- add author

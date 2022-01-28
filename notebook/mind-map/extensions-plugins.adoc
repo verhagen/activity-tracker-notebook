@@ -1,0 +1,24 @@
+= Mind Map - Extensions / Plug-ins
+
+These _Notebook Extensions / Plug-ins_ will make it possible to use _Activity Tracker - Notebook Tasks_ from with in these tools.
+Usages of the _ContentCreator_ instances as well as the _Generator_ instances.
+
+== Notebook Gradle Plug-in
+
+
+== Notebook Maven Plug-in
+
+The `notebook-maven-plugin` has multiple goals:
+
+- init        > Same as [content-type]
+- generate
+
+
+== Notebook for Eclipse Plug-in
+
+
+== Add Integration with Slack / MatterMost / Twist
+
+Just use Activity Tracker from Slack for start / stopping activities
+
+https://www.chanty.com/blog/using-slack-alternatives/amp/[8 Slack Alternatives]

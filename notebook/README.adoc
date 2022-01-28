@@ -1,0 +1,15 @@
+= Eat Your Own Dog Food
+
+[sidebar]
+This 📔 _Notebook_ contains the 🗒 notes, for this project 🙂
+
+Content
+
+* Architecture
+** xref:architecture/applications.adoc[Applications]
+** xref:architecture/class.adoc[Class Task]
+** xref:architecture/gradle-project-structure.adoc[Gradle Project Structure]
+* Ideas
+** xref:ideas/class-linktask.adoc[Class LinkTask]
+* Mind Maps
+** xref:mind-map/notebook-structure.adoc[Notebook Structure]

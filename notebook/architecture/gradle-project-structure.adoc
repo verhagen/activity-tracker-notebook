@@ -1,0 +1,43 @@
+= Architecture - Gradle Project Structure
+
+The _Activity Tracker - Notebook_ (ATNB) project consist of multiple Gradle sub-projects.
+
+- *ATNB Monolithic App*  (_Fat Client_)
++
+_Current name `activity-logbook-app`_
++
+Contains the xref:applications.adoc#monolithic-app[Monolithic Application] - _Fat Client_
+
+
+- *ATNB - Core*
++
+Contains the Web API.
+_Rename this to API?_
+
+
+- *ATNB - Cucumber*
+
+
+- *ATNB - Domain*
+
+
+- *ATNB - Grammer*
+
+
+- *ATNB - Sample*
+
+
+- *ATNB - Task Book*
+
+
+- *ATNB - Task Project*
+
+
+- *ATNB - Task Opportunity*
+
+
+- *ATNB - Web GUI*
+
+
+- *ATNB - CLI API App* (_Thin Client_)
+

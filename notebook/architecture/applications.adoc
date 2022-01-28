@@ -1,0 +1,25 @@
+= Architecture - Applications
+
+This project comes in two big architecture types. One is a classic _Monolithic_ application, which can be run from the command line.
+The other is a _Microservices_ application, which runs as a service.
+
+Then there are two Microservices client applications. A web GUI and a _command line interface_ application.
+
+
+== 🏛 Monolithic Application - _The Fat CLI Client_
+
+This application does all the work on it's own.
+
+
+== 🔬 Microservices API
+
+The web application is split into multiple parts, the main part is the _Web API_. This _Web API_ can be used by any (web) client.
+There are already two clients, both make use of the Web API. There is a _Single Page Application_ (SPA), with a (web) GUI and
+there is a _Command Line Interface_ (cli) Application, for usage from the command line (shell).
+
+
+
+== Single Page App (SPA) - _Web Client_
+
+
+== Command Line Interface (CLI) Application - _The Think CLI Client_

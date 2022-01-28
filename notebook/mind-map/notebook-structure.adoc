@@ -1,0 +1,64 @@
+= Mind Map - Notebook Structure
+
+The structure of a _notebook_ could look like:
+
+[source]
+----
+notebook/.atnb/                    // Configuration
+        /_atnb/contacts.hjson      // Reference Data
+              /meetings.hjson
+              /projects.hjson
+              /teams.hjson
+        /manuals                   // Documentation (in MarkDown, AsciiDoc, etc)
+        /notes/architecture        // Documentation (in MarkDown, AsciiDoc, etc)
+              /ideas               // Documentation (in MarkDown, AsciiDoc, etc)
+              /pocs
+              /mind-maps
+              /roadmaps
+              /...
+        /issues/_attic/<issue-id>  // Small notes about each issues you work on. Like a whiteboard, small tips. Contacts. 
+               /<issue-id>         // Small notes about each issues you work on. Like a whiteboard, small tips. Contacts. 
+                                   // All kind of small things, which you don't want to put in the real issue. But which
+                                   // are handy as reference.
+        /time-sheets               // Put here your downloaded time-sheet files, so they get backuped as well.
+        /activity-tracker/activity-events.log  // 
+        /genrated/logbooks         // The Activity Logbooks will be generated from the Activity Tracker Events
+
+----
+
+*Remarks*:
+- If there are too many issues at some point, just move them to the __attic_
+
+- Maybe sometimes working on multiple project, with their own issues. Maybe one likes to place those in their own map.
++
+[source]
+----
+notebook/issues/<project-a>/A-10.adoc
+               /<project-b>/B-1122.adoc
+----
+Or in a different form:
+
+[source]
+----
+notebook/projects/<project-a>/issues/A-10.adoc
+                 /<project-b>/issues/B-1122.adoc
+----
+
+*Questions*:
+- Where to put cache files?
+
+
+The structure for a location with multiple _notebooks_ could look like:
+
+[source]
+----
+notebooks/<organisation>/
+         /<cookbook>/recipes/boeuf-bourguignon.adoc                 // Identifier: cookbook.recipes.boeuf-bourguignon
+         /<cookbook>/recipes/main-courses/boeuf-bourguignon.adoc    // Identifier: cookbook.recipes.category.main-courses.boeuf-bourguignon  (adds a category)
+         /<hobby>/.atnb/links.hjson
+                 /notes/ideas/
+                       /images
+                 /materials
+                 /stock
+                 
+----

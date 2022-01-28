@@ -1,0 +1,48 @@
+= Idea - Tags
+
+[sidebar]
+_Tags can be added to anything!_
+
+All documents should have the option for adding tags.
+
+== Automatic adding tags, based on the TaskIdentifier
+
+* If an Article is added to a Notebook, then the tag `article` should automatically be included.
+* If that Article title contains known tags, add them automatically as well.
+* If the _remainer_ contains a field `tags` add them as well.
+
+
+== Tag aliases
+
+Preferably a tag should be as short as possible, so usage of abbreviations is appreciated. But not
+everyone knows all abbreviations. So in case a abbreviation is used, there should be the full text one be given.
+
+----
+integrated-developer-environment - ide
+application-programming-interface - api
+----
+
+
+== Create a Tag Cloud of Known Tags and Their Relationships
+
+This means, that every tag can have one or multiple generalisation tags, or specialisation tags.
+
+----
+eclipse -> ide
+eclipse -> java-ide
+java -> programming-language
+----
+
+REMARK: At the moment the idea is, that tags will be unique, inside a Notebook. In case they ever would collide,
+there maybe needs some way to help identify which tag is mend.
+
+----
+eclipse -> ide           | Eclipse as IDE
+eclipse -> java-ide      | Eclipse as Java IDE
+eclipse -> solar-eclipse | A solar eclipse occurs when a portion of the Earth is engulfed in a shadow cast by the Moon which fully or partially blocks sunlight.
+----
+
+The first two entries of `eclipse` refer to the same Eclipse as _Integrated Developer Environment_.
+But the last one is about the solar eclipse, so these two eclipse tags should be distinguished.
+
+Maybe something like `eclipse:ide` and `eclipse:solar-eclipse`.

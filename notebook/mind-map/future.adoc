@@ -1,0 +1,9 @@
+# Mind Map - Future
+
+_Maybe use the https://plantuml.com/mindmap-diagram[Mind Map]_
+
+----
+@startmindmap
++ Notebook
+@endmindmap
+----

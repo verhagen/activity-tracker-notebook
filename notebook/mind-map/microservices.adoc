@@ -1,0 +1,33 @@
+= Mind Map - Microservice
+
+https://shopify.dev/
+https://shopify.dev/app-developers
+
+https://www.programmableweb.com/
+
+https://istio.io/
+https://docs.apigee.com/
+https://apievangelist.com/
+https://oai.github.io/Documentation/specification.html
+
+https://github.com/shipkit/shipkit-changelog
+
+https://newrelic.com/
+
+https://martinfowler.com/bliki/CircuitBreaker.html
+
+Service Mesh
+Envoy vs Istio
+
+https://aether.fandom.com/wiki/Mentioned_features
+
+
+https://dzone.com/articles/api-and-api-management-overview
+## What API Management Tools Are Available?
+There are many API management vendors available, including:
+
+- Apigee.
+- IBM API management.
+- Microsoft’s AZURE API management.
+- MuleSoft’s Anypoint platform for APIs.
+

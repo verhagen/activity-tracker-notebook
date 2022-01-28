@@ -131,3 +131,5 @@ See the [progress](progress.md).
   `$  activity-logbook  https://livebook.manning.com/book/testing-angular-applications/chapter-2  next`  
   
   
+  - Support input / output with [Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml).
+  
