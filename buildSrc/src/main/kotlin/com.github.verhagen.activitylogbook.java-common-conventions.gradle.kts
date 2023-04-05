@@ -14,19 +14,18 @@ repositories {
 }
 
 dependencies {
-    implementation("org.slf4j:slf4j-api:1.7.30")
-    implementation("org.apache.commons:commons-lang3:3.11")
+    implementation("org.slf4j:slf4j-api:1.7.35")
+    implementation("org.apache.commons:commons-lang3:3.12.0")
     implementation("org.hjson:hjson:3.0.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.1")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.1")
-    //testImplementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.1")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
     testImplementation("org.mockito:mockito-core:4.3.1")
-    testImplementation("org.mockito:mockito-junit-jupiter:4.3.1")
+	testImplementation("org.mockito:mockito-junit-jupiter:4.3.1")
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
-    testRuntimeOnly("ch.qos.logback:logback-classic:1.2.3")
+    testRuntimeOnly("ch.qos.logback:logback-classic:1.2.10")
 }
 
 tasks.test {

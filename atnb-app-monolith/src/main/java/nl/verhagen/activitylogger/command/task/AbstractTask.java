@@ -83,6 +83,12 @@ public abstract class AbstractTask {
 		);
 	}
 
+	public TaskIdentifier getTaskIdentifersPure() {
+		if (taskIdentifiers.size() != 1) {
+			throw new RuntimeException("The " + this.getClass().getSimpleName() + " contains multiple TaskIdentifiers: " + taskIdentifiers);
+		}
+		return taskIdentifiers.values().stream().findFirst().get();
+	}
 	public String getTaskIdentifier() {
 		if (taskIdentifiers.size() != 1) {
 			throw new RuntimeException("The " + this.getClass().getSimpleName() + " contains multiple TaskIdentifiers: " + taskIdentifiers);

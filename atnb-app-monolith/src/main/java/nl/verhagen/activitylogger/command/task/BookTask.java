@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import nl.verhagen.activitylogger.command.domain.ActivityEvent;
 import nl.verhagen.activitylogger.command.domain.TaskIdentifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +13,6 @@ import org.slf4j.LoggerFactory;
 import nl.verhagen.activitylogger.command.CommandException;
 import nl.verhagen.activitylogger.command.CommandName;
 import nl.verhagen.activitylogger.command.UriIdentifierConverter;
-import nl.verhagen.activitylogger.command.domain.ActivityEvent;
 import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfiguration;
 import nl.verhagen.activitylogger.command.domain.ActivityEventImpl;
 
@@ -103,7 +103,7 @@ public class BookTask extends RepositoryTask {
 
 
 	private void init(ActivityEvent activityEvent) {
-		logger.info("Execute book add ...  This  should add a book to the books collection...");
+		logger.info("Execute book init ...  This  should add a book to the books collection...");
 	}
 
 }

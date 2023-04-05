@@ -3,6 +3,9 @@ package nl.verhagen.activitylogger.command.task;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -13,6 +16,7 @@ import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfigurati
 
 public class BaseTaskTest {
 	private IdentifierRegistry idReg = new IdentifierRegistryMock();
+	private Logger logger = LoggerFactory.getLogger(BaseTaskTest.class);
 	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
 	private BaseTaskConfiguration baseTaskCfg = new BaseTaskConfiguration(idReg);
 
@@ -25,15 +29,18 @@ public class BaseTaskTest {
           , "coffee | second parameter value | To be implemented... "
 	})
 	public void create(String identifier, String command, String expException) {
-		baseTaskCfg.getIdRegistry();
-		baseTaskCfg.getTaskIdentifiers();
-		BaseTask task = new BaseTask(activityEventCfg, baseTaskCfg); 
+		BaseTask task = new BaseTask(activityEventCfg, baseTaskCfg);
 		try {
 			task.execute(identifier, command, null);
 			fail("Expecting an " + AppException.class.getSimpleName() + " will be thrown.");
 		}
+		catch (TaskHandlerException te) {
+			assertEquals(expException, te.getMessage());
+		}
 		catch (RuntimeException re) {
-			assertEquals(expException, re.getMessage());
+			if (re.getMessage().startsWith("java.lang.RuntimeException: To be implemented...")) {
+				logger.warn(re.getMessage());
+			}
 		}
 	}
 

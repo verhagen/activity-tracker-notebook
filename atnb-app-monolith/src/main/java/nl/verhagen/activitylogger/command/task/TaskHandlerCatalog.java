@@ -7,13 +7,13 @@ import com.github.verhagen.activitylogbook.core.HierarchicalCatalog;
 
 public class TaskHandlerCatalog {
 	private final TaskHandlerCatalogConfiguration taskHandlerCatCfg;
-//	private final HierarchicalCatalog<AbstractTask> taskCatalog;
+	private final HierarchicalCatalog<AbstractTask> taskCatalog;
 //	private final Map<AbstractTask> tasks = new ArrayList<>();
 
 
 	public TaskHandlerCatalog(TaskHandlerCatalogConfiguration taskHandlerCatCfg) {
 		this.taskHandlerCatCfg = taskHandlerCatCfg;
-//		tasks.
+		taskCatalog = null; // FIXME
 	}
 
 

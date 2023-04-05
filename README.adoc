@@ -136,4 +136,3 @@ $  activity-tracker  https://livebook.manning.com/book/testing-angular-applicati
 ----
   
 - Support input / output with https://www.iana.org/assignments/media-types/media-types.xhtml[Media Types].
-  

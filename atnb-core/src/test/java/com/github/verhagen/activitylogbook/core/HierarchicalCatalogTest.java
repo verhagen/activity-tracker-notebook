@@ -32,11 +32,11 @@ public class HierarchicalCatalogTest {
 
 	@Test
 	void identifier() {
-		HierarchicalCatalog<String> registery = new HierarchicalCatalog<>(Arrays.asList(new String[] {"programming-language"}));
-		registery.add(Collections.singletonList("programming-language"), Arrays.asList(new String[] { "kotlin" }));
-		registery.add(Collections.singletonList("programming-language"), Arrays.asList(new String[] { "programming-language", "type-script" }));
+		HierarchicalCatalog<String> catalog = new HierarchicalCatalog<>(Arrays.asList(new String[] {"programming-language"}));
+		catalog.add(Collections.singletonList("programming-language"), Arrays.asList(new String[] { "kotlin" }));
+		catalog.add(Collections.singletonList("programming-language"), Arrays.asList(new String[] { "programming-language", "type-script" }));
 
-		List<List<String>> items = registery.getCollection();
+		List<List<String>> items = catalog.getCollection();
 	}
 
 }

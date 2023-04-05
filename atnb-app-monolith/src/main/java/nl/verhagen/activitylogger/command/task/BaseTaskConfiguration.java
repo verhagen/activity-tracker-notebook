@@ -2,7 +2,6 @@ package nl.verhagen.activitylogger.command.task;
 
 import java.util.Arrays;
 import java.util.List;
-
 import nl.verhagen.activitylogger.command.IdentifierRegistry;
 
 public class BaseTaskConfiguration extends TaskConfiguration {

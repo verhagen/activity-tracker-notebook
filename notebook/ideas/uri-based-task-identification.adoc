@@ -3,14 +3,14 @@
 Currently it is possible to add an article in the following way:
 
 ----
-$> at  article  add  https://www.baeldung.com/eclipse-debugging[Debugging with Eclipse] 
+$> app  article  add  https://www.baeldung.com/eclipse-debugging[Debugging with Eclipse]
 ----
 
 It would be very nice, to just write:
 
 ----
-$> at  add  https://www.baeldung.com/eclipse-debugging[Debugging with Eclipse]
-$> at  add  https://www.baeldung.com/eclipse-debugging
+$> app  link  add  https://www.baeldung.com/eclipse-debugging[Debugging with Eclipse]
+$> app  link  add  https://www.baeldung.com/eclipse-debugging
 ----
 
 * Just based on the URI host `baeldung.com`, it should be categorized as an `article`, so the `ArticleTask` is used.

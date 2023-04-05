@@ -84,4 +84,3 @@ There will also be a user specific `.atnb` directory
        /scan-locations.yaml        # Contains urls of loccations to scan for new content
 
 ----
-

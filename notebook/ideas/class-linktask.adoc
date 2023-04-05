@@ -11,11 +11,14 @@ A bit similar to `ArticleTask`
 
 Automatically extract details from the Goole url, for searching for particular images.
 
-`*.link  add  <uri>`
-`*.link  add  "https://www.google.com/search?q=winter+drawing+houses+scandinavia&tbm=isch&oq=winter+drawing+houses+scandinavia"`
-`*.link  add  "https://www.google.com/search?q=tekenen+schilderen+en+illustreren&oq=tekenen+schilderen+&aqs=chrome.1.69i57j0i19l3j0i19i22i30l6.13840j0j7&sourceid=chrome&ie=UTF-8"`
+----
+*.link  add  <uri>
+*.link  add  "https://www.google.com/search?q=winter+drawing+houses+scandinavia&tbm=isch&oq=winter+drawing+houses+scandinavia"
+*.link  add  "https://www.google.com/search?q=tekenen+schilderen+en+illustreren&oq=tekenen+schilderen+&aqs=chrome.1.69i57j0i19l3j0i19i22i30l6.13840j0j7&sourceid=chrome&ie=UTF-8"
+----
 
 Action Plan
+
 - auto extract tags: "winter drawing houses scandinavia" - use uri parameter 'q' value, use plus '+' as separater (the plus is actually used as space)
 - extend tags with: [google-search, images]
 - create title: Google Image Search: ${tags}

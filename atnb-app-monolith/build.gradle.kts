@@ -3,14 +3,10 @@ plugins {
 }
 
 dependencies {
-    implementation("org.slf4j:slf4j-api:1.7.30")
     implementation(project(":atnb-core"))
     implementation(project(":atnb-domain"))
     implementation(project(":atnb-book"))
     implementation(project(":atnb-project"))
-
-    implementation("info.picocli:picocli:4.6.1")
-    annotationProcessor("info.picocli:picocli-codegen:4.6.1")
 }
 
 tasks.withType<JavaCompile> {
@@ -20,16 +16,9 @@ tasks.withType<JavaCompile> {
     compilerArgs.add("-Aproject=com.github.verhagen/activity-tracker-notebook")
 }
 
-
-//tasks.withType<Jar> {
-//	manifest.attributes["Main-Class"] = "com.github.verhagen.activitylogbook.app.App"
-//	manifest()
-//}
-
 application {
-//    // Define the main class for the application.
+    // Define the main class for the application.
     mainClass.set("com.github.verhagen.activitylogbook.app.App")
-//	mainClassName = "com.github.verhagen.activitylogbook.app.App"
 }
 
 val jar by tasks.getting(Jar::class) {

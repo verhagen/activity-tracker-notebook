@@ -3,8 +3,7 @@
 == 🚀 Launching
 
 When the xref:applications.adoc=_monolithic_application[_Monolithic Application_] or
-xref:applications.adoc=_microservices_api[_Microservices API_] starts it will load
-the configuration.
+xref:applications.adoc=_microservices_api[_Microservices API_] starts it will load the configuration.
 
 
 

@@ -9,3 +9,8 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
+
+dependencies {
+    implementation("info.picocli:picocli:4.6.1")
+    annotationProcessor("info.picocli:picocli-codegen:4.6.1")
+}

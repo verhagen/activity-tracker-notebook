@@ -12,7 +12,6 @@ import nl.verhagen.activitylogger.command.UriTextField;
 public class BookTaskConfiguration extends RepositoryTaskConfiguration {
 	private final URI baseUri;
 
-
 	public BookTaskConfiguration(IdentifierRegistry idRegistry, URI baseUri) {
 		super(idRegistry, createTextFieldExtractor());
 		this.baseUri = baseUri;

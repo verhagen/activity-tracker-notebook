@@ -1,0 +1,9 @@
+= Mind Map - Graphical User Interface Design
+
+
+== Usage of Emoji in the User Interface
+
+https://emojipedia.org/
+
+☕️ Coffee break
+🍵️🫖 Tea break

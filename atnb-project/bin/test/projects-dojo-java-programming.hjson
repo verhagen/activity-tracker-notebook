@@ -1,0 +1,19 @@
+{
+	organisation:
+	{
+		url: github.com/dojo-java-programming
+		name: Dojo Java Programming
+	}
+	items: [ 
+		{
+			repository-url: https://github.com/dojo-java-programming/ou-projects-java-1
+			tags: open-universiteit, java
+			description: #Open Universiteit - Object Oriented Programming in Java deel 1
+		}
+		{
+			repository-url: https://github.com/dojo-java-programming/javaForTestersCode
+			tags: java
+			description:
+		}
+	]
+}

@@ -25,7 +25,7 @@ Locations are used in Activity Tracker Events, as well as in Activity Logbook Ev
 - [x] Implement loading of _book data_ (from files `publisher-*.hjson`) for activity identifiers
 - [ ] Make Activity a DP:Composite, so collections of activities can be created.
       NOTE: _This probably holds for the ActivityTrackerEvents as well as for the ActivityLogbookEvents_
-- [ ] Create 'snapshot' from data: projects-\*.hjson, books-\*.hjson, etc and activity-logbooks.csv / md  
+- [ ] Create 'snapshot' from data: projects-\*.hjson, books-\*.hjson, etc and activity-logbooks.csv / md
       Each snapshot should work, give correct results.
       
 - [ ] Rename Identifiers like `project.mazes-for-programmers` into `project.mazes-for-programmers-java`  
@@ -35,10 +35,10 @@ Locations are used in Activity Tracker Events, as well as in Activity Logbook Ev
 
 == IdentifierRegistry Action List
 
-- [ ] Rename IdentifierRegistery in to IdentifierCatalog
-- [x] Add IdentifierRegistery with search(query)
-- [ ] IdentifierRegistery - show most relevant on top (last used identifiers in Activity Logbook and / or Activity Log instances) 
-- [ ] IdentifierRegistery - filter out certain identifiers, because they are no longer relevant.  
+- [ ] Rename IdentifierRegistry in to IdentifierCatalog
+- [x] Add IdentifierRegistry with search(query)
+- [ ] IdentifierRegistry - show most relevant on top (last used identifiers in Activity Logbook and / or Activity Log instances)
+- [ ] IdentifierRegistry - filter out certain identifiers, because they are no longer relevant.
       For Example: `client-abc.*`
       
 
