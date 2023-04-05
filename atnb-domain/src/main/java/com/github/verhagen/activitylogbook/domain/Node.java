@@ -85,6 +85,6 @@ public class Node<P, V> {
 
 	@Override
 	public String toString() {
-		return "breadCrum: " + breadCrumb + "    " + value;
+		return "breadCrumb: " + breadCrumb + "    " + value;
 	}
 }

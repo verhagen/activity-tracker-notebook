@@ -19,7 +19,7 @@ public class JiraIssueFactoryTest {
                 .addOrganisation("github")
                 .addProject("docs")
                 .addIssuePrefix("github-docs")
-                .addIssuePath(Paths.get("target/issue"))
+                .addIssuePath(Paths.get("build/atnb/issue"))
                 .addIssueServer(issueHost)
                 .create();
         IssueFactory issueFactory = new JiraIssueFactory(cfg);

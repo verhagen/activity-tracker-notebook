@@ -1,22 +1,22 @@
-# Architecture - Application Life Cycle
+= Architecture - Application Life Cycle
 
-## 🚀 Launching
+== 🚀 Launching
 
-When the xref:applications.adoc#_monolithic_application[_Monolithic Application_] or
-xref:applications.adoc#_microservices_api[_Microservices API_] starts it will load
+When the xref:applications.adoc=_monolithic_application[_Monolithic Application_] or
+xref:applications.adoc=_microservices_api[_Microservices API_] starts it will load
 the configuration.
 
 
 
-Read the IdentifierCatalog from disk, if there is a cache available.
+Read the `IdentifierCatalog` from disk, if there is a cache available.
 
 NOTE: Maybe some structures, like those of the `issues` should be scanned, for the current active ones.
 Those moved to the `_attic` should no longer be concerned relevant for active identifiers.
 
 
-## 🪂 Landing
+== 🪂 Landing
 
-Write the current IdentifierCatalog to disk, under cache.
+Write the current `IdentifierCatalog` to disk, under cache.
 
 ----
 init

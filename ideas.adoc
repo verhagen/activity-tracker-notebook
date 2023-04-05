@@ -1,3 +1,5 @@
-# Ideas
+= Ideas
 
-- Use [Java Service Provider Interface](https://www.baeldung.com/java-spi) for loading different commands / factories.
+== Plug-in Design
+
+- Use https://www.baeldung.com/java-spi[Java Service Provider Interface] for loading different commands / factories.

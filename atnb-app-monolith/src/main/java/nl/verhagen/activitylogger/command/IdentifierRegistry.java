@@ -3,7 +3,7 @@ package nl.verhagen.activitylogger.command;
 import java.util.Arrays;
 import java.util.List;
 
-public interface IdentifierRegistery {
+public interface IdentifierRegistry {
 	static final String BY_DOT = "\\.";
 
 	default List<String> search(String identifier) {

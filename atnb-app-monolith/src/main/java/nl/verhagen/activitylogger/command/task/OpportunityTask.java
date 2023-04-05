@@ -44,9 +44,9 @@ public class OpportunityTask extends TemplateTask {
 	}
 
 	public void execute(String[] identifierPath, String command, Map<String, Object> fields) {
-		List<String> foundIdentifiers = opportunityTaskCfg.getIdRegistery().search(identifierPath);
+		List<String> foundIdentifiers = opportunityTaskCfg.getIdRegistry().search(identifierPath);
 		if (foundIdentifiers.size() == 0) {
-			opportunityTaskCfg.getIdRegistery().add(identifierPath);
+			getIdentifierRegistery().add(identifierPath);
 		}
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);
@@ -74,7 +74,8 @@ public class OpportunityTask extends TemplateTask {
 
 	private void create(ActivityEvent activityEvent) {
 		// TODO [2022.01.20 TV] Add implementation
-		throw new RuntimeException("Implement call to OpportunityContentCreator...");
+		//throw new RuntimeException("Implement call to OpportunityContentCreator...");
+		logger.info("Execute opportunity create ...  This  should add a create in the opportunity folder...");
 	}
 
 }

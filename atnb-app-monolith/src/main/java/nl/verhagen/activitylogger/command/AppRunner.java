@@ -26,6 +26,7 @@ public class AppRunner {
 
     private Pattern jiraIssue = Pattern.compile("\\w+-\\d+|\\d+"); //  ^\d+$|
 
+	// FIXME [2023.04.05 TV] Remove hard coded path
     private Path issueTargetPath = Paths.get("C:\\Users\\tjve\\Documents\\notes\\issue-generated");
     private JiraIssueFactoryConfiguration cfg = new JiraIssueFactoryConfiguration.Builder()
             .addOrganisation("cs")
@@ -48,6 +49,7 @@ public class AppRunner {
     public AppRunner(AppRunnerConfiguration appRunnerCfg) {
     	this.appRunnerCfg = appRunnerCfg;
 
+        // FIXME [2023.04.05 TV] Remove hard coded creating of TaskIdentifiers and Commands
     	// -------------
     	// TO BE REMOVED
     	// -------------
@@ -88,7 +90,7 @@ public class AppRunner {
 	public void execute(String identifier, String command) {
         execute(LocalDateTime.now(), identifier, command);
     }
-    public void  execute(LocalDateTime timestamp, String identifier, String command) {
+    public void execute(LocalDateTime timestamp, String identifier, String command) {
         execute(timestamp, identifier, command, null);
     }
     public void execute(String identifier, String command, String remainer) {

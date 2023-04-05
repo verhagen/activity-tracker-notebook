@@ -7,5 +7,5 @@ plugins {
 }
 
 dependencies {
-    api(project(":activity-logbook-domain"))
+    api(project(":atnb-domain"))
 }

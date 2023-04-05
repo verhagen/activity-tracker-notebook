@@ -18,7 +18,7 @@ public class ActivityEntryTest {
 	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
 
 	@ParameterizedTest
-    @CsvSource({
+    @CsvSource(delimiter = '|', value = {
         "2021.12.28 11:28 | book.street-coder | start"
         , "2021.12.20 11:28 | book.street-coder | add"
         , "2021.12.21 13:20 | publisher.manning.book.street-coder | add"

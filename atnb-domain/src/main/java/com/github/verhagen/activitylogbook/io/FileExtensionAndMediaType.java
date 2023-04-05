@@ -6,18 +6,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class FileExtentionAndMediaType {
+public class FileExtensionAndMediaType {
 	// The default file extension is always the first entry in the list
 	private static final Map<MediaType, List<String>> FILE_EXTENSIONS_PER_MEDIA_TYPE = new HashMap<>();
 
 	static {
 		FILE_EXTENSIONS_PER_MEDIA_TYPE.put(MediaTypes.TEXT_MARKDOWN, Arrays.asList("md", "markdown"));
+		FILE_EXTENSIONS_PER_MEDIA_TYPE.put(MediaTypes.TEXT_ASCIIDOC, Arrays.asList("adoc", "asciidoc"));
 	}
 	
 
 	public String getFileExtension(MediaType mediaType) {
 		if (! FILE_EXTENSIONS_PER_MEDIA_TYPE.containsKey(mediaType)) {
-			throw new RuntimeException("No file exetensions know for mediaType '" + mediaType + "'");
+			throw new RuntimeException("No file extensions know for mediaType '" + mediaType + "'");
 		}
 		return FILE_EXTENSIONS_PER_MEDIA_TYPE.get(mediaType).get(0);
 	}

@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class TextWithReferencesTest {
 
 	@ParameterizedTest
-	@CsvSource({
+	@CsvSource(delimiter = '|', value = {
 		"Follow the new on http://www.cnn.com to stay up to date.  | title: Follow the new on uri: ${uri-0} to stay up to date. | 1"
 		, "Download ftp://download.com to https://cnn.com/lastest. | title: Download uri: ${uri-0} to ${uri-1}                  | 2"
 		, "See link:for-downloading:ftp://download.com/ for more.. | title: See uri: link:${uri-0} for more..                   | 1"

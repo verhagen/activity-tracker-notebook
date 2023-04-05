@@ -7,17 +7,15 @@
  * in the user manual at https://docs.gradle.org/6.7.1/userguide/multi_project_builds.html
  */
 
-rootProject.name = "activity-logbook"
+rootProject.name = "atnb"
 include(
-	"activity-logbook-app"
-	, "activity-logbook-book"
-	, "activity-logbook-core"
-	, "activity-logbook-cucumber"
-	, "activity-logbook-domain"
-	, "activity-logbook-project"
-	, "activity-logbook-opportunity"
-	, "activity-logbook-grammar"
+	"atnb-app"
+	, "atnb-book"
+	, "atnb-core"
+	, "atnb-cucumber"
+	, "atnb-domain"
+	, "atnb-project"
+	, "atnb-opportunity"
+	, "atnb-grammar"
 	, "atnb-app-monolith"
-	)
-
-// , "activity-logbook-grammar"
+)

@@ -4,7 +4,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 import nl.verhagen.activitylogger.command.DateTextField;
-import nl.verhagen.activitylogger.command.IdentifierRegistery;
+import nl.verhagen.activitylogger.command.IdentifierRegistry;
 import nl.verhagen.activitylogger.command.StringTextField;
 import nl.verhagen.activitylogger.command.TextFieldExtractor;
 import nl.verhagen.activitylogger.command.UriTextField;
@@ -12,7 +12,7 @@ import nl.verhagen.activitylogger.command.UriTextField;
 public class OpportunityTaskConfiguration extends TemplateTaskConfiguration {
 
 
-	public OpportunityTaskConfiguration(IdentifierRegistery idRegistery) {
+	public OpportunityTaskConfiguration(IdentifierRegistry idRegistery) {
 		super(idRegistery, createTextFieldExtractor());
 	}
 

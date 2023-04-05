@@ -7,6 +7,6 @@ plugins {
 }
 
 dependencies {
-    api(project(":activity-logbook-domain"))
+    api(project(":atnb-domain"))
     implementation("commons-io:commons-io:2.11.0")
 }

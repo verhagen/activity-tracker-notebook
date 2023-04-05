@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 
 /**
- * A HierarchicalRegistery contains a collection of items.
+ * A HierarchicalCatalog contains a collection of items.
  *
  * @param <T>
  */
@@ -22,24 +22,22 @@ public class HierarchicalCatalog<T> {
 	private List<T> topLevelItems = new ArrayList<>();
 	private Map<T, HierarchicalCatalog<T>> collection = new HashMap<>();
 
-
+	private HierarchicalCatalog() {
+		// Nothing to do
+	}
 	/**
 	 * Specify the top level items. Additional items, need to start with one of these
 	 * top level items;
 	 * 
-	 * @param items
+	 * @param items The items for the catalog
 	 */
-	public HierarchicalCatalog(T... items) {
-		this(Arrays.asList(items));
-	}
-	/** @see {@link #add(T...)} */
 	public HierarchicalCatalog(List<T> items) {
 		if (items.size() == 0) {
 			throw new IllegalArgumentException("Argument 'items' should at least contain 1 item.");
 		}
 		topLevelItems.addAll(items);
 		for (T item : topLevelItems) {
-			collection.put(item, new HierarchicalCatalog<>(Collections.emptyList()));
+			collection.put(item, new HierarchicalCatalog<>());
 		}
 		logger.info("Adding items: "  + items);
 	}
@@ -50,12 +48,12 @@ public class HierarchicalCatalog<T> {
 //	}
 
 	/**
-	 * @param existing hierarchy
-	 * @param new hierarchy entries
+	 * @param existingHierarchy
+	 * @param newEntries new hierarchy entries
 	 */
-	public void add(List<T> existingHierary, List<T> newEntries) {
-		HierarchicalCatalog<T> registery = get(existingHierary.iterator());
-		registery.addNew(newEntries.iterator());
+	public void add(List<T> existingHierarchy, List<T> newEntries) {
+		HierarchicalCatalog<T> catalog = get(existingHierarchy.iterator());
+		catalog.addNew(newEntries.iterator());
 	}
 
 	private HierarchicalCatalog<T> get(Iterator<T> iterator) {

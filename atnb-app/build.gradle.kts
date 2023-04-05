@@ -3,10 +3,10 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":activity-logbook-core"))
-    implementation(project(":activity-logbook-domain"))
-    implementation(project(":activity-logbook-book"))
-    implementation(project(":activity-logbook-project"))
+    implementation(project(":atnb-core"))
+    implementation(project(":atnb-domain"))
+    implementation(project(":atnb-book"))
+    implementation(project(":atnb-project"))
 
     implementation("info.picocli:picocli:4.6.1")
     annotationProcessor("info.picocli:picocli-codegen:4.6.1")
@@ -27,8 +27,8 @@ tasks.withType<JavaCompile> {
 
 application {
 //    // Define the main class for the application.
-//    mainClass.set("com.github.verhagen.activitylogbook.app.App")
-	mainClassName = "com.github.verhagen.activitylogbook.app.App"
+    mainClass.set("com.github.verhagen.activitylogbook.app.App")
+//	mainClassName = "com.github.verhagen.activitylogbook.app.App"
 }
 
 val jar by tasks.getting(Jar::class) {

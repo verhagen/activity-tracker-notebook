@@ -1,35 +1,77 @@
-# Ideas - Commands
+= Ideas - Commands
 
 
+== Init
 
-## List
+Create initial structure for a notebook.
+If there is no user specific configuration, create it as well `~/.ntnb`.
 
-- `list` - List the current identifiers  
-  `issue  list` - list the issue identifiers
+----
+$ app  init  <organisation>  <notebook>
+$ app  init  <notebook>    # Only possible if there is a default organisation, or in case the current location is inside
+                           # an organisation path. Or inside a project path.
+----
+
+What will be created:
+----
+<organisation>/notebook-<notebook-id>/
+<project>/notebook/
+----
+
+
+== List
+
+----
+$ app  list           # List the current identifiers
+$ app  issue  list    # list the issue identifiers
+----
+
+== History
+
+----
+$ app  history       # Show the history (default with last # days / number of activities)  
+$ app  book history  # - Show history of book activities (reading)
+$ app  <organisation> history (this|last) (week|month|sprint)` - Show the history of activities, related to an organisation...
+----
+
+== Scan
+
+----
+$ app  scan           # Scan the locations given in `~/.atnb/atnb-settings.yaml` group `scan-locations` and updates the cache.
+$ app  scan --deep    # Uses scan defaults directory entries, like `notebook`.
+----
+
+== Generate
+
+----
+$ app  generate  overview  (<year>.w##|<year>.m##)
+----
+
+----
+$ app  <organisation>  init    # Create a new activity tracker notebook repository
+$ app  <organisation>  generate  overview  (<year>.w##|<year>.m##)
+----
   
 
-## History
+== Reading Book / Article
 
-- `history` - Show the history (default with last # days / number of activities)  
-  `book history` - Show history of book activities (reading)
-  `<organisation> history (this|last) (week|month|sprint)` - Show the history of activities, related to an organisation...
+----
+$ app  article  start  <uri>
+$ app  article.<id>  start|stop
+$ app  article  start|stop|finish  [<title>]\(<uri>)   # automatically generate identifier, based on uri -> host_article-id
+----
+
+== Proof of Concept
+
+----
+$ app  poc.<identifier>  (start|stop)
+$ app  poc.<identifier>  init
+----
+Create poc directory `${space_root}/poc/<identifier>`
 
 
-## Generate
+== Other
 
-- `generate overview (<year>.w##|<year>.m##)`  
-  `<organisation> generate overview (<year>.w##|<year>.m##)`  
-  
+Now a `gradle init` as well as an `git init` can be run there.
 
-## Reading Book / Article
-
-- `article  start  <uri>`
-- `article.<id>  start|stop`
-- `article  start|stop|finish  [<title>]\(<uri>)` automatically generate identifier, based on uri -> host_article-id
-
-## Proof of Concept
-
-- `poc.<identifier>  (start|stop)`
-- `poc.<identifier>  init`  Create poc directory, under $poc_root} or if not defined ${scm_root}/poc/<identifier>  
-  Now a `gradle init` as well as an `git init` can be run there.
-  Use https://start.vertx.io/
+Use https://start.vertx.io/

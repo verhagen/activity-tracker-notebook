@@ -1,10 +1,10 @@
 package nl.verhagen.activitylogger.command.task;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistery;
+import nl.verhagen.activitylogger.command.IdentifierRegistry;
 
 public class CommunityTaskConfiguration extends TaskConfiguration {
 
-	public CommunityTaskConfiguration(IdentifierRegistery idRegistery) {
+	public CommunityTaskConfiguration(IdentifierRegistry idRegistery) {
 		super(idRegistery);
 	}
 

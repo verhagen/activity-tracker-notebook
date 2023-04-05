@@ -5,15 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.net.URI;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
 
 
 public class UriInformationExtractionTest {
 
-	@Test
-	@CsvSource({
+	@ParameterizedTest
+	@CsvSource(delimiter = '|', value = {
 			"https://www.manning.com/books/street-coder | Street Coder | Manning"
 	})
 	public void create(String uriStr, String expTitle, 	String expGroup) {

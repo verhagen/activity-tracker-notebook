@@ -20,7 +20,7 @@ public class TextFieldExtractorTest {
 
 	@Disabled
 	@ParameterizedTest
-	@CsvSource({ 
+	@CsvSource(delimiter = '|', value = {
 		  "      1963.11.22;       John F. Kennedy Shot;      https://en.wikipedia.org/wiki/John_F._Kennedy | 1963.11.22 | John F. Kennedy Shot | https://en.wikipedia.org/wiki/John_F._Kennedy"
 		, "date: 1963.11.22; title:John F. Kennedy Shot; url: https://en.wikipedia.org/wiki/John_F._Kennedy | 1963.11.22 | John F. Kennedy Shot | https://en.wikipedia.org/wiki/John_F._Kennedy"
 		, "d:    1963.11.22;     t:John F. Kennedy Shot;   u: https://en.wikipedia.org/wiki/John_F._Kennedy | 1963.11.22 | John F. Kennedy Shot | https://en.wikipedia.org/wiki/John_F._Kennedy"
@@ -49,7 +49,7 @@ public class TextFieldExtractorTest {
 	}
 
 	@Disabled
-	@CsvSource({ 
+	@CsvSource(delimiter = '|', value = {
 		  "      1963.11.22;       John F. Kennedy Shot;     https://en.wikipedia.org/wiki/John_F._Kennedy | 1963.11.22 | John F. Kennedy Shot | https://en.wikipedia.org/wiki/John_F._Kennedy"
 		, "date: 1963.11.22; title:John F. Kennedy Shot; url:https://en.wikipedia.org/wiki/John_F._Kennedy | 1963.11.22 | John F. Kennedy Shot | https://en.wikipedia.org/wiki/John_F._Kennedy"
 		, "d:    1963.11.22;     t:John F. Kennedy Shot;   u:https://en.wikipedia.org/wiki/John_F._Kennedy | 1963.11.22 | John F. Kennedy Shot | https://en.wikipedia.org/wiki/John_F._Kennedy"
@@ -105,7 +105,7 @@ public class TextFieldExtractorTest {
 
 
 	@ParameterizedTest
-    @CsvSource({
+    @CsvSource(delimiter = '|', value = {
           "https://www.manning.com/books/street-coder                   | Street Coder   | https://www.manning.com/books/street-coder"
         , "Street Coder A https://www.manning.com/books/street-coder    | Street Coder A | https://www.manning.com/books/street-coder"
         , "[Street Coder B](https://www.manning.com/books/street-coder) | Street Coder B | https://www.manning.com/books/street-coder"
@@ -137,7 +137,7 @@ public class TextFieldExtractorTest {
 
 	@Disabled
 	@ParameterizedTest
-	@CsvSource({
+	@CsvSource(delimiter = '|', value = {
 			  "[MarkDown](https://en.wikipedia.org/wiki/Markdown)         | MarkDown | https://en.wikipedia.org/wiki/Markdown"
 			, "https://docs.asciidoctor.org/asciidoctor/latest/[AsciiDoc] | AsciiDoc | https://docs.asciidoctor.org/asciidoctor/latest/"
 	})

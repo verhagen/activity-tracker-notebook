@@ -3,7 +3,7 @@ package nl.verhagen.activitylogger.command.task;
 import java.util.Arrays;
 import java.util.List;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistery;
+import nl.verhagen.activitylogger.command.IdentifierRegistry;
 
 public class BaseTaskConfiguration extends TaskConfiguration {
 	private static List<String> taskIdentifiers = Arrays.asList(
@@ -27,7 +27,7 @@ public class BaseTaskConfiguration extends TaskConfiguration {
 			);
 
 
-	public BaseTaskConfiguration(IdentifierRegistery idRegistery) {
+	public BaseTaskConfiguration(IdentifierRegistry idRegistery) {
 		super(idRegistery);
 	}
 

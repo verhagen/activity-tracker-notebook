@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-public class FileExtentionAndMediaTypeTest {
+public class FileExtensionAndMediaTypeTest {
 
 	@Test
 	void getFileExtension() {
-		FileExtentionAndMediaType fileExtAndMediaType = new FileExtentionAndMediaType();
+		FileExtensionAndMediaType fileExtAndMediaType = new FileExtensionAndMediaType();
 		
 		String fileExtension = fileExtAndMediaType.getFileExtension(MediaTypes.TEXT_MARKDOWN);
 		
@@ -17,7 +17,7 @@ public class FileExtentionAndMediaTypeTest {
 
 	@Test
 	void getMediaType() {
-		FileExtentionAndMediaType fileExtAndMediaType = new FileExtentionAndMediaType();
+		FileExtensionAndMediaType fileExtAndMediaType = new FileExtensionAndMediaType();
 		
 		MediaType mediaType = fileExtAndMediaType.getMediaType("md");
 		
@@ -26,7 +26,7 @@ public class FileExtentionAndMediaTypeTest {
 
 	@Test
 	void getMediaType2() {
-		FileExtentionAndMediaType fileExtAndMediaType = new FileExtentionAndMediaType();
+		FileExtensionAndMediaType fileExtAndMediaType = new FileExtensionAndMediaType();
 		
 		MediaType mediaType = fileExtAndMediaType.getMediaType("MARKDOWN");
 		

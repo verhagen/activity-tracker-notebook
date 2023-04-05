@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistery;
+import nl.verhagen.activitylogger.command.IdentifierRegistry;
 import nl.verhagen.activitylogger.command.TextField;
 import nl.verhagen.activitylogger.command.domain.ActivityEvent;
 import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfiguration;
@@ -42,8 +42,8 @@ public abstract class AbstractTask {
 		this.taskCfg = TaskCfg;
 		this.activityEventCfg = activityEventCfg;
 		for (TaskIdentifier taskIdentifier : taskIdentifierColl) {
-			for (String taskIdentiefierStr : taskIdentifier.getIdentifiers()) {
-				this.taskIdentifiers.put(taskIdentiefierStr, taskIdentifier); 
+			for (String taskIdentifierStr : taskIdentifier.getIdentifiers()) {
+				this.taskIdentifiers.put(taskIdentifierStr, taskIdentifier);
 			}
 		}
 	}
@@ -108,8 +108,8 @@ public abstract class AbstractTask {
 	}
 
 
-	protected IdentifierRegistery getIdentifierRegistery() {
-		return taskCfg.getIdRegistery();
+	protected IdentifierRegistry getIdentifierRegistery() {
+		return taskCfg.getIdRegistry();
 	}
 
 	protected Map<String, Object> extractFieldsAsObjects(String text) {

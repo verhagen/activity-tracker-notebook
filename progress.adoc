@@ -24,7 +24,7 @@ Locations are used in Activity Tracker Events, as well as in Activity Logbook Ev
 - [x] Implement loading of _project data_ (from files `projects-*.hjson`) for activity identifiers
 - [x] Implement loading of _book data_ (from files `publisher-*.hjson`) for activity identifiers
 - [ ] Make Activity a DP:Composite, so collections of activities can be created.
-      NOTE: _This probably holds for the ActivityTrackerEvents as wll as for the ActivityLogbookEvents_
+      NOTE: _This probably holds for the ActivityTrackerEvents as well as for the ActivityLogbookEvents_
 - [ ] Create 'snapshot' from data: projects-\*.hjson, books-\*.hjson, etc and activity-logbooks.csv / md  
       Each snapshot should work, give correct results.
       
@@ -33,7 +33,7 @@ Locations are used in Activity Tracker Events, as well as in Activity Logbook Ev
       Record rename(s) activities.
 
 
-== IdentifierRegistery Action List
+== IdentifierRegistry Action List
 
 - [ ] Rename IdentifierRegistery in to IdentifierCatalog
 - [x] Add IdentifierRegistery with search(query)

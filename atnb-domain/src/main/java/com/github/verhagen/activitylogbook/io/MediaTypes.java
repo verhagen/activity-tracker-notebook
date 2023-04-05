@@ -13,6 +13,7 @@ public class MediaTypes {
 	public static final MediaType TEXT_CSV_SCHEMA  = new  MediaType.Builder().addType("text").addSubtype("csv-schema").create();
 	public static final MediaType TEXT_HTML        = new  MediaType.Builder().addType("text").addSubtype("html").create();
 	public static final MediaType TEXT_MARKDOWN    = new  MediaType.Builder().addType("text").addSubtype("markdown").create();
+	public static final MediaType TEXT_ASCIIDOC    = new  MediaType.Builder().addType("text").addSubtype("asciidoc").create();;
 
 	//	application/xhtml+xml
 }

@@ -12,13 +12,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class IdentifierRegistryTest {
-	private Logger logger = LoggerFactory.getLogger(IdentifierRegistryTest.class);
-	private IdentifierRegistry registery = create();
+public class IdentifierRegisteryTest {
+	private Logger logger = LoggerFactory.getLogger(IdentifierRegisteryTest.class);
+	private IdentifierRegistery registery = create();
 
 	@Test
 	void createSimpleIdentifiers() throws Exception {
-		IdentifierRegistry registery = new IdentifierRegistry();
+		IdentifierRegistery registery = new IdentifierRegistery();
 		List<String> ids = Arrays.asList(new String[] {"java", "kotlin", "type-script"});
 		registery.add(ids);
 
@@ -30,7 +30,7 @@ public class IdentifierRegistryTest {
 
 	@Test
 	void createPathIdentifiers() throws Exception {
-		IdentifierRegistry registery = new IdentifierRegistry();
+		IdentifierRegistery registery = new IdentifierRegistery();
 		List<String> ids = Arrays.asList(new String[] {"programming.language.java", "programming.language.kotlin", "programming.language.type-script", "programming.language.java"});
 		registery.add(ids);
 
@@ -65,8 +65,8 @@ public class IdentifierRegistryTest {
 	}
 
 
-	private IdentifierRegistry create() {
-		IdentifierRegistry registery = new IdentifierRegistry();
+	private IdentifierRegistery create() {
+		IdentifierRegistery registery = new IdentifierRegistery();
 		List<String> ids = Arrays.asList(new String[] {
 				  "programming.language.java" 
 //				, "programming.language.kotlin" 

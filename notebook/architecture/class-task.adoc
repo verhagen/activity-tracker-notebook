@@ -1,10 +1,13 @@
 = Architecture - Class - Task
 
+This is an interface, which then gets different implementations.
 
 == Examples
 
 === BookTask
 
+=== ProjectTask
 
 === OpportunityTask
 
+=== IssueTask

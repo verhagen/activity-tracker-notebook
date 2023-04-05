@@ -10,8 +10,8 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class IdentifierRegistry {
-	private Logger logger = LoggerFactory.getLogger(IdentifierRegistry.class);
+public class IdentifierRegistery {
+	private Logger logger = LoggerFactory.getLogger(IdentifierRegistery.class);
 	private static Map<String, String> aliasSearchKeys = new HashMap<>();
 	private Map<String, String> identifiers = new HashMap<>();
 	private Node<String, String> identifierTree = new Node<>("__root__", null, null);

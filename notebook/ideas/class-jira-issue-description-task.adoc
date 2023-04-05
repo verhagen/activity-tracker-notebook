@@ -1,8 +1,14 @@
-= Idea - Class -Jira Issue Description TaskHandler
+= Idea - Class - Jira Issue Description TaskHandler
 
 [sidebar]
-_Writing in AsciiDoc is easier then writing in Jira Wiki Format_
+_Writing in AsciiDoc is easier than writing in Jira Wiki Format_
 
-For those who prefer to write in AsciiDoc format, and then convrt it into Jira Wiki format.
+For those who prefer to write in AsciiDoc format, and then convert it into Jira Wiki format.
 
 == Action List
+
+- create a new document (file) based on a new Jira issue ID (maybe first a temporal name)
+- write the document
+- convert it to Jira wiki syntax
+- copy / past the generated content to Jira
+- use Jira api, to post create a new issue and post the content

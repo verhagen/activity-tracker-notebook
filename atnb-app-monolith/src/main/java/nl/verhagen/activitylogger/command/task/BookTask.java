@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import nl.verhagen.activitylogger.command.domain.TaskIdentifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,27 +43,32 @@ public class BookTask extends RepositoryTask {
 		execute((idPartsFromUri != null) ? idPartsFromUri : idParts, command, fields);
 	}
 
-
+	// FIXME [2023.04.05 TV]
 	public void execute(String[] identifierPath, String command, Map<String, Object> fields) {
-		if (taskIdentifierColl.isUniqueIdentifierRequired()) {
-			int indexOfTaskIdentifier = -1;
-			for (int index = 0; index < identifierPath.length; index++) {
-				if (taskIdentifierColl.getIdentifier().equals(identifierPath[index])) {
-					indexOfTaskIdentifier = index;
-				}
-			}
-			if (indexOfTaskIdentifier > -1) {
-				if (isLastElementOfArray(identifierPath, indexOfTaskIdentifier)) {
-					throw new TaskHandlerException("Argument 'identifierPath' with value '" + Arrays.asList(identifierPath)
-							+ "' does contain the task identifier '" + taskIdentifierColl.getIdentifier() + "', but requires an unique identifier.");
-				}
-			}
-		}
-		if (! taskIdentifierColl.isKnownTaskCommand(command)) {
-			throw new TaskHandlerException("Argument 'command' with value '" + command + "' is not a known command. Known commands are: " + taskIdentifierColl.getTaskCommands());
-		}
-		
-		List<String> foundIdentifiers = getIdentifierRegistery().search(identifierPath);
+		List<String> foundIdentifiers = bookTaskCfg.getIdRegistry().search(identifierPath);
+
+		TaskIdentifier taskId = null;
+		String xx = getTaskIdentifier();
+
+		// FIXME [2023.04.05 TV] See also the disabled tests in BookTaskTest
+//		if (getTaskIdentifier().isUniqueIdentifierRequired()) {
+//			int indexOfTaskIdentifier = -1;
+//			for (int index = 0; index < identifierPath.length; index++) {
+//				if (taskIdentifierColl.getIdentifier().equals(identifierPath[index])) {
+//					indexOfTaskIdentifier = index;
+//				}
+//			}
+//			if (indexOfTaskIdentifier > -1) {
+//				if (isLastElementOfArray(identifierPath, indexOfTaskIdentifier)) {
+//					throw new TaskHandlerException("Argument 'identifierPath' with value '" + Arrays.asList(identifierPath)
+//							+ "' does contain the task identifier '" + taskIdentifierColl.getIdentifier() + "', but requires an unique identifier.");
+//				}
+//			}
+//		}
+//		if (! taskIdentifierColl.isKnownTaskCommand(command)) {
+//			throw new TaskHandlerException("Argument 'command' with value '" + command + "' is not a known command. Known commands are: " + taskIdentifierColl.getTaskCommands());
+//		}
+
 		if (foundIdentifiers.size() == 0) {
 			getIdentifierRegistery().add(identifierPath);
 		}
@@ -97,8 +103,7 @@ public class BookTask extends RepositoryTask {
 
 
 	private void init(ActivityEvent activityEvent) {
-		logger.info("Execute book init ...  This  should add a book to the books collection...");
+		logger.info("Execute book add ...  This  should add a book to the books collection...");
 	}
 
-	
 }

@@ -1,4 +1,4 @@
-# Architecture - Activity Tracker - Notebook Design
+= Architecture - Activity Tracker - Notebook Design
 
 Class Diagram App, AppRunner, TaskHandler, ContentCreator
 

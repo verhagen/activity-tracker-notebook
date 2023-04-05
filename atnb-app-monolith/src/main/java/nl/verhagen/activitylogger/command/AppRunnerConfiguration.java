@@ -5,13 +5,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfiguration;
-import nl.verhagen.activitylogger.command.domain.TaskIdentifier;
 import nl.verhagen.activitylogger.command.task.AbstractTask;
 import nl.verhagen.activitylogger.command.task.BookTask;
 import nl.verhagen.activitylogger.command.task.BookTaskConfiguration;
@@ -27,7 +25,7 @@ public class AppRunnerConfiguration {
         , ISSUES
     }
 
-	private IdentifierRegistery idReg = new IdentifierRegisteryImpl();
+	private IdentifierRegistry idReg = new IdentifierRegistryImpl();
 	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
 	private BookTaskConfiguration bookTaskCfg = new BookTaskConfiguration(idReg, URI.create("https://www.manning.com/books/"));
 	private List<AbstractTask> taskHandlers  = Arrays.asList(

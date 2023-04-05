@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":activity-logbook-app"))
+    implementation(project(":atnb-app"))
 }

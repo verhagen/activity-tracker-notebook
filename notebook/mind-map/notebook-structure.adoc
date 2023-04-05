@@ -20,9 +20,10 @@ notebook/.atnb/                    // Configuration
                /<issue-id>         // Small notes about each issues you work on. Like a whiteboard, small tips. Contacts. 
                                    // All kind of small things, which you don't want to put in the real issue. But which
                                    // are handy as reference.
-        /time-sheets               // Put here your downloaded time-sheet files, so they get backuped as well.
-        /activity-tracker/activity-events.log  // 
-        /genrated/logbooks         // The Activity Logbooks will be generated from the Activity Tracker Events
+        /time-sheets               // Put here your downloaded time-sheet files, so they get backed up as well.
+        /activity-tracker/activity-commands.log  // All atnb command log entries
+        /generated                  // The Activity Tracker generated content
+        /generated/logbooks/2021.03-logbook.adoc    // The Activity Tracker Logbooks will be generated from the Activity Tracker Events
 
 ----
 
@@ -46,6 +47,8 @@ notebook/projects/<project-a>/issues/A-10.adoc
 
 *Questions*:
 - Where to put cache files?
++
+In the `.cache` directory inside an `organisation` or `notebook` (space), and then within the `.atnb` directory.
 
 
 The structure for a location with multiple _notebooks_ could look like:
@@ -53,12 +56,32 @@ The structure for a location with multiple _notebooks_ could look like:
 [source]
 ----
 notebooks/<organisation>/
-         /<cookbook>/recipes/boeuf-bourguignon.adoc                 // Identifier: cookbook.recipes.boeuf-bourguignon
-         /<cookbook>/recipes/main-courses/boeuf-bourguignon.adoc    // Identifier: cookbook.recipes.category.main-courses.boeuf-bourguignon  (adds a category)
-         /<hobby>/.atnb/links.hjson
-                 /notes/ideas/
-                       /images
-                 /materials
-                 /stock
+         /my/<cookbook>/recipes/boeuf-bourguignon.adoc                 // Identifier: cookbook.recipes.boeuf-bourguignon
+         /my/<cookbook>/recipes/main-courses/boeuf-bourguignon.adoc    // Identifier: cookbook.recipes.category.main-courses.boeuf-bourguignon  (adds a category)
+         /my/<hobby>/.atnb/links.hjson
+                    /notes/ideas/
+                          /images
+                    /materials
+                    /stock
                  
 ----
+
+
+Contents of the `.atnb` directory, which can be part of a organisation or space.
+[source]
+----
+.atnb/content-and-structure  # Templates for creating content and structure
+     /links.?
+     /tags.yaml
+     /.cache
+----
+
+There will also be a user specific `.atnb` directory
+[source]
+----
+~/.atnb/.cache
+       /.cache/organisations.yaml  # Contains urls of organisation
+       /scan-locations.yaml        # Contains urls of loccations to scan for new content
+
+----
+

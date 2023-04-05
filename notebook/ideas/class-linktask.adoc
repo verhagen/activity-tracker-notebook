@@ -7,7 +7,9 @@ See also Architecture xref:../architecture/class-task.adoc[Class Task]
 A bit similar to `ArticleTask`
 
 
-== GoogleImageSearchLinkTask
+== Sample LinkTask - GoogleImageSearchLinkTask
+
+Automatically extract details from the Goole url, for searching for particular images.
 
 `*.link  add  <uri>`
 `*.link  add  "https://www.google.com/search?q=winter+drawing+houses+scandinavia&tbm=isch&oq=winter+drawing+houses+scandinavia"`

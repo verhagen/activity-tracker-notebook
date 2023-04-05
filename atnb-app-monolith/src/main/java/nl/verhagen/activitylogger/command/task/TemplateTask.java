@@ -8,11 +8,6 @@ import nl.verhagen.activitylogger.command.domain.TaskIdentifier;
 
 public abstract class TemplateTask extends AbstractTask {
 
-//	public TemplateTask(ActivityTrackerEventConfiguration activityEventCfg, TemplateTaskConfiguration tempTaskCfg
-//			, TaskIdentifier taskIdentifier) {
-//		super(tempTaskCfg, activityEventCfg, taskIdentifier);
-//	}
-
 	public TemplateTask(ActivityTrackerEventConfiguration activityEventCfg,
 			TemplateTaskConfiguration tempTaskCfg, TaskIdentifier taskIdentifier) {
 		this(activityEventCfg, tempTaskCfg, Arrays.asList(taskIdentifier));

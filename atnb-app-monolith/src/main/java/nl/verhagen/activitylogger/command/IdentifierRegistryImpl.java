@@ -3,7 +3,7 @@ package nl.verhagen.activitylogger.command;
 import java.util.List;
 
 // TODO [2021.01.19 TV] Add implementation
-public class IdentifierRegisteryImpl implements IdentifierRegistery {
+public class IdentifierRegistryImpl implements IdentifierRegistry {
 
 	@Override
 	public void add(String[] identifierPath) {

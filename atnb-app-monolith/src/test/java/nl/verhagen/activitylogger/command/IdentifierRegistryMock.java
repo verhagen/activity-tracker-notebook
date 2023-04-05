@@ -3,7 +3,7 @@ package nl.verhagen.activitylogger.command;
 import java.util.Collections;
 import java.util.List;
 
-public class IdentifierRegisteryMock implements IdentifierRegistery {
+public class IdentifierRegistryMock implements IdentifierRegistry {
 
 	@Override
 	public void add(String[] identifierPath) {
