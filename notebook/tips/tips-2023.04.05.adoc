@@ -1,0 +1,144 @@
+= Tips - 2023.04.05
+
+NOTE: These tips should be moved to the correct location in the different documentations.
+
+== Identifier Status
+
+Identifiers have status
+
+
+== Notebook Status
+
+Each Notebook has a status, which is used to identify how relevant the identifiers still are.
+Certain commands require identifiers that are active.
+
+Creating new issue `1234` or start working on that issue:
+----
+$ app  issue.1234  create    # Create new issue based on the number, will need active project, or current project.
+$ app  issue.1234  start     # Start working on the given issue
+$ app  issue.1234            # Start working on the given issue
+----
+Issues are always in the context of a project or an organisation or space. So when creating or start working on an issue,
+the active organisations, spaces and projects are relevant.
+
+----
+<organisation>
+<organisation>/space-<space>
+<organisation>/space-<space>/project-<project>
+
+<organisation>
+<organisation>/spaces/<space>
+<organisation>/spaces/<space>/projects/<project>
+<organisation>/projects/<project>
+
+<organisation>/issues/issue-<issue>
+<organisation>/spaces/<space>/issues/issue-<issue>
+<organisation>/spaces/<space>/projects/<project>/issues/issue-<issue>
+<organisation>/projects/<project>/issues/issue-<issue>
+----
+
+
+----
+notebook-status:
+- active
+- steam, liquid, frozen
+- closed
+----
+
+
+== Generate Project Documentation for Software Project
+
+See also https://github.com/JNRowe/readyset[ReadySET: Project Overview]
+----
+----
+
+== Generate Wiki / Confluence / Manual(s)
+
+----
+${notebook_dir}/manual-api/
+${notebook_dir}/manual-user/
+----
+
+For easy writing in asciidoc format and then generate the confluence variant.
+Keep a backup / reference of the confluence saved version. This can help in keeping track of edits from within confluence.
+----
+${notebook_dir}/confluence/space-{{space-id}}/{{page-id}}.adoc
+----
+Maybe there should also be an option to generate the asciidoc format from confluence variant. So one can keep this
+file inline with the latest published variant on confluence. Maybe block or give errors, in case confluence contains stuff,
+which can not be translated.
+
+
+== Generate Project Structure for Java Project
+
+init-project-java
+----
+${project_dir}/README.adoc
+${project_dir}/README.md
+${project_dir}/.gitignore
+${project_dir}/src/main/java/${package-structure}
+                       /resources
+${project_dir}/src/test/java/${package-structure}
+                       /resources
+                       /resources/logback.xml
+commands:
+- gradle init ....
+- git init
+----
+
+Does `gradle init` add these lines, if the file `.gitignore` already exists?
+----
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+----
+
+
+init-project-maven
+----
+${project_dir}/pom.xml
+----
+
+----
+>$ app  project  init  name:Hello World; package:com.github.verhagen.helloworld.App; type:[java;kotlin] subtype:[plain;library;...]
+----
+
+
+
+
+- Documentation Generation System
+- Pipeline
+
+
+Issue Creator
+----
+{{issue_dir}}/<issue-id>.adoc    issue.adoc
+----
+
+Template `issue.adoc`
+----
+= {{issue.url}}[{{issue.id}}] {{issue.title}}
+
+|[cols=2]
+|===
+| git
+| <local-git-dir>
+
+| branch
+|
+
+| tags
+|
+
+| git-merge-request
+| 
+|===
+
+== Contacts
+
+== Background
+----
+
+

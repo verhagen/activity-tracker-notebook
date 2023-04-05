@@ -1,0 +1,18 @@
+= Idea - URI based Task Identification
+
+Currently it is poossible to add an article in the following way:
+
+----
+article  add  https://www.baeldung.com/eclipse-debugging[Debugging with Eclipse]
+----
+
+It would be very nice, to just write:
+
+----
+https://www.baeldung.com/eclipse-debugging[Debugging with Eclipse]
+https://www.baeldung.com/eclipse-debugging
+----
+
+* Just based on the URI host `baeldung.com`, it should be categorized as an `article`, so the `ArticleTask` is used.
+* This task should use the uri, to extract the title. 
+* Check the title for known tag names, in this case `eclipse` should be added as tag.

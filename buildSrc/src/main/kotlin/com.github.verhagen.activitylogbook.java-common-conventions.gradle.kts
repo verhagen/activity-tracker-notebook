@@ -17,10 +17,13 @@ dependencies {
     implementation("org.slf4j:slf4j-api:1.7.30")
     implementation("org.apache.commons:commons-lang3:3.11")
     implementation("org.hjson:hjson:3.0.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.0")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.1")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.1")
+    //testImplementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.1")
 
     // testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
+    testImplementation("org.mockito:mockito-core:4.2.0")
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testRuntimeOnly("ch.qos.logback:logback-classic:1.2.3")

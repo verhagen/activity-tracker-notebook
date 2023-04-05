@@ -1,0 +1,51 @@
+= Activity Tracker - Notebook
+
+This application is there to make tracking of activities and time very easy.
+
+Some examples of starting and stopping activities, from the command line:
+----
+$ at  reading.fast-microservices-with-kotlin  start
+$ at  reading.fast-microservices-with-kotlin  stop
+
+$ at  issue.AAA-123  start
+$ at  issue.AAA-123  stop
+----
+
+Each of these above commands will generate an activity event.
+
+----
+2023.03.02-09:45  reading.fast-microservices-with-kotlin  start
+2023.03.02-10:15  reading.fast-microservices-with-kotlin  stop
+2023.03.02-10:20  issue.AAA-123  start
+2023.03.02-16:00  issue.AAA-123  stop
+----
+These entries of activities in time, can be seen as a logbook.
+
+**Background**
+
+> A https://en.wikipedia.org/wiki/Logbook[logbook] (a ship's logs or simply log) is a record of important events in the management, operation, and navigation of a ship. It is essential to traditional navigation, and must be filled in at least daily.
+
+
+The most important parts are:
+
+- Activity Tracker
++
+Makes it very easy to track activities and time.
+- Generator
++
+Generate documents based on the entries of activities and time.
+- Notebook
++
+Create documents with predefined content.
+
+== Activity Tracker Part
+
+
+== Generator Part
+
+
+== Notebook Part
+
+
+== Text Template Part
+

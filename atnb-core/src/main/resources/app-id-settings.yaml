@@ -1,0 +1,5 @@
+# {{app-name}} Settings
+status: active
+language: en-uk
+scan-locations:
+# - <uri>

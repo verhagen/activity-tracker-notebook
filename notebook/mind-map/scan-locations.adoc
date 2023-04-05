@@ -1,0 +1,40 @@
+= Scan Locations
+
+Scans the default locations or the given location. The extracted information can be seen as the notebook workspace information.
+The most important part of each notebook workspace is probably the identifiers, that go with that notebook.
+All the collected information is stored as cache in `.atnb/.cache`.
+
+----
+>$ atnb  scan          # Scan locations, as given in `~/.atnb/antb-settings.yaml` under `scan-locations`.
+>$ atnb  scan  <path>  # Scan the path
+----
+
+== Scanning for Identifiers
+
+----
+<*>/.atnb/.cache/identifiers.yaml    #  Collection of identifiers for this notebook
+----
+
+
+== Scanning for Organisation and Notebook locations
+
+----
+<organisation>/.atnb/.cache/notebooks.yaml
+----
+
+== Scanning for Structure and Content Locations
+
+
+
+----
+<organisation>/.atnb/.cache/structure-and-content.yaml
+----
+
+== How it Works
+
+When a scan is made, all relevant files and locations, should be cached. Each cache entry should contain a time-stamp of the 
+last-modified time-stamp of that file. So only updated file will be handled.
+
+Each cache must contain a scan-time-stamp, so if a rescan is done within a certain time frame, the scan will be skipped (by default).
+
+

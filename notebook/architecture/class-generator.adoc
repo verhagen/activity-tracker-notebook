@@ -1,0 +1,48 @@
+= Architecture - Class - Generator
+
+A _Generator_ instances, creates _new content_ (documents / files / streams) from the existing content.
+These documents / files / streams can be in any format (MarkDown, AsciiDoc, pdf, Word, csv, Excel, jpeg, png, svg, etc, etc)
+
+Some Examples:
+
+
+* *LogbookGenerator*
++
+Use the _Activity Tracker Events_ to create _Activity Logbook_ documents. 
+
+
+* *Time Sheet Overview Generator*
++
+Use the _Activity Tracker Events_ (or _Activity Logbook_ documents), for generating the amount of hours spent / day for the project.
+
+
+* *Dishes Cooked Overview Generator*
++
+Create a Notebook _cookbook_ to store the recipes of things you cook / bake / prepare.
+Use the _Activity Tracker_ when preparing those dishes, to track how long it takes to prepare.
+
+Use the _Dishes Cooked Overview Generator_ to generate an overview of which dishes have been cook, the last week / month / year.
+In the year overview, show which dishes where cooked multiple times.
+
+
+* *Create Shopping List*
++
+Use the cookbook recipes and some input data, like the number of persons there will be cooked for, to create a shopping list of ingredients.
+Maybe have an input list of things, you already have available (some seasonings (herbs / spices)), so they will be subtracted from the
+generated output list. Maybe just add them at the bottom, as expected to be already available. Just so someone can check, or remember to
+add the cinnamon again to the shopping list.
+
+
+* *Hobby - Creating Illustrations*
++
+Use the Activity Tracker when starting and stopping on a new illustration.
+Create a notebook in which you create a note that goes with each illustration. Write where the idea came from, maybe with some links
+or embedded images. What materials where used to create the illustration. Maybe reference some books / videos that gave inspiration.
+
+Use the _Activity Tracker Events_ to create an calendar overview of when you worked on which illustration. Summarize the total amount of time
+spent on an illustration. Or the total amount of time making illustrations this day / week / month / year.
+
+
+
+
+

@@ -1,0 +1,24 @@
+= Activity Tracker - Notebook - Domain
+
+== Structure of the Application
+
+
+----
+- user
+- organisation
+- space
+
++--------------+        +------+
+| organisation | <----> | user |
++--------------+        +------+
+       ^
+       |
+  +----------+
+  |  space   |
+  +----------+
+
+----
+- An user can connect to multiple organisations.
+- An organisation can have multiple users.
+- An organisation can have multiple spaces.
+- Each space belongs to one organisation.

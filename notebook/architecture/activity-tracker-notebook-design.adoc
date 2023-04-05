@@ -1,0 +1,68 @@
+# Architecture - Activity Tracker - Notebook Design
+
+Class Diagram App, AppRunner, TaskHandler, ContentCreator
+
+----
+[ App ]
+| public static void main(String[] args) |
+| public void execute(String[] args)     | 
+  |
+  | uses
+  |
+  v
+[ AppRunner ]
+| String execute(String identifier, String command)                                           |
+| String execute(LocalDateTime timestamp, String identifier, String command)                  |
+| String execute(String identifier, String command, String remainer)                          |
+| String execute(LocalDateTime timestamp, String identifier, String command, String remainer) |
+  |
+  | uses
+  |
+  v
+[ TaskHandler ]
+| void execute(String identifier, String command, String text)                               | --- uses ---> [ TextFieldExtractor ]
+| void execute(String[] identifierPath, CommandName commandName, Map<String, Object> fields) |
+  |                                  |
+  | uses                             | creates events, and logs those
+  |                                  |
+  v                                  |
+[ ContentCreator ]                   |
+  |                                  |
+  | create documents                 |
+  |                                  |
+  v                                  V
++------------\          +---[ Activity Tracker Events ] ---+
+|           | \         | 09:45  working on ...            |
+| Documents +--\        | 09:30  meeting                   |
+|              |        | 08:40  working on ...            |
++--------------+        | 08:30  checking email            |
+                        +----------------------------------+ 
+----
+
+
+Class Diagram Generator
+
+----
++------------\          +---[ Activity Tracker Events ] ---+
+|           | \         | 09:45  working on ...            |
+| Documents +--\        | 09:30  meeting                   |
+|              |        | 08:40  working on ...            |
++--------------+        | 08:30  checking email            |
+  ^                     +----------------------------------+ 
+  |                                ^
+  |                                |
+  | loads documents (data)         | reads event log entries
+  |                                |
+[ Generator ]
+  |
+  | create documents
+  |
+  v
++------------\  
+|           | \ 
+| Documents +--\
+|              |
++--------------+
+
+
+----

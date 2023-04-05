@@ -1,0 +1,8 @@
+= Idea - Class -Jira Issue Description TaskHandler
+
+[sidebar]
+_Writing in AsciiDoc is easier then writing in Jira Wiki Format_
+
+For those who prefer to write in AsciiDoc format, and then convrt it into Jira Wiki format.
+
+== Action List

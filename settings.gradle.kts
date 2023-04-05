@@ -8,4 +8,16 @@
  */
 
 rootProject.name = "activity-logbook"
-include("activity-logbook-app", "activity-logbook-book", "activity-logbook-core", "activity-logbook-domain", "activity-logbook-grammar", "activity-logbook-project")
+include(
+	"activity-logbook-app"
+	, "activity-logbook-book"
+	, "activity-logbook-core"
+	, "activity-logbook-cucumber"
+	, "activity-logbook-domain"
+	, "activity-logbook-project"
+	, "activity-logbook-opportunity"
+	, "activity-logbook-grammar"
+	, "atnb-app-monolith"
+	)
+
+// , "activity-logbook-grammar"

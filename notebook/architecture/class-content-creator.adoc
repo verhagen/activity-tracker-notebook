@@ -1,0 +1,3 @@
+# Architecture - Class - ContentCreator
+
+The `ContentCreator` classes create documents. These documents are added to a `notebook`.
