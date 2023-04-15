@@ -1,13 +1,13 @@
-= Idea - Class - LinkTask
+= Idea - Class - BookmarkTask
 
 See also Architecture xref:../architecture/class-task.adoc[Class Task]
 
-*Store links* and extract as much details as possible automatically.
+*Store bookmarks* and extract as much details as possible automatically.
 
 A bit similar to `ArticleTask`
 
 
-== Sample LinkTask - GoogleImageSearchLinkTask
+== Sample BookmarkTask - GoogleImageSearchLinkTask
 
 Automatically extract details from the Goole url, for searching for particular images.
 
