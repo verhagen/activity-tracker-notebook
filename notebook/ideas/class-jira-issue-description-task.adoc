@@ -7,8 +7,11 @@ For those who prefer to write in AsciiDoc format, and then convert it into Jira 
 
 == Action List
 
-- create a new document (file) based on a new Jira issue ID (maybe first a temporal name)
+- create a new document (file) based on a new Jira issue ID (maybe first a temporal name, with a timestamp instead of a number)
 - write the document
 - convert it to Jira wiki syntax
 - copy / past the generated content to Jira
+- create an yaml with the issue fields
 - use Jira api, to post create a new issue and post the content
+- clone the issue from Jira to local file (in prefered format) +
+  keep a copy of the original, to see if anything has changed, before a push
