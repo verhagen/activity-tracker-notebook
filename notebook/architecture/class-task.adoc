@@ -11,3 +11,7 @@ This is an interface, which then gets different implementations.
 === OpportunityTask
 
 === IssueTask
+
+=== ArticleTask
+
+=== BookmarkTask

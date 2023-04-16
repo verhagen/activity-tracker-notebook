@@ -1,0 +1,9 @@
+= Types of Events
+
+- Command Events
+- Logbook Events
+
+Each command give to the Activity Tracker, results in a Command Event.
+
+The commands that _start_ or _stop_ an activity result in a Logbook Event.
+

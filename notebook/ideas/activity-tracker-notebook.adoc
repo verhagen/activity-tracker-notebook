@@ -11,7 +11,7 @@ $ at  issue.AAA-123  start
 $ at  issue.AAA-123  stop
 ----
 
-Each of these above commands will generate an activity event.
+Each of these above commands will generate an activity tracker event.
 
 ----
 2023.03.02-09:45  reading.fast-microservices-with-kotlin  start

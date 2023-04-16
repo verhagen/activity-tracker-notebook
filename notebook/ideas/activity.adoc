@@ -1,4 +1,4 @@
-= Activity
+= Activity Logbook Event
 
 An activity consists of six things:
 
@@ -28,9 +28,9 @@ This makes it possible to lookup when time has been spent on a certain activity.
 Date information should be given as `<year>.<month>.<day>` like `2020.12.01` for Tuesday 1 December 2020.
 
 
-== Activity Identifier
+== Identifier
 
-An activity must have an activity identifier. Some examples of an activity could be: `cooking`, `working`, `running`, `study`.
+An activity must have an identifier. Some examples of an activity could be: `cooking`, `working`, `running`, `study`.
 These are very generic activities, which is OK, but to make them more useful a more specific identifier is better.
 Maybe one likes to read back what was cooked on a certain moment. Maybe it was __goulash__ or __spätzle__, these identifiers
 would become `cooking.goulash` and `cooking.spätzle`. This way one can find back when what was cooked, but also how many times,
