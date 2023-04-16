@@ -18,7 +18,7 @@ tasks.withType<JavaCompile> {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.github.verhagen.activitylogbook.app.App")
+    mainClass.set("com.github.verhagen.activitylogbook.command.App")
 }
 
 val jar by tasks.getting(Jar::class) {
