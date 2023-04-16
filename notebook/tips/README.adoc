@@ -4,7 +4,7 @@
 
 Maybe the _Activity Event Creator_ should be separate from the content creation.
 
-The _Activity Events_ should be logged into a file, or directory send to the 
+The _Activity Events_ should be logged into a file, or directory send to the Activity Tracker service.
 
 
 == Decisions to Make
