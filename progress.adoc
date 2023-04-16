@@ -35,16 +35,16 @@ Locations are used in Activity Tracker Events, as well as in Activity Logbook Ev
 
 == IdentifierRegistry Action List
 
-- [ ] Rename IdentifierRegistry in to IdentifierCatalog
-- [x] Add IdentifierRegistry with search(query)
-- [ ] IdentifierRegistry - show most relevant on top (last used identifiers in Activity Logbook and / or Activity Log instances)
-- [ ] IdentifierRegistry - filter out certain identifiers, because they are no longer relevant.
+- [x] Rename IdentifierRegistry in to IdentifierCatalog
+- [x] Add IdentifierCatalog with search(query)
+- [ ] IdentifierCatalog - shows the most relevant on top (last used identifiers in Activity Logbook and / or Activity Log instances)
+- [ ] IdentifierCatalog - filter out certain identifiers, because they are no longer relevant.
       For Example: `client-abc.*`
       
 
 == ActivityLogbook Action List
 
-- [ ] Validate identifiers 'project.project.abc' against IdentifierRegistery
+- [ ] Validate identifiers 'project.project.abc' against IdentifierCatalog
 - [ ]
 
 

@@ -8,12 +8,12 @@ import org.slf4j.LoggerFactory;
 
 import com.github.verhagen.activitylogbook.domain.Activity;
 import com.github.verhagen.activitylogbook.domain.ActivityLogbook;
-import com.github.verhagen.activitylogbook.domain.IdentifierRegistery;
+import com.github.verhagen.activitylogbook.domain.IdentifierCatalog;
 import com.github.verhagen.activitylogbook.domain.UnknownIdentifierException;
 
 public class Engine {
 	private Logger logger = LoggerFactory.getLogger(Engine.class);
-	private IdentifierRegistery registery = new IdentifierRegistery();
+	private IdentifierCatalog registery = new IdentifierCatalog();
 	private ActivityLogbook activityLogbook = new ActivityLogbook();
 
 

@@ -1,27 +1,27 @@
 package nl.verhagen.activitylogger.command.task;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistry;
+import nl.verhagen.activitylogger.command.IdentifierCatalog;
 import nl.verhagen.activitylogger.command.TextFieldExtractor;
 
 public abstract class TaskConfiguration {
-	private final IdentifierRegistry idRegistry;
+	private final IdentifierCatalog idCatalog;
 	private final TextFieldExtractor textFieldExtractor;
 
 	
-	public TaskConfiguration(IdentifierRegistry idRegistry) {
-		this(idRegistry, null);
+	public TaskConfiguration(IdentifierCatalog idCatalog) {
+		this(idCatalog, null);
 	}
-	public TaskConfiguration(IdentifierRegistry idRegistry, TextFieldExtractor textFieldExtractor) {
-		if (idRegistry == null) {
+	public TaskConfiguration(IdentifierCatalog idCatalog, TextFieldExtractor textFieldExtractor) {
+		if (idCatalog == null) {
 			throw new IllegalArgumentException("Argument 'idRegistry' should not be null.");
 		}
-		this.idRegistry = idRegistry;
+		this.idCatalog = idCatalog;
 		this.textFieldExtractor = textFieldExtractor;
 	}
 
 
-	public IdentifierRegistry getIdRegistry() {
-		return idRegistry;
+	public IdentifierCatalog getIdCatalog() {
+		return idCatalog;
 	}
 
 

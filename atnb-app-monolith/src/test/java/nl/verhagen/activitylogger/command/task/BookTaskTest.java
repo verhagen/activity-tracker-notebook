@@ -11,14 +11,14 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import nl.verhagen.activitylogger.command.AppException;
-import nl.verhagen.activitylogger.command.IdentifierRegistry;
-import nl.verhagen.activitylogger.command.IdentifierRegistryMock;
+import nl.verhagen.activitylogger.command.IdentifierCatalog;
+import nl.verhagen.activitylogger.command.IdentifierCatalogMock;
 import nl.verhagen.activitylogger.command.domain.ActivityEvent;
 import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfiguration;
 import nl.verhagen.activitylogger.command.domain.Listener;
 
 public class BookTaskTest {
-	private IdentifierRegistry idReg = new IdentifierRegistryMock();
+	private IdentifierCatalog idReg = new IdentifierCatalogMock();
 	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
 	private BookTaskConfiguration bookTaskConfiguration = new BookTaskConfiguration(idReg, URI.create("https://www.manning.com/books/"));
 

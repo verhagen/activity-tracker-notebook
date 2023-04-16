@@ -8,15 +8,15 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistry;
-import nl.verhagen.activitylogger.command.IdentifierRegistryMock;
+import nl.verhagen.activitylogger.command.IdentifierCatalog;
+import nl.verhagen.activitylogger.command.IdentifierCatalogMock;
 import nl.verhagen.activitylogger.command.domain.ActivityEvent;
 import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfiguration;
 import nl.verhagen.activitylogger.command.domain.Listener;
 
 public class OpportunityTaskTest {
 	private Logger logger = LoggerFactory.getLogger(OpportunityTaskTest.class);
-	private IdentifierRegistry idReg = new IdentifierRegistryMock();
+	private IdentifierCatalog idReg = new IdentifierCatalogMock();
 	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
 	private OpportunityTaskConfiguration bookTaskConfiguration = new OpportunityTaskConfiguration(idReg);
 

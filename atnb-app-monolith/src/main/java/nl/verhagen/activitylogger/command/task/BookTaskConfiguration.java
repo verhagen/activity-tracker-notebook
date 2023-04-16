@@ -3,17 +3,14 @@ package nl.verhagen.activitylogger.command.task;
 import java.net.URI;
 import java.util.Arrays;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistry;
-import nl.verhagen.activitylogger.command.StringTextField;
-import nl.verhagen.activitylogger.command.TextFieldExtractor;
-import nl.verhagen.activitylogger.command.UriInformationExtractor;
-import nl.verhagen.activitylogger.command.UriTextField;
+import nl.verhagen.activitylogger.command.*;
+import nl.verhagen.activitylogger.command.IdentifierCatalog;
 
 public class BookTaskConfiguration extends RepositoryTaskConfiguration {
 	private final URI baseUri;
 
-	public BookTaskConfiguration(IdentifierRegistry idRegistry, URI baseUri) {
-		super(idRegistry, createTextFieldExtractor());
+	public BookTaskConfiguration(IdentifierCatalog idCatalog, URI baseUri) {
+		super(idCatalog, createTextFieldExtractor());
 		this.baseUri = baseUri;
 	}
 

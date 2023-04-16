@@ -45,7 +45,7 @@ public class BookTask extends RepositoryTask {
 
 	// FIXME [2023.04.05 TV]
 	public void execute(String[] identifierPath, String command, Map<String, Object> fields) {
-		List<String> foundIdentifiers = bookTaskCfg.getIdRegistry().search(identifierPath);
+		List<String> foundIdentifiers = bookTaskCfg.getIdCatalog().search(identifierPath);
 
 		TaskIdentifier taskId = null;
 		String xx = getTaskIdentifier();
@@ -70,7 +70,7 @@ public class BookTask extends RepositoryTask {
 //		}
 
 		if (foundIdentifiers.size() == 0) {
-			getIdentifierRegistery().add(identifierPath);
+			getIdentifierCatalog().add(identifierPath);
 		}
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);

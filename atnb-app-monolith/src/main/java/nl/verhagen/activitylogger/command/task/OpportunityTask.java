@@ -44,9 +44,9 @@ public class OpportunityTask extends TemplateTask {
 	}
 
 	public void execute(String[] identifierPath, String command, Map<String, Object> fields) {
-		List<String> foundIdentifiers = opportunityTaskCfg.getIdRegistry().search(identifierPath);
+		List<String> foundIdentifiers = opportunityTaskCfg.getIdCatalog().search(identifierPath);
 		if (foundIdentifiers.size() == 0) {
-			getIdentifierRegistery().add(identifierPath);
+			getIdentifierCatalog().add(identifierPath);
 		}
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);

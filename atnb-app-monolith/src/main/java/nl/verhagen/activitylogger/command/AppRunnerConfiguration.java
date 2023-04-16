@@ -25,13 +25,13 @@ public class AppRunnerConfiguration {
         , ISSUES
     }
 
-	private IdentifierRegistry idReg = new IdentifierRegistryImpl();
+	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
 	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
-	private BookTaskConfiguration bookTaskCfg = new BookTaskConfiguration(idReg, URI.create("https://www.manning.com/books/"));
+	private BookTaskConfiguration bookTaskCfg = new BookTaskConfiguration(idCatalog, URI.create("https://www.manning.com/books/"));
 	private List<AbstractTask> taskHandlers  = Arrays.asList(
 			new BookTask(activityEventCfg, bookTaskCfg)
-			, new OpportunityTask(activityEventCfg, new OpportunityTaskConfiguration(idReg))
-			, new IssueTask(activityEventCfg, new IssueTaskConfiguration(idReg))
+			, new OpportunityTask(activityEventCfg, new OpportunityTaskConfiguration(idCatalog))
+			, new IssueTask(activityEventCfg, new IssueTaskConfiguration(idCatalog))
 	);
 	private Map<String, AbstractTask> taskHandlerMap;
 

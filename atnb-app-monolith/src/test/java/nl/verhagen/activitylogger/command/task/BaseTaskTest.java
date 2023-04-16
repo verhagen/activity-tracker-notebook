@@ -10,12 +10,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import nl.verhagen.activitylogger.command.AppException;
-import nl.verhagen.activitylogger.command.IdentifierRegistry;
-import nl.verhagen.activitylogger.command.IdentifierRegistryMock;
+import nl.verhagen.activitylogger.command.IdentifierCatalog;
+import nl.verhagen.activitylogger.command.IdentifierCatalogMock;
 import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfiguration;
 
 public class BaseTaskTest {
-	private IdentifierRegistry idReg = new IdentifierRegistryMock();
+	private IdentifierCatalog idReg = new IdentifierCatalogMock();
 	private Logger logger = LoggerFactory.getLogger(BaseTaskTest.class);
 	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
 	private BaseTaskConfiguration baseTaskCfg = new BaseTaskConfiguration(idReg);

@@ -1,12 +1,12 @@
 package nl.verhagen.activitylogger.command.task;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistry;
+import nl.verhagen.activitylogger.command.IdentifierCatalog;
 import nl.verhagen.activitylogger.command.TextFieldExtractor;
 
 public class BaseTemplateTaskConfiguration extends TemplateTaskConfiguration {
 
-	public BaseTemplateTaskConfiguration(IdentifierRegistry idRegistery) {
-		super(idRegistery, createTextFieldExtractor());
+	public BaseTemplateTaskConfiguration(IdentifierCatalog idCatalog) {
+		super(idCatalog, createTextFieldExtractor());
 	}
 
 

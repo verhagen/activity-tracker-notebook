@@ -3,8 +3,8 @@ package nl.verhagen.activitylogger.command.task;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistry;
-import nl.verhagen.activitylogger.command.IdentifierRegistryMock;
+import nl.verhagen.activitylogger.command.IdentifierCatalog;
+import nl.verhagen.activitylogger.command.IdentifierCatalogMock;
 import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfiguration;
 
 public class TaskHandlerCatalogTest {
@@ -14,7 +14,7 @@ public class TaskHandlerCatalogTest {
 			"first parameter value | second parameter value"
 	})
 	public void create(String first, String second) {
-		IdentifierRegistry idReg = new IdentifierRegistryMock();
+		IdentifierCatalog idReg = new IdentifierCatalogMock();
 		CommunityTaskConfiguration communityTaskCfg = new CommunityTaskConfiguration(idReg);
 		ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("eddy-the-eagle");
 		CommunityTask task = new CommunityTask(communityTaskCfg, activityEventCfg);

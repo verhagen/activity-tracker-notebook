@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import nl.verhagen.activitylogger.command.IdentifierCatalog;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nl.verhagen.activitylogger.command.IdentifierRegistry;
 import nl.verhagen.activitylogger.command.TextField;
 import nl.verhagen.activitylogger.command.domain.ActivityEvent;
 import nl.verhagen.activitylogger.command.domain.ActivityTrackerEventConfiguration;
@@ -114,8 +114,8 @@ public abstract class AbstractTask {
 	}
 
 
-	protected IdentifierRegistry getIdentifierRegistery() {
-		return taskCfg.getIdRegistry();
+	protected IdentifierCatalog getIdentifierCatalog() {
+		return taskCfg.getIdCatalog();
 	}
 
 	protected Map<String, Object> extractFieldsAsObjects(String text) {
