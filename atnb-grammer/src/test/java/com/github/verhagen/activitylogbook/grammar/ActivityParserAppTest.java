@@ -1,4 +1,4 @@
-package com.github.verhagen.activitylogbook.grammar;
+package com.github.verhagen.atnb.grammar;
 
 import static org.junit.jupiter.api.Assertions.*;
 

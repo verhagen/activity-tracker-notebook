@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id("com.github.verhagen.activitylogbook.java-library-conventions")
+    id("com.github.verhagen.atnb.java-library-conventions")
 }
 
 dependencies {

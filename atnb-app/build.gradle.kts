@@ -1,5 +1,5 @@
 plugins {
-    id("com.github.verhagen.activitylogbook.java-application-conventions")
+    id("com.github.verhagen.atnb.java-application-conventions")
 }
 
 dependencies {
@@ -21,17 +21,17 @@ tasks.withType<JavaCompile> {
 
 
 //tasks.withType<Jar> {
-//	manifest.attributes["Main-Class"] = "com.github.verhagen.activitylogbook.app.App"
+//	manifest.attributes["Main-Class"] = "com.github.verhagen.atnb.app.App"
 //	manifest()
 //}
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.github.verhagen.activitylogbook.app.App")
+    mainClass.set("com.github.verhagen.atnb.app.App")
 }
 
 val jar by tasks.getting(Jar::class) {
     manifest {
-        attributes["Main-Class"] = "com.github.verhagen.activitylogbook.app.App"
+        attributes["Main-Class"] = "com.github.verhagen.atnb.app.App"
     }
 }

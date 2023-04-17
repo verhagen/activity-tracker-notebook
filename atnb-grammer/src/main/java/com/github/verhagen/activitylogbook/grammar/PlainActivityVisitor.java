@@ -1,4 +1,4 @@
-package com.github.verhagen.activitylogbook.grammar;
+package com.github.verhagen.atnb.grammar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.verhagen.activitylogbook.grammar.ActivityParser.ActivityExpressionContext;
-import com.github.verhagen.activitylogbook.grammar.ActivityParser.ExprContext;
-import com.github.verhagen.activitylogbook.grammar.ActivityParser.WhatExpressionContext;
+import com.github.verhagen.atnb.grammar.ActivityParser.ActivityExpressionContext;
+import com.github.verhagen.atnb.grammar.ActivityParser.ExprContext;
+import com.github.verhagen.atnb.grammar.ActivityParser.WhatExpressionContext;
 
 public class PlainActivityVisitor extends ActivityBaseVisitor<String> {
 	private Logger logger = LoggerFactory.getLogger(PlainActivityVisitor.class);

@@ -1,4 +1,4 @@
-package com.github.verhagen.activitylogbook.grammar;
+package com.github.verhagen.atnb.grammar;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;

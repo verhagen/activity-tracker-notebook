@@ -1,6 +1,6 @@
 
 plugins {
-    id("com.github.verhagen.activitylogbook.java-library-conventions")
+    id("com.github.verhagen.atnb.java-library-conventions")
     antlr
 }
 
@@ -12,7 +12,7 @@ dependencies {
 
 tasks.generateGrammarSource {
     maxHeapSize = "64m"
-    arguments = arguments + listOf("-visitor", "-long-messages", "-package", "com.github.verhagen.activitylogbook.grammar")
+    arguments = arguments + listOf("-visitor", "-long-messages", "-package", "com.github.verhagen.atnb.grammar")
 }
 /*
 tasks.withType<AntlrTask> {
