@@ -1,5 +1,6 @@
 package com.github.verhagen.atnb.config;
 
+import com.github.verhagen.atnb.AtnbRuntimeException;
 import org.apache.commons.lang3.StringUtils;
 
 import java.nio.file.Path;
@@ -15,6 +16,7 @@ public class AppConfig {
     private final static String APP_ID = new AppMetaConfig().getAppId();
     private final static String APP_CONFIG_FILE_NAME = new AppMetaConfig().getAppId() + ".properties";
     private final static String APP_CONFIG_DIR_NAME = "." + new AppMetaConfig().getAppId();
+    private boolean isUserHomeConfig = false;
     private Path configDir;
     private Path configFile;
 
@@ -56,8 +58,11 @@ public class AppConfig {
             }
         }
         else {
-            throw new AppConfigException("");
+            throw new AppConfigException("To be filled in...");
         }
+        isUserHomeConfig = bldr.isSimulateUserHomeActive
+                ? configDir.getParent().equals(bldr.userHome)
+                : configDir.getParent().equals(Paths.get(System.getProperty("user.home")));
     }
 
     public Path getConfigDir() {
@@ -68,14 +73,39 @@ public class AppConfig {
         return configFile;
     }
 
+    public Path getWorkspace() {
+        if (isUserHomeConfig) {
+            throw new AtnbRuntimeException("This is the user personal configuration, it does not have a workspace.");
+        }
+        return configDir.getParent();
+    }
+
     public static class Builder {
+        private final boolean isSimulateUserHomeActive;
+        private final Path userHome;
         private Path path;
+
+        public Builder() {
+            this(false, null);
+        }
+        public Builder(boolean isSimulateUserHomeActive, Path userHome) {
+            this.isSimulateUserHomeActive = isSimulateUserHomeActive;
+            this.userHome = userHome;
+        }
 
         public AppConfig create() {
             return new AppConfig(this);
         }
         public Builder setPath(Path path) {
-            this.path = path;
+//            if (isSimulateUserHomeActive) {
+//                if (path == userHome) {
+//
+//                }
+//            }
+//            else {
+                this.path = path;
+
+//            }
             return this;
         }
         public Builder setPath(String pathStr) {

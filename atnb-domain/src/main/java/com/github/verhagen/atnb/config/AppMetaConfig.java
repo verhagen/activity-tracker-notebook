@@ -15,7 +15,7 @@ public class AppMetaConfig {
     public final static String APP_TITLE = "app.title";
     public final static String APP_TITLE_DOC = "The Application Title, human friendly";
     public final static String APP_TITLE_ABBREVIATION = "app.title.abbreviation";
-    public final static String APP_TITLE_ABBREVIATION_DOC = "The Application Title abbreviation, human friendly";
+    public final static String APP_TITLE_ABBREVIATION_DOC = "Application Title Abbreviation, human friendly";
     private final static Map<String, String> keyDocumentation = new HashMap<>();
     static {
         keyDocumentation.put(APP_ID, APP_ID_DOC);

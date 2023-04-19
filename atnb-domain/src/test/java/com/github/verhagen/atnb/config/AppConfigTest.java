@@ -1,44 +1,40 @@
 package com.github.verhagen.atnb.config;
 
-import com.github.verhagen.atnb.config.AppConfig;
-import com.github.verhagen.atnb.config.AppConfigException;
+import com.github.verhagen.atnb.AtnbRuntimeException;
+import com.github.verhagen.atnb.ResourceHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AppConfigTest {
-    private Path resourcesPath = Paths.get("src/test/data");
-    private Path configDir = resourcesPath.resolve(".atnb");
-    private Path configFile = configDir.resolve("atnb.properties");
+    private final ResourceHelper resrcHlpr = new ResourceHelper("src/test/data");
 
     @BeforeEach
     public void setUp() {
-        assertTrue(resourcesPath.toFile().isDirectory());
-        assertTrue(configDir.toFile().isDirectory());
-        assertTrue(configFile.toFile().isFile());
     }
 
     @Test
-    public void loadByConfigDir() {
-        AppConfig appConfig = new AppConfig.Builder().setPath(configDir).create();
+    public void loadByConfigDir() throws IOException {
+        AppConfig appConfig = new AppConfig.Builder().setPath(resrcHlpr.getConfigDirPath("correct-config-dir")).create();
         assertTrue(appConfig.getConfigDir().toFile().isDirectory());
         assertTrue(appConfig.getConfigFile().toFile().isFile());
+        assertTrue(appConfig.getWorkspace().toFile().isDirectory());
     }
     @Test
-    public void loadByConfigFile() {
-        AppConfig appConfig = new AppConfig.Builder().setPath(configFile).create();
+    public void loadByConfigFile() throws IOException {
+        AppConfig appConfig = new AppConfig.Builder().setPath(resrcHlpr.getConfigFilePath("correct-config-dir")).create();
         assertTrue(appConfig.getConfigDir().toFile().isDirectory());
         assertTrue(appConfig.getConfigFile().toFile().isFile());
+        assertTrue(appConfig.getWorkspace().toFile().isDirectory());
     }
 
     @Test
     public void loadIncorrectFile1() {
         try {
-            new AppConfig.Builder().setPath(resourcesPath.resolve("incorrect-config-file/.atnb/app.properties")).create();
+            new AppConfig.Builder().setPath(resrcHlpr.getResource("incorrect-config-file",".atnb/app.properties" )).create();
             fail();
         }
         catch (AppConfigException  ace) {
@@ -49,7 +45,7 @@ public class AppConfigTest {
     @Test
     public void loadIncorrectFile2() {
         try {
-            new AppConfig.Builder().setPath(resourcesPath.resolve("incorrect-config-file/.atnb")).create();
+            new AppConfig.Builder().setPath(resrcHlpr.getResource("incorrect-config-file", ".atnb")).create();
             fail();
         }
         catch (AppConfigException  ace) {
@@ -60,7 +56,7 @@ public class AppConfigTest {
     @Test
     public void loadIncorrectDir1() {
         try {
-            new AppConfig.Builder().setPath(resourcesPath.resolve("incorrect-config-dir/app/atnb.properties")).create();
+            new AppConfig.Builder().setPath(resrcHlpr.getResource("incorrect-config-dir","app/atnb.properties")).create();
             fail();
         }
         catch (AppConfigException  ace) {
@@ -70,11 +66,24 @@ public class AppConfigTest {
     @Test
     public void loadIncorrectDir2() {
         try {
-            new AppConfig.Builder().setPath(resourcesPath.resolve("incorrect-config-dir/app")).create();
+            new AppConfig.Builder().setPath(resrcHlpr.getResource("incorrect-config-dir", "app")).create();
             fail();
         }
         catch (AppConfigException  ace) {
             assertEquals("The given directory 'src/test/data/incorrect-config-dir/app' has not the correct name '.atnb'.", ace.getMessage());
+        }
+    }
+
+    @Test
+    public void userHome() {
+        AppConfig appConfig = new AppConfig.Builder(true, resrcHlpr.getResource("user-home"))
+                .setPath(resrcHlpr.getResource("user-home", "." + new AppMetaConfig().getAppId())).create();
+        try {
+            appConfig.getWorkspace();
+            fail();
+        }
+        catch (AtnbRuntimeException ae) {
+            assertEquals("This is the user personal configuration, it does not have a workspace.", ae.getMessage());
         }
     }
 
