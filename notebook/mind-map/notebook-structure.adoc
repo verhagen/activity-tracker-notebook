@@ -21,7 +21,7 @@ notebook/.atnb/                    // Configuration
                                    // All kind of small things, which you don't want to put in the real issue. But which
                                    // are handy as reference.
         /time-sheets               // Put here your downloaded time-sheet files, so they get backed up as well.
-        /activity-tracker/activity-commands.log  // All atnb command log entries
+        /activity-tracker/activity-tracker-command.log  // All atnb command log entries
         /generated                  // The Activity Tracker generated content
         /generated/logbooks/2021.03-logbook.adoc    // The Activity Tracker Logbooks will be generated from the Activity Tracker Events
 
@@ -46,6 +46,7 @@ notebook/projects/<project-a>/issues/A-10.adoc
 ----
 
 *Questions*:
+
 - Where to put cache files?
 +
 In the `.cache` directory inside an `organisation` or `notebook` (space), and then within the `.atnb` directory.
@@ -80,6 +81,7 @@ There will also be a user specific `.atnb` directory
 [source]
 ----
 ~/.atnb/.cache
+       /atnb.yaml                  # Configuration
        /.cache/organisations.yaml  # Contains urls of organisation
        /scan-locations.yaml        # Contains urls of loccations to scan for new content
 

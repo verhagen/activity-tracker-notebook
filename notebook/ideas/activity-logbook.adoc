@@ -7,7 +7,7 @@ The link:activity.adoc[Activity] Logbook contains records of activities.
 > A https://en.wikipedia.org/wiki/Logbook[logbook] (a ship's logs or simply log) is a record of important events in the management, operation, and navigation of a ship. It is essential to traditional navigation, and must be filled in at least daily.
 
 
-== Activity Logbook Commands
+== Activity Tracker Commands
 
 - `identifier  start  <time|-hours:minutes>`
 +

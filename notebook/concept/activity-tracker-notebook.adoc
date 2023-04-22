@@ -1,6 +1,9 @@
 = Activity Tracker - Notebook
 
-This application is there to make tracking of activities and time very easy.
+This application is there to make tracking of activities and time _very easy_.
+
+> The **very easy** here is important, it should take almost no time and effort, in doing so.
+> Therefor the choice was to create at least a _command line interface (cli)_.
 
 Some examples of starting and stopping activities, from the command line:
 ----
@@ -28,15 +31,19 @@ These entries of activities in time, can be seen as a logbook.
 
 The most important parts are:
 
-- Activity Tracker
+- **Activity Tracker**
 +
-Makes it very easy to track activities and time.
-- Generator
+Creates Activity Tracker Events which are stored, so they can be used to extract
+information from.
+
+- **Content Creators**
++
+Creates documents with predefined content.
+
+- **Content Generators**
 +
 Generate documents based on the entries of activities and time.
-- Notebook
-+
-Create documents with predefined content.
+
 
 == Activity Tracker Part
 

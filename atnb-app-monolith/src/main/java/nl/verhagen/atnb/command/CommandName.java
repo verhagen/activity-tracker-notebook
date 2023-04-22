@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public enum CommandName {
-	// INIT create a fresh Activity Event environment.
-	// Both ADD and CREATE will create an Identifier in the idRegistery
+	// INIT create a fresh Activity Tracker Event environment.
+	// Both ADD and CREATE will create an Identifier in the IdentifierCatalog
 	// START should never do so, as it should only use available id's (prevents typo's)
 	// FINISH kind of closes the item, so search for current active items, it will no longer appear
 	// ARCHIVE similar to Finish, but finish for a single item. Archive, just freezes the current state, but never find any for active items.

@@ -1,4 +1,4 @@
-= Ideas - Commands
+= Activity Tracker Commands - 1
 
 
 == Init
@@ -7,17 +7,19 @@ Create initial structure for a notebook.
 If there is no user specific configuration, create it as well `~/.ntnb`.
 
 ----
-$ app  init  <organisation>  <notebook>
-$ app  init  <notebook>    # Only possible if there is a default organisation, or in case the current location is inside
-                           # an organisation path. Or inside a project path.
+$ app  init  <notebook-name>  type: <type>; name: <name>; uri: <uri>
+$ app  init  <notebook-name>    # Will create a new notebook structure
+                                # ./<notebook-name>/.atnb/*
+$ app  init                     # Will create a new notebook structure
+                                # ./atnb/*
 ----
 
 What will be created:
 ----
-<organisation>/notebook-<notebook-id>/
-<project>/notebook/
+<notebook-name>/.atnb/*
 ----
 
+Based on the type of notebook, some default content can be provided, through Content Creators.
 
 == List
 

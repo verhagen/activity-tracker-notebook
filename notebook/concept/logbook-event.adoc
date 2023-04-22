@@ -1,0 +1,4 @@
+= Logbook Event
+
+//This is required, and identifies what the activity is about.
+//- ⏳ Duration

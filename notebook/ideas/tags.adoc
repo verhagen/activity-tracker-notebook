@@ -33,7 +33,7 @@ eclipse -> java-ide
 java -> programming-language
 ----
 
-REMARK: At the moment the idea is, that tags will be unique, inside a Notebook. In case they ever would collide,
+NOTE: At the moment the idea is, that tags will be unique, inside a Notebook. In case they ever would collide,
 there maybe needs some way to help identify which tag is mend.
 
 ----

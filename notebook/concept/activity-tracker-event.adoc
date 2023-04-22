@@ -1,4 +1,4 @@
-= Activity Logbook Event
+= Activity Tracker Event
 
 An activity consists of six things:
 
@@ -6,9 +6,6 @@ An activity consists of six things:
 +
 This is required. It represents a moment in time. On which day the activity takes place.
 - 🆔 Identifier - What
-+
-This is required, and identifies what the activity is about.
-- ⏳ Duration
 +
 This is optional, but very useful! It tells how much time is spent on the activity.
 - 📋 Note

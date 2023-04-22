@@ -66,7 +66,7 @@ public class OpportunityTask extends TemplateTask {
 				handle(atEvent);
 				break;
 			default:
-				logger.error("No command handling available for '" + command + "' with activity event '" + atEvent + "'");
+				logger.error("No command handling available for '" + command + "' with activity tracker event '" + atEvent + "'");
 				break;
 		}
 		

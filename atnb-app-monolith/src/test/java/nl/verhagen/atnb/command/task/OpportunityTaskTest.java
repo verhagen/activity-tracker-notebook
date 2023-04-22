@@ -17,7 +17,7 @@ import nl.verhagen.atnb.command.domain.Listener;
 public class OpportunityTaskTest {
 	private Logger logger = LoggerFactory.getLogger(OpportunityTaskTest.class);
 	private IdentifierCatalog idReg = new IdentifierCatalogMock();
-	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
+	private ActivityTrackerEventConfiguration atEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
 	private OpportunityTaskConfiguration bookTaskConfiguration = new OpportunityTaskConfiguration(idReg);
 
 	// app  opportunity  create  [date] <agency> <organisation> <role> <mail-url>
@@ -31,7 +31,7 @@ public class OpportunityTaskTest {
 		, "opportunity | start  |       2021.12.05;         Harvey Nash;  org:          Lexis-Nexis;        Senior Software Developer; http://mail.org | opportunity.2021.12.05-harvey-nash_lexis-nexis_senior-software-developer"
 	})
 	public void create(String identifier, String command, String text, String expectedIdentifier) {
-		OpportunityTask task = new OpportunityTask(activityEventCfg, bookTaskConfiguration);
+		OpportunityTask task = new OpportunityTask(atEventCfg, bookTaskConfiguration);
 		task.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
 			public void update(ActivityTrackerEvent event) {
