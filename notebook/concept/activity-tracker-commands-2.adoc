@@ -1,8 +1,8 @@
 = Activity Tracker Commands
 
-Sample fo commands that can be used, and what they mean
+Sample of commands that can be used, and what they mean
 
-Suggestion: Maybe even the command `start` should be the default command.
+INFO: The command `start` is the default command, when no command is given.
 
 ----
 $ app  28416  start         > start developing on issue 28416 (default organisation, default issue category)
@@ -10,8 +10,10 @@ $ app  28416  start         > start developing on issue 28416 (default organisat
 $ app  LPBUNI-28416  start  > start developing on issue LPBUNI-28416 (default organisation)
                               Example: organisation.schaubroeck.project.lima.issue.LPBUNI-28416
 
-$ app  LPBUNI-28416  create   > create document for issue through associating DocumentFactory
+$ app  LPBUNI-28416  create   > create document for issue through associating ContentCreator
                               Example: `LPBUNI-28416.md`
+
+$ app  28416
 
 $ app  create  https://jira.int.cipal.be/browse/LPBUNI-25918
 
@@ -83,7 +85,7 @@ $
 ----
 
 
-== Document Creation
+== Content Creators
 
 === Support Multiple Output Formats
 
