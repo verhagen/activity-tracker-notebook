@@ -16,8 +16,8 @@ public class OpportunityTask extends TemplateTask {
 	private Logger logger = LoggerFactory.getLogger(OpportunityTask.class);
 	private OpportunityTaskConfiguration opportunityTaskCfg;
 
-	public OpportunityTask(ActivityTrackerEventConfiguration activityEventCfg, OpportunityTaskConfiguration opportunityTaskCfg) {
-		super(activityEventCfg, opportunityTaskCfg, createTaskIdentifier("opportunity", Arrays.asList("create")));
+	public OpportunityTask(ActivityTrackerEventConfiguration atEventCfg, OpportunityTaskConfiguration opportunityTaskCfg) {
+		super(atEventCfg, opportunityTaskCfg, createTaskIdentifier("opportunity", Arrays.asList("create")));
 		this.opportunityTaskCfg = opportunityTaskCfg;
 	}
 
@@ -51,22 +51,22 @@ public class OpportunityTask extends TemplateTask {
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);
 		}
-		ActivityTrackerEvent activityTrackerEvent = createActivityEventBuilder().identity(identifierPath).command(command).fields(fields).create();
+		ActivityTrackerEvent atEvent = createActivityEventBuilder().identity(identifierPath).command(command).fields(fields).create();
 		switch (command) {
 			case "start":
-				handle(activityTrackerEvent);
+				handle(atEvent);
 				break;
 			case "stop":
-				handle(activityTrackerEvent);
+				handle(atEvent);
 				break;
 			case "create":
-				create(activityTrackerEvent);
+				create(atEvent);
 				break;
 			case "finish":
-				handle(activityTrackerEvent);
+				handle(atEvent);
 				break;
 			default:
-				logger.error("No command handling available for '" + command + "' with activity event '" + activityTrackerEvent + "'");
+				logger.error("No command handling available for '" + command + "' with activity event '" + atEvent + "'");
 				break;
 		}
 		

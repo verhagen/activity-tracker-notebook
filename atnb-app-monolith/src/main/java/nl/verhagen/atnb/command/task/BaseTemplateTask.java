@@ -8,8 +8,8 @@ import nl.verhagen.atnb.command.domain.TaskIdentifier;
 
 public class BaseTemplateTask extends TemplateTask {
 
-	public BaseTemplateTask(ActivityTrackerEventConfiguration activityEventCfg, BaseTemplateTaskConfiguration baseTempTaskCfg) {
-		super(activityEventCfg, baseTempTaskCfg, createTaskIdentifierCollection());
+	public BaseTemplateTask(ActivityTrackerEventConfiguration atEventCfg, BaseTemplateTaskConfiguration baseTempTaskCfg) {
+		super(atEventCfg, baseTempTaskCfg, createTaskIdentifierCollection());
 	}
 
 //    add(knownActivities, "issue", Arrays.asList("create"));

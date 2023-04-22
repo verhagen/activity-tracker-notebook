@@ -6,8 +6,8 @@ import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
 
 public class IssueTask extends AbstractTask {
 
-	public IssueTask(ActivityTrackerEventConfiguration activityEventCfg, IssueTaskConfiguration taskConfiguration) {
-		super(taskConfiguration, activityEventCfg, createTaskIdentifier("issue", Arrays.asList("create")));
+	public IssueTask(ActivityTrackerEventConfiguration atEventCfg, IssueTaskConfiguration taskConfiguration) {
+		super(taskConfiguration, atEventCfg, createTaskIdentifier("issue", Arrays.asList("create")));
 	}
 
 	@Override

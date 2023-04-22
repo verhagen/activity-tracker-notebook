@@ -21,8 +21,8 @@ public class BookTask extends RepositoryTask {
 	private final BookTaskConfiguration bookTaskCfg;
 
 
-	public BookTask(ActivityTrackerEventConfiguration activityEventCfg, BookTaskConfiguration bookTaskCfg) {
-		super(activityEventCfg, bookTaskCfg, createTaskIdentifier("book", Arrays.asList(CommandName.ADD.name())));
+	public BookTask(ActivityTrackerEventConfiguration atEventCfg, BookTaskConfiguration bookTaskCfg) {
+		super(atEventCfg, bookTaskCfg, createTaskIdentifier("book", Arrays.asList(CommandName.ADD.name())));
 		this.bookTaskCfg = bookTaskCfg;
 	}
 	
@@ -75,22 +75,22 @@ public class BookTask extends RepositoryTask {
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);
 		}
-		ActivityTrackerEventImpl activityEvent = createActivityEventBuilder().identity(identifierPath).command(command).fields(fields).create();
+		ActivityTrackerEventImpl atEvent = createActivityEventBuilder().identity(identifierPath).command(command).fields(fields).create();
 		switch (command) {
 			case "start":
-				handle(activityEvent);
+				handle(atEvent);
 				break;
 			case "stop":
-				handle(activityEvent);
+				handle(atEvent);
 				break;
 			case "add":
-				init(activityEvent);
+				init(atEvent);
 				break;
 			case "finish":
-				handle(activityEvent);
+				handle(atEvent);
 				break;
 			default:
-				logger.error("No command handling available for '" + command + "' with activity event '" + activityEvent + "'");
+				logger.error("No command handling available for '" + command + "' with activity event '" + atEvent + "'");
 				break;
 		}
 		

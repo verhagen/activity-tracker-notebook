@@ -5,8 +5,8 @@ import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
 public class BaseTask extends AbstractTask {
 	
 
-	public BaseTask(ActivityTrackerEventConfiguration activityEventCfg, BaseTaskConfiguration baseTaskCfg) {
-		super(baseTaskCfg, activityEventCfg, createTaskIdentifier(baseTaskCfg.getTaskIdentifiers(), null));
+	public BaseTask(ActivityTrackerEventConfiguration atEventCfg, BaseTaskConfiguration baseTaskCfg) {
+		super(baseTaskCfg, atEventCfg, createTaskIdentifier(baseTaskCfg.getTaskIdentifiers(), null));
 	}
 
 	@Override

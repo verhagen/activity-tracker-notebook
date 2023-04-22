@@ -26,12 +26,12 @@ public class AppRunnerConfiguration {
     }
 
 	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
-	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
+	private ActivityTrackerEventConfiguration atEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
 	private BookTaskConfiguration bookTaskCfg = new BookTaskConfiguration(idCatalog, URI.create("https://www.manning.com/books/"));
 	private List<AbstractTask> taskHandlers  = Arrays.asList(
-			new BookTask(activityEventCfg, bookTaskCfg)
-			, new OpportunityTask(activityEventCfg, new OpportunityTaskConfiguration(idCatalog))
-			, new IssueTask(activityEventCfg, new IssueTaskConfiguration(idCatalog))
+			new BookTask(atEventCfg, bookTaskCfg)
+			, new OpportunityTask(atEventCfg, new OpportunityTaskConfiguration(idCatalog))
+			, new IssueTask(atEventCfg, new IssueTaskConfiguration(idCatalog))
 	);
 	private Map<String, AbstractTask> taskHandlerMap;
 

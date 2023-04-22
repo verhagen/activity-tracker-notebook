@@ -26,21 +26,21 @@ public abstract class AbstractTask {
 	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
 
 	protected final Map<String, TaskIdentifier> taskIdentifiers = new HashMap<>();
-	private final ActivityTrackerEventConfiguration activityEventCfg;
+	private final ActivityTrackerEventConfiguration atEventCfg;
 	private final List<Listener<ActivityTrackerEvent>> listeners = new LinkedList<>();
 	private final TaskConfiguration taskCfg;
 
 
-	public AbstractTask(TaskConfiguration taskConfiguration, ActivityTrackerEventConfiguration activityEventCfg
+	public AbstractTask(TaskConfiguration taskConfiguration, ActivityTrackerEventConfiguration atEventCfg
 			, TaskIdentifier taskIdentifier) {
-		this(taskConfiguration, activityEventCfg, Arrays.asList(taskIdentifier));
+		this(taskConfiguration, atEventCfg, Arrays.asList(taskIdentifier));
 	}
 
 
-	public AbstractTask(TaskConfiguration TaskCfg, ActivityTrackerEventConfiguration activityEventCfg
+	public AbstractTask(TaskConfiguration TaskCfg, ActivityTrackerEventConfiguration atEventCfg
 			, Collection<TaskIdentifier> taskIdentifierColl) {
 		this.taskCfg = TaskCfg;
-		this.activityEventCfg = activityEventCfg;
+		this.atEventCfg = atEventCfg;
 		for (TaskIdentifier taskIdentifier : taskIdentifierColl) {
 			for (String taskIdentifierStr : taskIdentifier.getIdentifiers()) {
 				this.taskIdentifiers.put(taskIdentifierStr, taskIdentifier);
@@ -109,8 +109,8 @@ public abstract class AbstractTask {
 	}
 
 
-	public ActivityTrackerEventConfiguration getActivityEventCfg() {
-		return activityEventCfg;
+	public ActivityTrackerEventConfiguration getAtEventCfg() {
+		return atEventCfg;
 	}
 
 
@@ -139,7 +139,7 @@ public abstract class AbstractTask {
 
 
 	protected ActivityTrackerEventImpl.Builder createActivityEventBuilder() {
-		return new ActivityTrackerEventImpl.Builder(getActivityEventCfg());
+		return new ActivityTrackerEventImpl.Builder(getAtEventCfg());
 	}
 
 }

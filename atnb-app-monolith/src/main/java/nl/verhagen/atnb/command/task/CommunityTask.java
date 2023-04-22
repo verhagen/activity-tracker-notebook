@@ -16,8 +16,8 @@ import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
  */
 public class CommunityTask extends AbstractTask {
 
-	public CommunityTask(TaskConfiguration TaskCfg, ActivityTrackerEventConfiguration activityEventCfg) {
-		super(TaskCfg, activityEventCfg, createTaskIdentifier("community", Arrays.asList("add")));
+	public CommunityTask(TaskConfiguration TaskCfg, ActivityTrackerEventConfiguration atEventCfg) {
+		super(TaskCfg, atEventCfg, createTaskIdentifier("community", Arrays.asList("add")));
 	}
 
 
