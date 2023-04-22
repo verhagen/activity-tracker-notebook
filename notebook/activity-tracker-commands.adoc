@@ -1,0 +1,107 @@
+= Activity Tracker Commands
+
+Sample fo commands that can be used, and what they mean
+
+Suggestion: Maybe even the command `start` should be the default command.
+
+----
+$ app  28416  start         > start developing on issue 28416 (default organisation, default issue category)
+                              Example: organisation.schaubroeck.project.lima.issue.LPBUNI-28416
+$ app  LPBUNI-28416  start  > start developing on issue LPBUNI-28416 (default organisation)
+                              Example: organisation.schaubroeck.project.lima.issue.LPBUNI-28416
+
+$ app  LPBUNI-28416  create   > create document for issue through associating DocumentFactory
+                              Example: `LPBUNI-28416.md`
+
+$ app  create  https://jira.int.cipal.be/browse/LPBUNI-25918
+
+$ app  create  https://www.manning.com/books/effective-software-testing    > create an entry in the books overview of publisher manning
+
+$ app  init:notebook <organisation-identifier> <path>  > create a default directory structure for writing:
+                                            - ${USER_HOME}/.atnb/
+                                              - atnb.yaml
+                                              - activity-logbook-configuration.hjson
+                                                {
+                                                    trays: [
+                                                        # Trays have order, so the top one is kind of default, if not explicitly given
+                                                        # in the identifier
+                                                        {
+                                                            status: current (current | archive)
+                                                            path: ${USER_HOME}/<path>
+                                                        }
+                                                    ]
+                                                }
+                                            - <path>(/notebook)
+                                              - .atnb/
+                                                - organisation-identifier/
+                                                  - contacts.hjson
+                                                  - contacts.txt
+                                                  - organisation.hjson
+                                                  - projects.hjson
+                                                  - teams.hjson
+                                                  - .cache/
+                                                    identifiers.hjson
+                                                  - .gitignore
+                                                    .cache
+                                              - general/
+                                              - issue/
+                                                - images/
+                                              - images/
+                                              - logbook/
+                                              - other/
+                                              - tmp/
+                                              - abbreviations-and-acronyms.md
+                                              - .gitignore
+                                                tmp/
+
+
+$ app  coffee  start
+$ app  lunch  start
+
+$ app  contacts  add <name>; <email>; <phone>
+$ app  contacts  add <name>; (type:) <email>; (type:) <phone>
+$ app  <organisation-id>.contacts  add  <name>; (type:) <email>; (type:) <phone>
+$ app  organisation.<organisation-id>.contacts  add  <name>; (type:) <email>; (type:) <phone>
+
+$ app  28416  stop      > stop working on this task
+
+$ app  28400  start:code-review   > start with the code review on this issue
+----
+
+== What to do when starting on a new job / project in an organisation
+
+**Action Plan**
+
+----
+$ app  init  notes  <organisation-identifier>  <path>
+Creates a default directory structure
+Example:
+  organisation-identifier `cipal-schaubroeck`
+  path `~/Documents/notes`
+$ cd <path>
+$
+----
+
+
+== Document Creation
+
+=== Support Multiple Output Formats
+
+See different [document markup languages](https://en.wikipedia.org/wiki/List_of_document_markup_languages)
+
+- `text/x-rst` reStructuredText  
+    extensions: `.rst`, `.asciidoc`
+- `text/markdown` \(before official `text/x-markdown`\)  
+    extensions: `.md`, `.markdown`
+- `text/x-asciidoc`  
+    extensions: `.adoc`, `.asciidoc`
+- `text/csv`  
+    extensions: `.csv`
+- `application/docbook+xml`  
+    extensions: `.docbook.xml`
+
+=== Support different Template Engines
+
+- http://mustache.github.io/
+- https://freemarker.apache.org/
+- https://www.thymeleaf.org/

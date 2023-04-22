@@ -16,7 +16,7 @@ public class TaskHandlerCatalogTest {
 	public void create(String first, String second) {
 		IdentifierCatalog idReg = new IdentifierCatalogMock();
 		CommunityTaskConfiguration communityTaskCfg = new CommunityTaskConfiguration(idReg);
-		ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("eddy-the-eagle");
+		ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("eddy-the-eagle", "london");
 		CommunityTask task = new CommunityTask(communityTaskCfg, activityEventCfg);
 
 		TaskHandlerCatalogConfiguration taskHandlerCatCfg = new TaskHandlerCatalogConfiguration(task);
@@ -24,7 +24,5 @@ public class TaskHandlerCatalogTest {
 		
 		taskHandlerCat.lookupTaskHandler("community");
 	}
-	
-	
 
 }

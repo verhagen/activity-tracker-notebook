@@ -1,0 +1,36 @@
+= Idea - Identifiers
+
+- Main Identifiers
+- Sub Identifiers
+
+The Identifiers form a hierarchy:
+----
+main
+main.sub
+main.sub.main
+main.sub.main.sub
+----
+- `main` ID's are there to group `sub` ID's
+- only `sub` ID's can be used for activity identification
+-
+
+----
+$ app  main      add  --main
+$ app  main.sub  add
+
+$ app  main.sub.main      add  --main
+$ app  main.sub.main.sub  add
+----
+
+----
+$ app  organisation      add  --main
+$ app  organisation.aaa  add
+
+$ app  organisation.aaa.tribe      add  --main
+$ app  organisation.aaa.tribe.bbb  add
+$ app  organisation.aaa.tribe.ccc  add
+
+$ app  organisation.aaa.squad      add  --main
+$ app  organisation.aaa.squad.zzz  add
+$ app  organisation.aaa.squad.yyy  add
+----

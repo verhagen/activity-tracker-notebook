@@ -38,7 +38,7 @@ public class ActivityRegisteryTest {
 	}
 
 	private ActivityRegistery createActivityRegistery(String[] content) {
-		ActivityTrackerEventConfiguration cfg = new ActivityTrackerEventConfiguration("kermit-the-frog");
+		ActivityTrackerEventConfiguration cfg = new ActivityTrackerEventConfiguration("kermit-the-frog", "london");
 		ActivityRegistery activityReg = new ActivityRegistery();
 		List<ActivityEventImpl> activities = Arrays.asList(content).stream()
 				.map(ar -> ar.split("\\|"))

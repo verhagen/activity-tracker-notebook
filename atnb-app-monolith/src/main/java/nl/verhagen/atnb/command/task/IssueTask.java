@@ -12,6 +12,7 @@ public class IssueTask extends AbstractTask {
 
 	@Override
 	public void execute(String identifier, String command, String text) {
+		// TODO [2023.04.22 TV] Add implementation
 		throw new RuntimeException("To be implemented...");
 	}
 

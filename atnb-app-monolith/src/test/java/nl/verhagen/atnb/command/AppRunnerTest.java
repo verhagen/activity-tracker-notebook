@@ -12,6 +12,7 @@ import nl.verhagen.atnb.command.domain.Listener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -23,7 +24,12 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class AppRunnerTest {
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
 
-    @Disabled // FIXME Implementation needed (now throws an exception) 
+	@BeforeEach
+	public void setUp () {
+		System.setProperty("user.home", "src/test/data/user-home-default");
+	}
+
+    @Disabled  // TODO [2023.04.05] Implementation needed (now throws an exception)
     @Test
     public void startIssue() {
         LocalDateTime timeStamp = LocalDateTime.parse("2021.12.07 13:35", formatter);
@@ -43,7 +49,7 @@ public class AppRunnerTest {
 //        assertEquals("2021.12.07 13:35-  organisation.cs.project.lima.issue.LPBUNI-123  start", result);
     }
 
-    @Disabled // FIXME Implementation needed (now throws an exception) 
+    @Disabled // TODO [2023.04.05] Implementation needed (now throws an exception)
     @Test
     public void stopIssue() {
         LocalDateTime timeStamp = LocalDateTime.parse("2021.12.07 13:50", formatter);
@@ -75,7 +81,20 @@ public class AppRunnerTest {
 		catch (AppException ae) {
 			assertEquals(b, ae.getMessage());
 		}
-				
+	}
+
+	@Disabled
+	@ParameterizedTest
+	@CsvSource(delimiter = '|', value = {
+			"issue.OPL-1444 | create | A | B "
+	})
+	public void createSuccess(String identifier, String command, String a, String b) {
+		try {
+			new AppRunner(new AppRunnerConfiguration()).execute(identifier, command);
+		}
+		catch (AppException ae) {
+			assertEquals(b, ae.getMessage());
+		}
 	}
 
 }

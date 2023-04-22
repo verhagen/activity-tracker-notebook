@@ -1,10 +1,13 @@
 package com.github.verhagen.atnb.config;
 
 import com.github.verhagen.atnb.AtnbRuntimeException;
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import org.apache.commons.lang3.StringUtils;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * some-dir-name                        <-- workspace-dir
@@ -19,6 +22,8 @@ public class AppConfig {
     private boolean isUserHomeConfig = false;
     private Path configDir;
     private Path configFile;
+
+    private IdentifierCatalog idCatalog;
 
     public AppConfig(Builder bldr) {
         Path path = bldr.getPath();
@@ -49,7 +54,6 @@ public class AppConfig {
                     throw new AppConfigException("The given file '" + path + "' has the correct name '"
                             + APP_CONFIG_FILE_NAME + "'. But it is not inside a directory with the name '" + APP_CONFIG_DIR_NAME
                             + "'.");
-
                 }
             }
             else {
@@ -63,8 +67,29 @@ public class AppConfig {
         isUserHomeConfig = bldr.isSimulateUserHomeActive
                 ? configDir.getParent().equals(bldr.userHome)
                 : configDir.getParent().equals(Paths.get(System.getProperty("user.home")));
+
+        idCatalog = create();
     }
 
+    private IdentifierCatalog create() {
+        IdentifierCatalog idCatalog = new IdentifierCatalog();
+        List<String> ids = Arrays.asList(new String[] {
+                "programming.language.java"
+                , "programming.language.kotlin"
+                , "programming.language.type-script"
+                , "programming.language.java.library.apache-commons-stringutils"
+                , "programming.language.java.library.junit"
+                , "build-tool.maven"
+                , "build-tool.gradle"
+                , "publisher.pragprog.book.mazes-for-programmers"
+                , "publisher.manning.book.software-development-metrics"
+                , "project.mazes-for-programmers"
+                , "project.mazes-for-programmers-type-script"
+                , "organization.aaa.space.kkk.project.mazes-for-programmers-type-script"
+        });
+        idCatalog.add(ids);
+        return idCatalog;
+    }
     public Path getConfigDir() {
         return configDir;
     }
@@ -78,6 +103,10 @@ public class AppConfig {
             throw new AtnbRuntimeException("This is the user personal configuration, it does not have a workspace.");
         }
         return configDir.getParent();
+    }
+
+    public IdentifierCatalog getIdentifierCatalog() {
+        return idCatalog;
     }
 
     public static class Builder {

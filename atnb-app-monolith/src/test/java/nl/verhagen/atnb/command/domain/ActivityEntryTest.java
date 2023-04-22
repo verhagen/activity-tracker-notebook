@@ -24,7 +24,7 @@ public class ActivityEntryTest {
         , "2021.12.21 13:20 | publisher.manning.book.street-coder | add"
     })
 	public void create(String timestampStr, String identifierStr, String commandStr) {
-		ActivityTrackerEventConfiguration cfg = new ActivityTrackerEventConfiguration("sam-the-eagle");
+		ActivityTrackerEventConfiguration cfg = new ActivityTrackerEventConfiguration("sam-the-eagle", "london");
 		ActivityEventImpl activityEntry =
 				new ActivityEventImpl.Builder(cfg)
 				.timestamp(LocalDateTime.parse(timestampStr, formatter))

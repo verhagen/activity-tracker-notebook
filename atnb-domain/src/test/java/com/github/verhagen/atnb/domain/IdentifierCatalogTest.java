@@ -14,15 +14,15 @@ import org.slf4j.LoggerFactory;
 
 public class IdentifierCatalogTest {
 	private Logger logger = LoggerFactory.getLogger(IdentifierCatalogTest.class);
-	private IdentifierCatalog registery = create();
+	private IdentifierCatalog idCatalog = create();
 
 	@Test
 	void createSimpleIdentifiers() throws Exception {
-		IdentifierCatalog registery = new IdentifierCatalog();
+		IdentifierCatalog idCatalog = new IdentifierCatalog();
 		List<String> ids = Arrays.asList(new String[] {"java", "kotlin", "type-script"});
-		registery.add(ids);
+		idCatalog.add(ids);
 
-		Collection<String> identifiers = registery.getIdentifiers();
+		Collection<String> identifiers = idCatalog.getIdentifiers();
 		assertTrue(identifiers.contains("java"));
 		assertTrue(identifiers.contains("kotlin"));
 		assertTrue(identifiers.contains("type-script"));
@@ -30,17 +30,17 @@ public class IdentifierCatalogTest {
 
 	@Test
 	void createPathIdentifiers() throws Exception {
-		IdentifierCatalog registery = new IdentifierCatalog();
+		IdentifierCatalog idCatalog = new IdentifierCatalog();
 		List<String> ids = Arrays.asList(new String[] {"programming.language.java", "programming.language.kotlin", "programming.language.type-script", "programming.language.java"});
-		registery.add(ids);
+		idCatalog.add(ids);
 
-		Collection<String> identifiers = registery.getIdentifiers();
+		Collection<String> identifiers = idCatalog.getIdentifiers();
 		assertTrue(identifiers.contains("programming.language.java"));
 		assertTrue(identifiers.contains("programming.language.kotlin"));
 		assertTrue(identifiers.contains("programming.language.type-script"));
 
 		BreadCrumbsExtractor visitor = new BreadCrumbsExtractor();
-		registery.accept(visitor);
+		idCatalog.accept(visitor);
 		assertEquals("[[programming], [programming, language], [programming, language, type-script], [programming, language, java], [programming, language, kotlin]]", visitor.getBreadCrumbs().toString());
 		logger.info(visitor.getBreadCrumbs().toString());
 	}
@@ -56,7 +56,7 @@ public class IdentifierCatalogTest {
 			, "b:mazes, [book.mazes-for-programmers]"
 	})
 	void createQuery(String query, String expectedResult) throws Exception {
-		List<String> results = registery.search(query);
+		List<String> results = idCatalog.search(query);
 		logger.info("Results for query '" + query + "': " + results.toString());
 		for (String expected : expectedResult.substring(1, expectedResult.length() -1).split(";")) {
 			assertTrue(results.contains(expected.trim()), "Expected result '" + expected.trim() 
@@ -66,7 +66,7 @@ public class IdentifierCatalogTest {
 
 
 	private IdentifierCatalog create() {
-		IdentifierCatalog registery = new IdentifierCatalog();
+		IdentifierCatalog idCatalog = new IdentifierCatalog();
 		List<String> ids = Arrays.asList(new String[] {
 				  "programming.language.java" 
 //				, "programming.language.kotlin" 
@@ -77,13 +77,13 @@ public class IdentifierCatalogTest {
 				, "project.mazes-for-programmers"
 				, "project.mazes-for-programmers-type-script"
 				});
-		registery.add(ids);
+		idCatalog.add(ids);
 
 		BreadCrumbsExtractor visitor = new BreadCrumbsExtractor();
-		registery.accept(visitor);
+		idCatalog.accept(visitor);
 		assertEquals("[[book], [book, mazes-for-programmers], [project], [project, mazes-for-programmers-type-script], [project, mazes-for-programmers], [programming], [programming, language], [programming, language, type-script], [programming, language, java]]", visitor.getBreadCrumbs().toString());
 		logger.info(visitor.getBreadCrumbs().toString());
-		return registery;
+		return idCatalog;
 	}
 
 }

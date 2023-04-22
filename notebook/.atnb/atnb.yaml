@@ -1,0 +1,6 @@
+notebook:
+  type: project
+  parents:
+  children:
+  authors:
+    - github.com/verhagen

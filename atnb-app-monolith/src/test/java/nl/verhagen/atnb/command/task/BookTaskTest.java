@@ -19,7 +19,7 @@ import nl.verhagen.atnb.command.domain.Listener;
 
 public class BookTaskTest {
 	private IdentifierCatalog idReg = new IdentifierCatalogMock();
-	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
+	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
 	private BookTaskConfiguration bookTaskConfiguration = new BookTaskConfiguration(idReg, URI.create("https://www.manning.com/books/"));
 
 	// TODO [2022.01.14 TV] This should throw an Exception, as there is not enough information, about which specific book this is about.

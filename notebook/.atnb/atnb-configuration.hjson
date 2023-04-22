@@ -2,11 +2,11 @@
 
 {
 	notebook-locations: [
+
 	]
 
 	task-handlers: [
-	
-	
+
 	]
 
 	content-creators: [
@@ -14,5 +14,6 @@
 	]
 
 	content-generators: [
+
 	]
 }

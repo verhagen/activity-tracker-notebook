@@ -17,7 +17,7 @@ import nl.verhagen.atnb.command.domain.Listener;
 public class OpportunityTaskTest {
 	private Logger logger = LoggerFactory.getLogger(OpportunityTaskTest.class);
 	private IdentifierCatalog idReg = new IdentifierCatalogMock();
-	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
+	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
 	private OpportunityTaskConfiguration bookTaskConfiguration = new OpportunityTaskConfiguration(idReg);
 
 	// app  opportunity  create  [date] <agency> <organisation> <role> <mail-url>

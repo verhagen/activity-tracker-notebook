@@ -17,7 +17,7 @@ import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
 public class BaseTaskTest {
 	private IdentifierCatalog idReg = new IdentifierCatalogMock();
 	private Logger logger = LoggerFactory.getLogger(BaseTaskTest.class);
-	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
+	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
 	private BaseTaskConfiguration baseTaskCfg = new BaseTaskConfiguration(idReg);
 
 

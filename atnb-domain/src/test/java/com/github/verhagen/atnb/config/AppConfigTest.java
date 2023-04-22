@@ -2,10 +2,14 @@ package com.github.verhagen.atnb.config;
 
 import com.github.verhagen.atnb.AtnbRuntimeException;
 import com.github.verhagen.atnb.ResourceHelper;
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -87,4 +91,11 @@ public class AppConfigTest {
         }
     }
 
+    @Test
+    public void withIdentifiers() throws IOException {
+        AppConfig appConfig = new AppConfig.Builder().setPath(resrcHlpr.getConfigDirPath("correct-config-dir")).create();
+        assertTrue(appConfig.getWorkspace().toFile().isDirectory());
+        IdentifierCatalog idCatalog = appConfig.getIdentifierCatalog();
+        Collection<String> identifiers = idCatalog.getIdentifiers();
+    }
 }

@@ -1,5 +1,6 @@
 package nl.verhagen.atnb.command;
 
+import com.github.verhagen.atnb.config.AppMetaConfig;
 import nl.verhagen.atnb.command.domain.ActivityEvent;
 import nl.verhagen.atnb.command.domain.TaskIdentifier;
 import org.apache.commons.lang3.StringUtils;
@@ -8,14 +9,14 @@ import org.slf4j.LoggerFactory;
 
 import nl.verhagen.atnb.command.domain.Listener;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.net.URI;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -23,10 +24,11 @@ public class AppRunner {
     private static Logger log = LoggerFactory.getLogger(AppRunner.class);
     private static Logger actCmd = LoggerFactory.getLogger("activity-command");
 
+	private final static String SEP = System.getProperty("file.separator");
     private Pattern jiraIssue = Pattern.compile("\\w+-\\d+|\\d+"); //  ^\d+$|
 
 	// FIXME [2023.04.05 TV] Remove hard coded path
-    private Path issueTargetPath = Paths.get("C:\\Users\\tjve\\Documents\\notes\\issue-generated");
+    private Path issueTargetPath;
     private JiraIssueFactoryConfiguration cfg = new JiraIssueFactoryConfiguration.Builder()
             .addOrganisation("cs")
             .addProject("lima")
@@ -63,6 +65,24 @@ public class AppRunner {
 //        add(knownActivities, "poc", Arrays.asList("create"));
 //        add(knownActivities, "idea", Arrays.asList("create"));
 //        add(knownActivities, "white-board", Arrays.asList("create"));
+
+		// Fixme [2023.04.19 TV]:
+		Properties props = new Properties();
+		AppMetaConfig appMetaConfig = new AppMetaConfig();
+		props.setProperty("issue-target-path", System.getProperty("java.io.tmpdir")
+				+ SEP + appMetaConfig.getAppName() + SEP + "generated-issues");
+		// Load properties file from ~/.atnb/atnb.properties
+		props = new Properties(props);
+		Path path = Paths.get(System.getProperty("user.home"))
+				.resolve("." + appMetaConfig.getAppId())
+				.resolve(appMetaConfig.getAppId() + ".properties");
+		try (BufferedReader reader = Files.newBufferedReader(path)) {
+			props.load(reader);
+		}
+		catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		issueTargetPath = Paths.get(props.getProperty("issue-target-path"));
     }
 
 

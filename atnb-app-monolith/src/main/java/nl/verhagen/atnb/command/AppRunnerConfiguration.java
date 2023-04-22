@@ -26,7 +26,7 @@ public class AppRunnerConfiguration {
     }
 
 	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
-	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy");
+	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
 	private BookTaskConfiguration bookTaskCfg = new BookTaskConfiguration(idCatalog, URI.create("https://www.manning.com/books/"));
 	private List<AbstractTask> taskHandlers  = Arrays.asList(
 			new BookTask(activityEventCfg, bookTaskCfg)
