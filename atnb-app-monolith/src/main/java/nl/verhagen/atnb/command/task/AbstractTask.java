@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.TextField;
-import nl.verhagen.atnb.command.domain.ActivityEvent;
-import nl.verhagen.atnb.command.domain.ActivityEventImpl;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventImpl;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
 import nl.verhagen.atnb.command.domain.TaskIdentifier;
 import org.apache.commons.lang3.StringUtils;
@@ -27,7 +27,7 @@ public abstract class AbstractTask {
 
 	protected final Map<String, TaskIdentifier> taskIdentifiers = new HashMap<>();
 	private final ActivityTrackerEventConfiguration activityEventCfg;
-	private final List<Listener<ActivityEvent>> listeners = new LinkedList<>();
+	private final List<Listener<ActivityTrackerEvent>> listeners = new LinkedList<>();
 	private final TaskConfiguration taskCfg;
 
 
@@ -67,18 +67,18 @@ public abstract class AbstractTask {
 	public abstract void execute(String identifier, String command, String text);
 
 
-	public void addListener(Listener<ActivityEvent> listener) {
+	public void addListener(Listener<ActivityTrackerEvent> listener) {
 		listeners.add(listener);
 	}
 
-	protected void handle(ActivityEvent activityEvent) {
-		listeners.stream().forEach(l -> l.update(activityEvent));
+	protected void handle(ActivityTrackerEvent activityTrackerEvent) {
+		listeners.stream().forEach(l -> l.update(activityTrackerEvent));
 		logger.info(
-				activityEvent.getTimeStamp().format(formatter)
-				+ "  " + activityEvent.getIdentifier()
-				+ "  " + activityEvent.getCommand()
-				+ (activityEvent.getFields() != null 
-						? "  " + activityEvent.getFields().entrySet().stream().map(e -> e.getKey() + ": " + e.getValue()).collect(Collectors.joining(", "))
+				activityTrackerEvent.getTimeStamp().format(formatter)
+				+ "  " + activityTrackerEvent.getIdentifier()
+				+ "  " + activityTrackerEvent.getCommand()
+				+ (activityTrackerEvent.getFields() != null
+						? "  " + activityTrackerEvent.getFields().entrySet().stream().map(e -> e.getKey() + ": " + e.getValue()).collect(Collectors.joining(", "))
 						: "")
 		);
 	}
@@ -138,8 +138,8 @@ public abstract class AbstractTask {
 	}
 
 
-	protected ActivityEventImpl.Builder createActivityEventBuilder() {
-		return new ActivityEventImpl.Builder(getActivityEventCfg());
+	protected ActivityTrackerEventImpl.Builder createActivityEventBuilder() {
+		return new ActivityTrackerEventImpl.Builder(getActivityEventCfg());
 	}
 
 }

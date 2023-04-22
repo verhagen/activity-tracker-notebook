@@ -6,7 +6,7 @@ package nl.verhagen.atnb.command;
 //
 //import junitparams.JUnitParamsRunner;
 //import junitparams.Parameters;
-import nl.verhagen.atnb.command.domain.ActivityEvent;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.Listener;
 
 import java.time.LocalDateTime;
@@ -34,9 +34,9 @@ public class AppRunnerTest {
     public void startIssue() {
         LocalDateTime timeStamp = LocalDateTime.parse("2021.12.07 13:35", formatter);
         AppRunner appRunner = new AppRunner(new AppRunnerConfiguration());
-        appRunner.addListener(new Listener<ActivityEvent>() {
+        appRunner.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
-			public void update(ActivityEvent event) {
+			public void update(ActivityTrackerEvent event) {
 				assertEquals("2021.12.07 14:35", event.getTimeStamp().format(formatter));
 				assertEquals("test", event.getIdentifier());
 				assertEquals("start", event.getCommand());
@@ -54,9 +54,9 @@ public class AppRunnerTest {
     public void stopIssue() {
         LocalDateTime timeStamp = LocalDateTime.parse("2021.12.07 13:50", formatter);
         AppRunner appRunner = new AppRunner(new AppRunnerConfiguration());
-        appRunner.addListener(new Listener<ActivityEvent>() {
+        appRunner.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
-			public void update(ActivityEvent event) {
+			public void update(ActivityTrackerEvent event) {
 				assertEquals("2021.12.07 14:35", event.getTimeStamp().format(formatter));
 				assertEquals("test", event.getIdentifier());
 				assertEquals("start", event.getCommand());

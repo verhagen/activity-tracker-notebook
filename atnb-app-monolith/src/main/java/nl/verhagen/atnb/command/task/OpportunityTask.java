@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import nl.verhagen.atnb.command.domain.ActivityEvent;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,28 +51,28 @@ public class OpportunityTask extends TemplateTask {
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);
 		}
-		ActivityEvent activityEvent = createActivityEventBuilder().identity(identifierPath).command(command).fields(fields).create();
+		ActivityTrackerEvent activityTrackerEvent = createActivityEventBuilder().identity(identifierPath).command(command).fields(fields).create();
 		switch (command) {
 			case "start":
-				handle(activityEvent);
+				handle(activityTrackerEvent);
 				break;
 			case "stop":
-				handle(activityEvent);
+				handle(activityTrackerEvent);
 				break;
 			case "create":
-				create(activityEvent);
+				create(activityTrackerEvent);
 				break;
 			case "finish":
-				handle(activityEvent);
+				handle(activityTrackerEvent);
 				break;
 			default:
-				logger.error("No command handling available for '" + command + "' with activity event '" + activityEvent + "'");
+				logger.error("No command handling available for '" + command + "' with activity event '" + activityTrackerEvent + "'");
 				break;
 		}
 		
 	}
 
-	private void create(ActivityEvent activityEvent) {
+	private void create(ActivityTrackerEvent activityTrackerEvent) {
 		// TODO [2022.01.20 TV] Add implementation
 		//throw new RuntimeException("Implement call to OpportunityContentCreator...");
 		logger.info("Execute opportunity create ...  This  should add a create in the opportunity folder...");

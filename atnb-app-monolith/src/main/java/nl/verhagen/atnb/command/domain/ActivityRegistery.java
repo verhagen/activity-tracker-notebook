@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ActivityRegistery implements VisitorAcceptor<ActivityEvent> {
-	private List<ActivityEventImpl> activities = new ArrayList<>();
+public class ActivityRegistery implements VisitorAcceptor<ActivityTrackerEvent> {
+	private List<ActivityTrackerEventImpl> activities = new ArrayList<>();
 
-	public void add(ActivityEventImpl activityEntry) {
+	public void add(ActivityTrackerEventImpl activityEntry) {
 		activities.add(activityEntry);
 	}
 
-	public List<ActivityEventImpl> search(String query) {
+	public List<ActivityTrackerEventImpl> search(String query) {
 //		if (query.contains("author")) {
 //			
 //		}
@@ -19,7 +19,7 @@ public class ActivityRegistery implements VisitorAcceptor<ActivityEvent> {
 	}
 
 	@Override
-	public void accept(Visitor<ActivityEvent> visitor) {
+	public void accept(Visitor<ActivityTrackerEvent> visitor) {
 		activities.stream().forEach(ae -> ae.accept(visitor));
 	}
 

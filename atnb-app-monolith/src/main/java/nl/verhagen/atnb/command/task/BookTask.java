@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import nl.verhagen.atnb.command.domain.ActivityEvent;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.TaskIdentifier;
-import nl.verhagen.atnb.command.domain.ActivityEventImpl;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -75,7 +75,7 @@ public class BookTask extends RepositoryTask {
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);
 		}
-		ActivityEventImpl activityEvent = createActivityEventBuilder().identity(identifierPath).command(command).fields(fields).create();
+		ActivityTrackerEventImpl activityEvent = createActivityEventBuilder().identity(identifierPath).command(command).fields(fields).create();
 		switch (command) {
 			case "start":
 				handle(activityEvent);
@@ -102,7 +102,7 @@ public class BookTask extends RepositoryTask {
 	}
 
 
-	private void init(ActivityEvent activityEvent) {
+	private void init(ActivityTrackerEvent activityTrackerEvent) {
 		logger.info("Execute book init ...  This  should add a book to the books collection...");
 	}
 

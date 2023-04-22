@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.IdentifierCatalogMock;
-import nl.verhagen.atnb.command.domain.ActivityEvent;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
 import nl.verhagen.atnb.command.domain.Listener;
 
@@ -32,9 +32,9 @@ public class OpportunityTaskTest {
 	})
 	public void create(String identifier, String command, String text, String expectedIdentifier) {
 		OpportunityTask task = new OpportunityTask(activityEventCfg, bookTaskConfiguration);
-		task.addListener(new Listener<ActivityEvent>() {
+		task.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
-			public void update(ActivityEvent event) {
+			public void update(ActivityTrackerEvent event) {
 				assertEquals(expectedIdentifier, event.getIdentifier());
 				assertEquals(command, event.getCommand());
 			}

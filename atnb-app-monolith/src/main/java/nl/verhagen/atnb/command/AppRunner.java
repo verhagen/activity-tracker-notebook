@@ -1,7 +1,7 @@
 package nl.verhagen.atnb.command;
 
 import com.github.verhagen.atnb.config.AppMetaConfig;
-import nl.verhagen.atnb.command.domain.ActivityEvent;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.TaskIdentifier;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -101,7 +101,7 @@ public class AppRunner {
 	}
 
 
-	public void addListener(Listener<ActivityEvent> listener) {
+	public void addListener(Listener<ActivityTrackerEvent> listener) {
 		appRunnerCfg.getTaskHandlers().stream().forEach(th -> th.addListener(listener));
 	}
 

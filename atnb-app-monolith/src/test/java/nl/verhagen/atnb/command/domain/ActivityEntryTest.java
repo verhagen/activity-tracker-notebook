@@ -25,8 +25,8 @@ public class ActivityEntryTest {
     })
 	public void create(String timestampStr, String identifierStr, String commandStr) {
 		ActivityTrackerEventConfiguration cfg = new ActivityTrackerEventConfiguration("sam-the-eagle", "london");
-		ActivityEventImpl activityEntry =
-				new ActivityEventImpl.Builder(cfg)
+		ActivityTrackerEventImpl activityEntry =
+				new ActivityTrackerEventImpl.Builder(cfg)
 				.timestamp(LocalDateTime.parse(timestampStr, formatter))
 				.identity(identifierStr.split(BY_DOT))
 				.command(commandStr)

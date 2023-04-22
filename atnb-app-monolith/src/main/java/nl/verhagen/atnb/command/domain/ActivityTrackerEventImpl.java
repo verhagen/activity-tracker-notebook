@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 
-public class ActivityEventImpl implements VisitorAcceptor<ActivityEvent>, ActivityEvent {
+public class ActivityTrackerEventImpl implements VisitorAcceptor<ActivityTrackerEvent>, ActivityTrackerEvent {
 	private final static DateTimeFormatter formatter  = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy.MM.dd HH:mm")
 	private final LocalDateTime timeStamp;
@@ -19,7 +19,7 @@ public class ActivityEventImpl implements VisitorAcceptor<ActivityEvent>, Activi
 	private final Map<String, Object> fields;
 
 
-	public ActivityEventImpl(Builder bldr) {
+	public ActivityTrackerEventImpl(Builder bldr) {
 		timeStamp = bldr.timstamp != null ? bldr.getTimstamp() : LocalDateTime.now();
 		author = bldr.getAuthor() != null ? bldr.getAuthor() : bldr.getActivityEntryConfiguration().getAuthor();
 		identifier = bldr.getIdentifier();
@@ -59,7 +59,7 @@ public class ActivityEventImpl implements VisitorAcceptor<ActivityEvent>, Activi
 
 
 	@Override
-	public void accept(Visitor<ActivityEvent> visitor) {
+	public void accept(Visitor<ActivityTrackerEvent> visitor) {
 		visitor.visit(this);
 	}
 
@@ -89,8 +89,8 @@ public class ActivityEventImpl implements VisitorAcceptor<ActivityEvent>, Activi
 			this.cfg = cfg;
 		}
 
-		public ActivityEventImpl create() {
-			return new ActivityEventImpl(this);
+		public ActivityTrackerEventImpl create() {
+			return new ActivityTrackerEventImpl(this);
 		}
 
 		

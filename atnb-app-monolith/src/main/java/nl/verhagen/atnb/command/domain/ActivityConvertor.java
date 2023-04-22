@@ -5,13 +5,13 @@ import org.slf4j.LoggerFactory;
 
 import nl.verhagen.atnb.command.CommandName;
 
-public class ActivityConvertor implements Visitor<ActivityEvent> {
+public class ActivityConvertor implements Visitor<ActivityTrackerEvent> {
 	private Logger logger = LoggerFactory.getLogger(ActivityConvertor.class);
-	private ActivityEvent currentActivityEntry;
+	private ActivityTrackerEvent currentActivityEntry;
 //	private Handler<Activity> handler;
 	
 	@Override
-	public void visit(ActivityEvent activityEntry) {
+	public void visit(ActivityTrackerEvent activityEntry) {
 		if (CommandName.START.name() == activityEntry.getCommand()
 				&& currentActivityEntry == null) {
 			currentActivityEntry = activityEntry;

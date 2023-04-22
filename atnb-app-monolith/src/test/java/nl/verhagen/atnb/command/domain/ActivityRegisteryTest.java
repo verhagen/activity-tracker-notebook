@@ -24,7 +24,7 @@ public class ActivityRegisteryTest {
 						, "2021.10.01 10:45 | project.mazes-for-programmers | start"
 						, "2021.10.01 12:00 | lunch | start"
 				});
-		List<ActivityEventImpl> result = activityReg.search("kermit-the-frog");
+		List<ActivityTrackerEventImpl> result = activityReg.search("kermit-the-frog");
 		
 		assertEquals(5, result.size());
 
@@ -40,9 +40,9 @@ public class ActivityRegisteryTest {
 	private ActivityRegistery createActivityRegistery(String[] content) {
 		ActivityTrackerEventConfiguration cfg = new ActivityTrackerEventConfiguration("kermit-the-frog", "london");
 		ActivityRegistery activityReg = new ActivityRegistery();
-		List<ActivityEventImpl> activities = Arrays.asList(content).stream()
+		List<ActivityTrackerEventImpl> activities = Arrays.asList(content).stream()
 				.map(ar -> ar.split("\\|"))
-				.map(x -> new ActivityEventImpl.Builder(cfg)
+				.map(x -> new ActivityTrackerEventImpl.Builder(cfg)
 						.timestamp(LocalDateTime.parse(x[0].trim(), formatter))
 						.identity(x[1].split("\\."))
 						.command(x[2].trim())

@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import nl.verhagen.atnb.command.AppException;
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.IdentifierCatalogMock;
-import nl.verhagen.atnb.command.domain.ActivityEvent;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
 import nl.verhagen.atnb.command.domain.Listener;
 
@@ -56,9 +56,9 @@ public class BookTaskTest {
 	})
 	public void execute(String identifier, String command, String text, String expectedIdentifier) {
 		BookTask task = new BookTask(activityEventCfg, bookTaskConfiguration); 
-		task.addListener(new Listener<ActivityEvent>() {
+		task.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
-			public void update(ActivityEvent event) {
+			public void update(ActivityTrackerEvent event) {
 				assertEquals(expectedIdentifier, event.getIdentifier());
 				assertEquals(command, event.getCommand());
 			}

@@ -1,10 +1,10 @@
 package nl.verhagen.atnb.command.domain;
 
-public class PlainVisitor implements Visitor<ActivityEvent> {
+public class PlainVisitor implements Visitor<ActivityTrackerEvent> {
 	
 
 	@Override
-	public void visit(ActivityEvent type) {
+	public void visit(ActivityTrackerEvent type) {
 //		type.
 		
 	}
