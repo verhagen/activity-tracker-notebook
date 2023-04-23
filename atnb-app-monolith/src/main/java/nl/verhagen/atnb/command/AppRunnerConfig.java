@@ -20,8 +20,9 @@ import nl.verhagen.atnb.command.task.OpportunityTaskConfig;
 public class AppRunnerConfig {
 
 	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
-	private ActivityTrackerEventConfig atEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
+	private ActivityTrackerEventConfig atEventCfg;
 	private BookTaskConfig bookTaskCfg = new BookTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
+
 	// TODO [2023.04.05 TV] Make loading of task handler dynamic
 	private List<AbstractTask> taskHandlers  = Arrays.asList(
 			new BookTask(atEventCfg, bookTaskCfg)
@@ -32,6 +33,7 @@ public class AppRunnerConfig {
     
     public AppRunnerConfig() {
     	taskHandlerMap = taskHandlers.stream().collect(Collectors.toMap(th -> th.getTaskIdentifier(), Function.identity()));
+		atEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
 	}
 
     public List<String> getIdentifiers() {
