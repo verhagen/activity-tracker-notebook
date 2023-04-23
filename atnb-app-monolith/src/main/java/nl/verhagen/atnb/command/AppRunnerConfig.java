@@ -2,7 +2,6 @@ package nl.verhagen.atnb.command;
 
 import java.net.URI;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,6 +22,7 @@ public class AppRunnerConfig {
 	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
 	private ActivityTrackerEventConfig atEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
 	private BookTaskConfig bookTaskCfg = new BookTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
+	// TODO [2023.04.05 TV] Make loading of task handler dynamic
 	private List<AbstractTask> taskHandlers  = Arrays.asList(
 			new BookTask(atEventCfg, bookTaskCfg)
 			, new OpportunityTask(atEventCfg, new OpportunityTaskConfig(idCatalog))

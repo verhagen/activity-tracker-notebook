@@ -66,7 +66,6 @@ public class App {
 
     private void isKnownIdentifier(String identifier) {
 		appRunner.isKnownTaskIdentifier(identifier);
-		
 	}
 
 }

@@ -1,11 +1,5 @@
 package nl.verhagen.atnb.command;
 
-//import org.junit.Ignore;
-//import org.junit.Test;
-//import org.junit.runner.RunWith;
-//
-//import junitparams.JUnitParamsRunner;
-//import junitparams.Parameters;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.Listener;
 
@@ -25,7 +19,7 @@ public class AppRunnerTest {
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
 
 	@BeforeEach
-	public void setUp () {
+	public void setUp() {
 		System.setProperty("user.home", "src/test/data/user-home-default");
 	}
 
