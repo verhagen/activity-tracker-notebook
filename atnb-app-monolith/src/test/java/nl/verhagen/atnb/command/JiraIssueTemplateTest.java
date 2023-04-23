@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
 
 
 public class JiraIssueTemplateTest {
-    private static Path targetPath = Paths.get("target/issue");
+    private static Path targetPath = Paths.get("build/test-case/jira-issue-temp/issue");
 
     @BeforeAll
     public static void setUp() {
@@ -102,7 +102,7 @@ public class JiraIssueTemplateTest {
                         .create()
         );
 
-        Path expectedPath = Paths.get("target/issue/GITHUB-DOCS-24.md");
+        Path expectedPath = targetPath.resolve("GITHUB-DOCS-24.md");
         assertTrue(Files.exists(expectedPath), "Could not find expected file '" + expectedPath + "' absolute path '" + expectedPath.toAbsolutePath() + "'");
     }
 }

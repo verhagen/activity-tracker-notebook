@@ -19,11 +19,6 @@ import nl.verhagen.atnb.command.task.OpportunityTask;
 import nl.verhagen.atnb.command.task.OpportunityTaskConfig;
 
 public class AppRunnerConfig {
-	public enum DataLocation {
-        DATA_HOME
-        , NOTES
-        , ISSUES
-    }
 
 	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
 	private ActivityTrackerEventConfig atEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
@@ -34,24 +29,10 @@ public class AppRunnerConfig {
 			, new IssueTask(atEventCfg, new IssueTaskConfig(idCatalog))
 	);
 	private Map<String, AbstractTask> taskHandlerMap;
-
-    private static final Map<DataLocation, String> dataLocations = new HashMap<>();
-
-    static {
-        dataLocations.put(DataLocation.DATA_HOME, "");
-        dataLocations.put(DataLocation.NOTES, ".");
-        dataLocations.put(DataLocation.ISSUES, "target/issue");
-    }
-
     
     public AppRunnerConfig() {
     	taskHandlerMap = taskHandlers.stream().collect(Collectors.toMap(th -> th.getTaskIdentifier(), Function.identity()));
 	}
-
-	public void getPath(DataLocation dataLoc) {
-
-//        return Paths.get();
-    }
 
     public List<String> getIdentifiers() {
         return Arrays.asList(

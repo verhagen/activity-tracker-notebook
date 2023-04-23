@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -26,10 +27,7 @@ public class FileUtils {
     }
 
     public FileUtils() {
-//        JAVA_PROPERTY_KEYS.keySet().stream().forEach(k -> map.put(JAVA_PROPERTY_KEYS.get(k), System.getProperty(k)));
-        for (String key : JAVA_PROPERTY_KEYS.keySet()) {
-            map.put(JAVA_PROPERTY_KEYS.get(key), System.getProperty(key));
-        }
+        JAVA_PROPERTY_KEYS.keySet().stream().forEach(k -> map.put(JAVA_PROPERTY_KEYS.get(k), System.getProperty(k)));
     }
 
     public Path resolveVariables(String pathStr) throws IOException {
@@ -52,7 +50,8 @@ public class FileUtils {
                     throw new IOException("Argument 'pathStr' with value '" + pathStr
                             + "' contains variable '{{" + key + "}}, which is not a known variable."
                             + " Known variable names are [" + JAVA_PROPERTY_KEYS.values().stream().collect(Collectors.joining(", ")) + "]."
-                            + (props.size() > 0 ? " And it is also not a known key in the given Properties instance." : ""));
+                            + (props.size() > 0 ? " And it is also not a known key in the given Properties instance."
+                            + " Known property-keys: [" + props.keySet().stream().map(k -> k.toString()).collect(Collectors.joining(", ")) + "].": ""));
                 }
                 else {
                     pathStr = pathStr.replace("{{" + key + "}}", map.get(key));

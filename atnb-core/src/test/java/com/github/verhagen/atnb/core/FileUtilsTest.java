@@ -46,4 +46,19 @@ public class FileUtilsTest {
         assertTrue(path.toString().endsWith(expectedPath), "The path with value '" + path + "' should end with '" + expectedPath + "'");
     }
 
+    @Test
+    public void resolveVariables_unknownVariableWithProperties() {
+        Properties props = new Properties();
+        props.setProperty("home-alone", "Kevin McCallister");
+        try {
+            new FileUtils().resolveVariables("{{home-sweet-home}}/dev/project", props);
+            fail();
+        }
+        catch (IOException ioe) {
+            assertEquals("Argument 'pathStr' with value '{{home-sweet-home}}/dev/project' contains variable '{{home-sweet-home}}"
+                    + ", which is not a known variable. Known variable names are [temp-dir, base-dir, user-home]. And it is also not"
+                    + " a known key in the given Properties instance. Known property-keys: [home-alone]."
+                    , ioe.getMessage());
+        }
+    }
 }
