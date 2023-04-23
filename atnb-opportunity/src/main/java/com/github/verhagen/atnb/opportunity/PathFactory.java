@@ -9,10 +9,10 @@ import com.github.verhagen.atnb.io.MediaType;
 
 public class PathFactory {
 	private FileExtensionAndMediaType fileExtensionAndMediaType = new FileExtensionAndMediaType();
-	private PathFactoryConfiguration cfg;
+	private PathFactoryConfig cfg;
 
 
-	public PathFactory(PathFactoryConfiguration cfg) {
+	public PathFactory(PathFactoryConfig cfg) {
 		this.cfg = cfg;
 	}
 

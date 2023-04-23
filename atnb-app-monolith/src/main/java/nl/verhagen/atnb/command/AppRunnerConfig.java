@@ -9,14 +9,14 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.task.AbstractTask;
 import nl.verhagen.atnb.command.task.BookTask;
-import nl.verhagen.atnb.command.task.BookTaskConfiguration;
+import nl.verhagen.atnb.command.task.BookTaskConfig;
 import nl.verhagen.atnb.command.task.IssueTask;
-import nl.verhagen.atnb.command.task.IssueTaskConfiguration;
+import nl.verhagen.atnb.command.task.IssueTaskConfig;
 import nl.verhagen.atnb.command.task.OpportunityTask;
-import nl.verhagen.atnb.command.task.OpportunityTaskConfiguration;
+import nl.verhagen.atnb.command.task.OpportunityTaskConfig;
 
 public class AppRunnerConfig {
 	public enum DataLocation {
@@ -26,12 +26,12 @@ public class AppRunnerConfig {
     }
 
 	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
-	private ActivityTrackerEventConfiguration atEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
-	private BookTaskConfiguration bookTaskCfg = new BookTaskConfiguration(idCatalog, URI.create("https://www.manning.com/books/"));
+	private ActivityTrackerEventConfig atEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
+	private BookTaskConfig bookTaskCfg = new BookTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
 	private List<AbstractTask> taskHandlers  = Arrays.asList(
 			new BookTask(atEventCfg, bookTaskCfg)
-			, new OpportunityTask(atEventCfg, new OpportunityTaskConfiguration(idCatalog))
-			, new IssueTask(atEventCfg, new IssueTaskConfiguration(idCatalog))
+			, new OpportunityTask(atEventCfg, new OpportunityTaskConfig(idCatalog))
+			, new IssueTask(atEventCfg, new IssueTaskConfig(idCatalog))
 	);
 	private Map<String, AbstractTask> taskHandlerMap;
 

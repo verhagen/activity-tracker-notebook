@@ -3,9 +3,9 @@ package nl.verhagen.atnb.command.task;
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.TextFieldExtractor;
 
-public class BaseTemplateTaskConfiguration extends TemplateTaskConfiguration {
+public class BaseTemplateTaskConfig extends TemplateTaskConfig {
 
-	public BaseTemplateTaskConfiguration(IdentifierCatalog idCatalog) {
+	public BaseTemplateTaskConfig(IdentifierCatalog idCatalog) {
 		super(idCatalog, createTextFieldExtractor());
 	}
 

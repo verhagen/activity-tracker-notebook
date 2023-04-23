@@ -3,7 +3,7 @@ package com.github.verhagen.atnb.opportunity;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class PathFactoryConfiguration {
+public class PathFactoryConfig {
 	public enum IdentityOn {
 		DIRECTORY
 		, FILE
@@ -13,7 +13,7 @@ public class PathFactoryConfiguration {
 	private String title;
 
 	
-	public PathFactoryConfiguration(Path dataPath, IdentityOn identityOn, String title) {
+	public PathFactoryConfig(Path dataPath, IdentityOn identityOn, String title) {
 		this.dataPath = dataPath;
 		this.identityOn = identityOn;
 		this.title = title;

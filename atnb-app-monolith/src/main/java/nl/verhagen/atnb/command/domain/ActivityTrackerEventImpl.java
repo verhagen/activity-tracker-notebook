@@ -78,14 +78,14 @@ public class ActivityTrackerEventImpl implements VisitorAcceptor<ActivityTracker
 
 
 	public static class Builder {
-		private ActivityTrackerEventConfiguration cfg;
+		private ActivityTrackerEventConfig cfg;
 		private LocalDateTime timstamp;
 		private String author;
 		private String identifier;
 		private String command;
 		private Map<String, Object> fields;
 
-		public Builder(ActivityTrackerEventConfiguration cfg) {
+		public Builder(ActivityTrackerEventConfig cfg) {
 			this.cfg = cfg;
 		}
 
@@ -94,7 +94,7 @@ public class ActivityTrackerEventImpl implements VisitorAcceptor<ActivityTracker
 		}
 
 		
-		public ActivityTrackerEventConfiguration getActivityEntryConfiguration() {
+		public ActivityTrackerEventConfig getActivityEntryConfiguration() {
 			return cfg;
 		}
 

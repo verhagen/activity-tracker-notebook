@@ -12,13 +12,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 import nl.verhagen.atnb.command.AppException;
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.IdentifierCatalogMock;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 
 public class BaseTaskTest {
 	private IdentifierCatalog idReg = new IdentifierCatalogMock();
 	private Logger logger = LoggerFactory.getLogger(BaseTaskTest.class);
-	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
-	private BaseTaskConfiguration baseTaskCfg = new BaseTaskConfiguration(idReg);
+	private ActivityTrackerEventConfig activityEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
+	private BaseTaskConfig baseTaskCfg = new BaseTaskConfig(idReg);
 
 
 	@ParameterizedTest

@@ -11,14 +11,14 @@ import org.slf4j.LoggerFactory;
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.IdentifierCatalogMock;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.domain.Listener;
 
 public class OpportunityTaskTest {
 	private Logger logger = LoggerFactory.getLogger(OpportunityTaskTest.class);
 	private IdentifierCatalog idReg = new IdentifierCatalogMock();
-	private ActivityTrackerEventConfiguration atEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
-	private OpportunityTaskConfiguration bookTaskConfiguration = new OpportunityTaskConfiguration(idReg);
+	private ActivityTrackerEventConfig atEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
+	private OpportunityTaskConfig bookTaskCfg = new OpportunityTaskConfig(idReg);
 
 	// app  opportunity  create  [date] <agency> <organisation> <role> <mail-url>
 	// app  opportunity  create  [date: 2021.12.20]; agent: <agent>; org: <organisation>; role: <role>; mail: <http://uri-to-mail.org/>
@@ -31,7 +31,7 @@ public class OpportunityTaskTest {
 		, "opportunity | start  |       2021.12.05;         Harvey Nash;  org:          Lexis-Nexis;        Senior Software Developer; http://mail.org | opportunity.2021.12.05-harvey-nash_lexis-nexis_senior-software-developer"
 	})
 	public void create(String identifier, String command, String text, String expectedIdentifier) {
-		OpportunityTask task = new OpportunityTask(atEventCfg, bookTaskConfiguration);
+		OpportunityTask task = new OpportunityTask(atEventCfg, bookTaskCfg);
 		task.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
 			public void update(ActivityTrackerEvent event) {

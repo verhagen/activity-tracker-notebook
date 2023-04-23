@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.IdentifierCatalogMock;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 
 public class TaskHandlerCatalogTest {
 
@@ -15,11 +15,11 @@ public class TaskHandlerCatalogTest {
 	})
 	public void create(String first, String second) {
 		IdentifierCatalog idReg = new IdentifierCatalogMock();
-		CommunityTaskConfiguration communityTaskCfg = new CommunityTaskConfiguration(idReg);
-		ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("eddy-the-eagle", "london");
+		CommunityTaskConfig communityTaskCfg = new CommunityTaskConfig(idReg);
+		ActivityTrackerEventConfig activityEventCfg = new ActivityTrackerEventConfig("eddy-the-eagle", "london");
 		CommunityTask task = new CommunityTask(communityTaskCfg, activityEventCfg);
 
-		TaskHandlerCatalogConfiguration taskHandlerCatCfg = new TaskHandlerCatalogConfiguration(task);
+		TaskHandlerCatalogConfig taskHandlerCatCfg = new TaskHandlerCatalogConfig(task);
 		TaskHandlerCatalog taskHandlerCat = new TaskHandlerCatalog(taskHandlerCatCfg);
 		
 		taskHandlerCat.lookupTaskHandler("community");

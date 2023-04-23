@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import nl.verhagen.atnb.command.IdentifierCatalog;
 
-public class BaseTaskConfiguration extends TaskConfiguration {
+public class BaseTaskConfig extends TaskConfig {
 	private static List<String> taskIdentifiers = Arrays.asList(
 			"break"
 			, "pause"
@@ -26,7 +26,7 @@ public class BaseTaskConfiguration extends TaskConfiguration {
 			);
 
 
-	public BaseTaskConfiguration(IdentifierCatalog idCatalog) {
+	public BaseTaskConfig(IdentifierCatalog idCatalog) {
 		super(idCatalog);
 	}
 

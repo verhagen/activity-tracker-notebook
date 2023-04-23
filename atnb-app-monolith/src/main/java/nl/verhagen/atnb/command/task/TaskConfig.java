@@ -3,15 +3,15 @@ package nl.verhagen.atnb.command.task;
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.TextFieldExtractor;
 
-public abstract class TaskConfiguration {
+public abstract class TaskConfig {
 	private final IdentifierCatalog idCatalog;
 	private final TextFieldExtractor textFieldExtractor;
 
 	
-	public TaskConfiguration(IdentifierCatalog idCatalog) {
+	public TaskConfig(IdentifierCatalog idCatalog) {
 		this(idCatalog, null);
 	}
-	public TaskConfiguration(IdentifierCatalog idCatalog, TextFieldExtractor textFieldExtractor) {
+	public TaskConfig(IdentifierCatalog idCatalog, TextFieldExtractor textFieldExtractor) {
 		if (idCatalog == null) {
 			throw new IllegalArgumentException("Argument 'idRegistry' should not be null.");
 		}

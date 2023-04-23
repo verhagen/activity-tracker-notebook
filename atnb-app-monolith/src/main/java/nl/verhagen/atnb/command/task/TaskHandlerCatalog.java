@@ -3,12 +3,12 @@ package nl.verhagen.atnb.command.task;
 import com.github.verhagen.atnb.core.HierarchicalCatalog;
 
 public class TaskHandlerCatalog {
-	private final TaskHandlerCatalogConfiguration taskHandlerCatCfg;
+	private final TaskHandlerCatalogConfig taskHandlerCatCfg;
 	private final HierarchicalCatalog<AbstractTask> taskCatalog;
 //	private final Map<AbstractTask> tasks = new ArrayList<>();
 
 
-	public TaskHandlerCatalog(TaskHandlerCatalogConfiguration taskHandlerCatCfg) {
+	public TaskHandlerCatalog(TaskHandlerCatalogConfig taskHandlerCatCfg) {
 		this.taskHandlerCatCfg = taskHandlerCatCfg;
 		taskCatalog = null; // FIXME
 	}

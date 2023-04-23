@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,9 +14,9 @@ import nl.verhagen.atnb.command.CommandException;
 
 public class OpportunityTask extends TemplateTask {
 	private Logger logger = LoggerFactory.getLogger(OpportunityTask.class);
-	private OpportunityTaskConfiguration opportunityTaskCfg;
+	private OpportunityTaskConfig opportunityTaskCfg;
 
-	public OpportunityTask(ActivityTrackerEventConfiguration atEventCfg, OpportunityTaskConfiguration opportunityTaskCfg) {
+	public OpportunityTask(ActivityTrackerEventConfig atEventCfg, OpportunityTaskConfig opportunityTaskCfg) {
 		super(atEventCfg, opportunityTaskCfg, createTaskIdentifier("opportunity", Arrays.asList("create")));
 		this.opportunityTaskCfg = opportunityTaskCfg;
 	}

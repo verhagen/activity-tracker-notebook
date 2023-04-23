@@ -14,13 +14,13 @@ import nl.verhagen.atnb.command.AppException;
 import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.IdentifierCatalogMock;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.domain.Listener;
 
 public class BookTaskTest {
 	private IdentifierCatalog idReg = new IdentifierCatalogMock();
-	private ActivityTrackerEventConfiguration activityEventCfg = new ActivityTrackerEventConfiguration("miss-piggy", "london");
-	private BookTaskConfiguration bookTaskConfiguration = new BookTaskConfiguration(idReg, URI.create("https://www.manning.com/books/"));
+	private ActivityTrackerEventConfig activityEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
+	private BookTaskConfig bookTaskConfig = new BookTaskConfig(idReg, URI.create("https://www.manning.com/books/"));
 
 	// TODO [2022.01.14 TV] This should throw an Exception, as there is not enough information, about which specific book this is about.
 	// Identifier 'book' is a primary path key and can never be used as a unique identifier. And there is no identification information
@@ -33,7 +33,7 @@ public class BookTaskTest {
 			, "library.book.street-coder | jump | Argument 'command' with value 'jump' is not a known command. Known commands are: [help, start, stop, finish, add] "
 	})
 	public void startWithoutUniqueIdentifier(String identifier, String command, String expException) {
-		BookTask task = new BookTask(activityEventCfg, bookTaskConfiguration);
+		BookTask task = new BookTask(activityEventCfg, bookTaskConfig);
 		try {
 			task.execute(identifier, command, null);
 			fail("Expecting an " + AppException.class.getSimpleName() + " will be thrown.");
@@ -55,7 +55,7 @@ public class BookTaskTest {
 		
 	})
 	public void execute(String identifier, String command, String text, String expectedIdentifier) {
-		BookTask task = new BookTask(activityEventCfg, bookTaskConfiguration); 
+		BookTask task = new BookTask(activityEventCfg, bookTaskConfig);
 		task.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
 			public void update(ActivityTrackerEvent event) {

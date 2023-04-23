@@ -9,9 +9,9 @@ import nl.verhagen.atnb.command.TextFieldExtractor;
 import nl.verhagen.atnb.command.UriInformationExtractor;
 import nl.verhagen.atnb.command.UriTextField;
 
-public class IssueTaskConfiguration extends TaskConfiguration {
+public class IssueTaskConfig extends TaskConfig {
 
-	public IssueTaskConfiguration(IdentifierCatalog idCatalog) {
+	public IssueTaskConfig(IdentifierCatalog idCatalog) {
 		super(idCatalog, createTextFieldExtractor());
 	}
 

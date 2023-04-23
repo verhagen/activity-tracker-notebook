@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import com.github.verhagen.atnb.io.MediaTypes;
-import com.github.verhagen.atnb.opportunity.PathFactoryConfiguration.IdentityOn;
+import com.github.verhagen.atnb.opportunity.PathFactoryConfig.IdentityOn;
 
 public class PathFactoryTest {
 	private static Path dataPath = Paths.get("build/generated-logbook");
@@ -29,7 +29,7 @@ public class PathFactoryTest {
 
 	@Test
 	public void create() throws IOException {
-		PathFactoryConfiguration cfg = new PathFactoryConfiguration(dataPath, IdentityOn.FILE, "activity-logbook");
+		PathFactoryConfig cfg = new PathFactoryConfig(dataPath, IdentityOn.FILE, "activity-logbook");
 		PathFactory pathFactory = new PathFactory(cfg);
 		Path filePath = pathFactory.create(MediaTypes.TEXT_MARKDOWN, "2012.12-logbook");
 

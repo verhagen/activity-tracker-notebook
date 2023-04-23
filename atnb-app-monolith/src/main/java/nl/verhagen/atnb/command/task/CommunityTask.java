@@ -2,7 +2,7 @@ package nl.verhagen.atnb.command.task;
 
 import java.util.Arrays;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 
 /**
  * This is a special task, as all other tasks will get registered underneath this task <i>community</i>.
@@ -16,7 +16,7 @@ import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
  */
 public class CommunityTask extends AbstractTask {
 
-	public CommunityTask(TaskConfiguration TaskCfg, ActivityTrackerEventConfiguration atEventCfg) {
+	public CommunityTask(TaskConfig TaskCfg, ActivityTrackerEventConfig atEventCfg) {
 		super(TaskCfg, atEventCfg, createTaskIdentifier("community", Arrays.asList("add")));
 	}
 

@@ -13,7 +13,7 @@ import nl.verhagen.atnb.command.IdentifierCatalog;
 import nl.verhagen.atnb.command.TextField;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventImpl;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.domain.TaskIdentifier;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -26,20 +26,20 @@ public abstract class AbstractTask {
 	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
 
 	protected final Map<String, TaskIdentifier> taskIdentifiers = new HashMap<>();
-	private final ActivityTrackerEventConfiguration atEventCfg;
+	private final ActivityTrackerEventConfig atEventCfg;
 	private final List<Listener<ActivityTrackerEvent>> listeners = new LinkedList<>();
-	private final TaskConfiguration taskCfg;
+	private final TaskConfig taskCfg;
 
 
-	public AbstractTask(TaskConfiguration taskConfiguration, ActivityTrackerEventConfiguration atEventCfg
+	public AbstractTask(TaskConfig taskCfg, ActivityTrackerEventConfig atEventCfg
 			, TaskIdentifier taskIdentifier) {
-		this(taskConfiguration, atEventCfg, Arrays.asList(taskIdentifier));
+		this(taskCfg, atEventCfg, Arrays.asList(taskIdentifier));
 	}
 
 
-	public AbstractTask(TaskConfiguration TaskCfg, ActivityTrackerEventConfiguration atEventCfg
+	public AbstractTask(TaskConfig taskCfg, ActivityTrackerEventConfig atEventCfg
 			, Collection<TaskIdentifier> taskIdentifierColl) {
-		this.taskCfg = TaskCfg;
+		this.taskCfg = taskCfg;
 		this.atEventCfg = atEventCfg;
 		for (TaskIdentifier taskIdentifier : taskIdentifierColl) {
 			for (String taskIdentifierStr : taskIdentifier.getIdentifiers()) {
@@ -109,7 +109,7 @@ public abstract class AbstractTask {
 	}
 
 
-	public ActivityTrackerEventConfiguration getAtEventCfg() {
+	public ActivityTrackerEventConfig getAtEventCfg() {
 		return atEventCfg;
 	}
 

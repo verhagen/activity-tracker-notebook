@@ -5,10 +5,10 @@ import java.util.Arrays;
 
 import nl.verhagen.atnb.command.*;
 
-public class BookTaskConfiguration extends RepositoryTaskConfiguration {
+public class BookTaskConfig extends RepositoryTaskConfig {
 	private final URI baseUri;
 
-	public BookTaskConfiguration(IdentifierCatalog idCatalog, URI baseUri) {
+	public BookTaskConfig(IdentifierCatalog idCatalog, URI baseUri) {
 		super(idCatalog, createTextFieldExtractor());
 		this.baseUri = baseUri;
 	}

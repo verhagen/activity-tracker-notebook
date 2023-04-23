@@ -3,12 +3,12 @@ package nl.verhagen.atnb.command.task;
 import java.util.Arrays;
 import java.util.Collection;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.domain.TaskIdentifier;
 
 public class BaseTemplateTask extends TemplateTask {
 
-	public BaseTemplateTask(ActivityTrackerEventConfiguration atEventCfg, BaseTemplateTaskConfiguration baseTempTaskCfg) {
+	public BaseTemplateTask(ActivityTrackerEventConfig atEventCfg, BaseTemplateTaskConfig baseTempTaskCfg) {
 		super(atEventCfg, baseTempTaskCfg, createTaskIdentifierCollection());
 	}
 

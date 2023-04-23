@@ -5,10 +5,10 @@ import java.util.Arrays;
 
 import nl.verhagen.atnb.command.*;
 
-public class OpportunityTaskConfiguration extends TemplateTaskConfiguration {
+public class OpportunityTaskConfig extends TemplateTaskConfig {
 
 
-	public OpportunityTaskConfiguration(IdentifierCatalog idRegistery) {
+	public OpportunityTaskConfig(IdentifierCatalog idRegistery) {
 		super(idRegistery, createTextFieldExtractor());
 	}
 

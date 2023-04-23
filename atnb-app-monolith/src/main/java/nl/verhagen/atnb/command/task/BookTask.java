@@ -14,14 +14,14 @@ import org.slf4j.LoggerFactory;
 import nl.verhagen.atnb.command.CommandException;
 import nl.verhagen.atnb.command.CommandName;
 import nl.verhagen.atnb.command.UriIdentifierConverter;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 
 public class BookTask extends RepositoryTask {
 	private Logger logger = LoggerFactory.getLogger(BookTask.class);
-	private final BookTaskConfiguration bookTaskCfg;
+	private final BookTaskConfig bookTaskCfg;
 
 
-	public BookTask(ActivityTrackerEventConfiguration atEventCfg, BookTaskConfiguration bookTaskCfg) {
+	public BookTask(ActivityTrackerEventConfig atEventCfg, BookTaskConfig bookTaskCfg) {
 		super(atEventCfg, bookTaskCfg, createTaskIdentifier("book", Arrays.asList(CommandName.ADD.name())));
 		this.bookTaskCfg = bookTaskCfg;
 	}

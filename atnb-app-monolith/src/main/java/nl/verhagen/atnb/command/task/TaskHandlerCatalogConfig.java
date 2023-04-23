@@ -1,10 +1,10 @@
 package nl.verhagen.atnb.command.task;
 
-public class TaskHandlerCatalogConfiguration {
+public class TaskHandlerCatalogConfig {
 	private final AbstractTask rootTaskIdentifier;
 
 
-	public TaskHandlerCatalogConfiguration(AbstractTask rootTaskIdentifier) {
+	public TaskHandlerCatalogConfig(AbstractTask rootTaskIdentifier) {
 		this.rootTaskIdentifier = rootTaskIdentifier;
 	}
 

@@ -14,13 +14,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.github.verhagen.atnb.io.MediaTypes;
-import com.github.verhagen.atnb.opportunity.PathFactoryConfiguration.IdentityOn;
+import com.github.verhagen.atnb.opportunity.PathFactoryConfig.IdentityOn;
 
 public class App {
 	private static Logger logger = LoggerFactory.getLogger(App.class);
 
 	private Path dataPath = Paths.get("build/generated-activity-logbook");
-	private PathFactoryConfiguration cfg = new PathFactoryConfiguration(dataPath.resolve("opportunity"), IdentityOn.DIRECTORY, "content");
+	private PathFactoryConfig cfg = new PathFactoryConfig(dataPath.resolve("opportunity"), IdentityOn.DIRECTORY, "content");
 	private PathFactory pathFactory = new PathFactory(cfg);
 	private OpportunityDocumentFactory documentFactory = new OpportunityDocumentFactory();
 	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");

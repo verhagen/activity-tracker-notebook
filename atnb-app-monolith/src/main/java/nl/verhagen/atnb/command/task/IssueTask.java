@@ -2,11 +2,11 @@ package nl.verhagen.atnb.command.task;
 
 import java.util.Arrays;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfiguration;
+import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 
 public class IssueTask extends AbstractTask {
 
-	public IssueTask(ActivityTrackerEventConfiguration atEventCfg, IssueTaskConfiguration taskConfiguration) {
+	public IssueTask(ActivityTrackerEventConfig atEventCfg, IssueTaskConfig taskConfiguration) {
 		super(taskConfiguration, atEventCfg, createTaskIdentifier("issue", Arrays.asList("create")));
 	}
 
