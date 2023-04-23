@@ -4,7 +4,7 @@
 	-->
 
     <appender name="LOG_CMD_FILE" class="ch.qos.logback.core.FileAppender">
-        <file>target/logbook/activity-commands.log</file>
+        <file>build/test-case/logs/activity-tracker-and-notebook.log</file>
         <!-- encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
