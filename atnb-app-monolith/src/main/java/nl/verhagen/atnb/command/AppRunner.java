@@ -1,6 +1,7 @@
 package nl.verhagen.atnb.command;
 
 import com.github.verhagen.atnb.config.AppMetaConfig;
+import com.github.verhagen.atnb.core.FileUtils;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.TaskIdentifier;
 import org.apache.commons.lang3.StringUtils;
@@ -29,16 +30,16 @@ public class AppRunner {
 
 	// FIXME [2023.04.05 TV] Remove hard coded path
     private Path issueTargetPath;
-    private JiraIssueFactoryConfiguration cfg = new JiraIssueFactoryConfiguration.Builder()
+    private JiraIssueFactoryConfig issueFactoryCfg = new JiraIssueFactoryConfig.Builder()
             .addOrganisation("cs")
             .addProject("lima")
             .addIssuePrefix("LPBUNI")
             .addIssuePath(issueTargetPath)
             .addIssueServer(URI.create("https://jira.int.cipal.be/"))
             .create();
-    private final AppRunnerConfiguration appRunnerCfg;
-    private IssueFactory issueFactory = new JiraIssueFactory(cfg);
-    private JiraIssueTemplate issueTemplate = new JiraIssueTemplate(new JiraIssueTemplateConfiguration(issueTargetPath));
+    private final AppRunnerConfig appRunnerCfg;
+    private IssueFactory issueFactory = new JiraIssueFactory(issueFactoryCfg);
+    private JiraIssueTemplate issueTemplate = new JiraIssueTemplate(new JiraIssueTemplateConfig(issueTargetPath));
     private final Set<TaskIdentifier> knownActivities = new HashSet<>();
 
     public enum Commands {
@@ -47,7 +48,7 @@ public class AppRunner {
         , CREATE
     }
 
-    public AppRunner(AppRunnerConfiguration appRunnerCfg) {
+    public AppRunner(AppRunnerConfig appRunnerCfg) {
     	this.appRunnerCfg = appRunnerCfg;
 
         // FIXME [2023.04.05 TV] Remove hard coded creating of TaskIdentifiers and Commands
@@ -82,7 +83,13 @@ public class AppRunner {
 		catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		issueTargetPath = Paths.get(props.getProperty("issue-target-path"));
+		FileUtils fileUtils = new FileUtils();
+		try {
+			issueTargetPath = fileUtils.resolveVariables(props.getProperty("issue-target-path"), props);
+		}
+		catch (IOException ioe) {
+			throw new AppException(ioe);
+		}
     }
 
 

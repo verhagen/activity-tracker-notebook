@@ -3,13 +3,13 @@ package nl.verhagen.atnb.command;
 import java.net.URI;
 import java.nio.file.Path;
 
-public class IssueFactoryConfiguration {
+public class IssueFactoryConfig {
     private final String organisation;
     private final String project;
     private final Path issuePath;
     private final URI host;
 
-    public IssueFactoryConfiguration(Builder bldr) {
+    public IssueFactoryConfig(Builder bldr) {
         organisation = bldr.getOrganisation();
         project = bldr.getProject();
         issuePath = bldr.getIssuePath();
@@ -39,8 +39,8 @@ public class IssueFactoryConfiguration {
         private Path issuePath;
         private URI host;
 
-        public IssueFactoryConfiguration create() {
-            return new IssueFactoryConfiguration(this);
+        public IssueFactoryConfig create() {
+            return new IssueFactoryConfig(this);
         }
 
         public Path getIssuePath() {

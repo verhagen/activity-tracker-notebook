@@ -15,7 +15,7 @@ public class JiraIssueFactoryTest {
     @Test
     public void test() {
         URI issueHost = URI.create("https://jira.company.com/");
-        JiraIssueFactoryConfiguration cfg = new JiraIssueFactoryConfiguration.Builder()
+        JiraIssueFactoryConfig cfg = new JiraIssueFactoryConfig.Builder()
                 .addOrganisation("github")
                 .addProject("docs")
                 .addIssuePrefix("github-docs")

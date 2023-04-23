@@ -19,7 +19,7 @@ public class AppTestIncorrectCases {
 	private AppRunner appRunner;
 
 	@Mock
-	private AppRunnerConfiguration appCfg;
+	private AppRunnerConfig appCfg;
 
 //	@Captor
 //	private ArgumentCaptor<String> identifierStr;

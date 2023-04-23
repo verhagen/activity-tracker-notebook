@@ -14,9 +14,9 @@ import static java.nio.file.StandardOpenOption.CREATE_NEW;
 
 public class JiraIssueTemplate {
     private static Logger log = LoggerFactory.getLogger(JiraIssueTemplate.class);
-    private final JiraIssueTemplateConfiguration cfg;
+    private final JiraIssueTemplateConfig cfg;
 
-    public JiraIssueTemplate(JiraIssueTemplateConfiguration cfg) {
+    public JiraIssueTemplate(JiraIssueTemplateConfig cfg) {
         this.cfg = cfg;
     }
 

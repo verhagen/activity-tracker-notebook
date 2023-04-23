@@ -4,11 +4,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class JiraIssueFactory implements IssueFactory {
-    private final JiraIssueFactoryConfiguration cfg;
+    private final JiraIssueFactoryConfig cfg;
     private final Pattern patternPrefixWithNumber = Pattern.compile("^(\\w+)-(\\d+)$");
     private final Pattern patternOnlyNumber = Pattern.compile("^(\\d+)$");
 
-    public JiraIssueFactory(JiraIssueFactoryConfiguration cfg) {
+    public JiraIssueFactory(JiraIssueFactoryConfig cfg) {
         this.cfg = cfg;
     }
 

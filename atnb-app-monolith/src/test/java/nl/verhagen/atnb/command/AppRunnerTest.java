@@ -33,7 +33,7 @@ public class AppRunnerTest {
     @Test
     public void startIssue() {
         LocalDateTime timeStamp = LocalDateTime.parse("2021.12.07 13:35", formatter);
-        AppRunner appRunner = new AppRunner(new AppRunnerConfiguration());
+        AppRunner appRunner = new AppRunner(new AppRunnerConfig());
         appRunner.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
 			public void update(ActivityTrackerEvent event) {
@@ -53,7 +53,7 @@ public class AppRunnerTest {
     @Test
     public void stopIssue() {
         LocalDateTime timeStamp = LocalDateTime.parse("2021.12.07 13:50", formatter);
-        AppRunner appRunner = new AppRunner(new AppRunnerConfiguration());
+        AppRunner appRunner = new AppRunner(new AppRunnerConfig());
         appRunner.addListener(new Listener<ActivityTrackerEvent>() {
 			@Override
 			public void update(ActivityTrackerEvent event) {
@@ -75,7 +75,7 @@ public class AppRunnerTest {
 	})
 	public void create(String identifier, String command, String a, String b) {
 		try {
-			new AppRunner(new AppRunnerConfiguration()).execute(identifier, command);
+			new AppRunner(new AppRunnerConfig()).execute(identifier, command);
 			fail("Expecting an " + AppException.class.getSimpleName() + " will be thrown.");
 		}
 		catch (AppException ae) {
@@ -90,7 +90,8 @@ public class AppRunnerTest {
 	})
 	public void createSuccess(String identifier, String command, String a, String b) {
 		try {
-			new AppRunner(new AppRunnerConfiguration()).execute(identifier, command);
+			new AppRunner(new AppRunnerConfig()).execute(identifier, command);
+			fail();
 		}
 		catch (AppException ae) {
 			assertEquals(b, ae.getMessage());

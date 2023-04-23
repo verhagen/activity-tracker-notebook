@@ -18,7 +18,7 @@ import nl.verhagen.atnb.command.task.IssueTaskConfiguration;
 import nl.verhagen.atnb.command.task.OpportunityTask;
 import nl.verhagen.atnb.command.task.OpportunityTaskConfiguration;
 
-public class AppRunnerConfiguration {
+public class AppRunnerConfig {
 	public enum DataLocation {
         DATA_HOME
         , NOTES
@@ -44,7 +44,7 @@ public class AppRunnerConfiguration {
     }
 
     
-    public AppRunnerConfiguration() {
+    public AppRunnerConfig() {
     	taskHandlerMap = taskHandlers.stream().collect(Collectors.toMap(th -> th.getTaskIdentifier(), Function.identity()));
 	}
 

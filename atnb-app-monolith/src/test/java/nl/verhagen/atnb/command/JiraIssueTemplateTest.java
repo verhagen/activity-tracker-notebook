@@ -56,7 +56,7 @@ public class JiraIssueTemplateTest {
     }
     @Test
     public void create() {
-        JiraIssueTemplate jit = new JiraIssueTemplate(new JiraIssueTemplateConfiguration(targetPath));
+        JiraIssueTemplate jit = new JiraIssueTemplate(new JiraIssueTemplateConfig(targetPath));
         String text = jit.create(
                 new JiraIssue.Builder()
                         .addOrganisation("github")
@@ -91,7 +91,7 @@ public class JiraIssueTemplateTest {
     @Test
     public void createAsFile() throws IOException {
 
-        JiraIssueTemplate jit = new JiraIssueTemplate(new JiraIssueTemplateConfiguration(targetPath));
+        JiraIssueTemplate jit = new JiraIssueTemplate(new JiraIssueTemplateConfig(targetPath));
         jit.createAsFile(
                 new JiraIssue.Builder()
                         .addOrganisation("github")

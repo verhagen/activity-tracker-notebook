@@ -7,7 +7,7 @@ public class App {
 	private final AppRunner appRunner;
 
     public  App() {
-        this(new AppRunner(new AppRunnerConfiguration()));
+        this(new AppRunner(new AppRunnerConfig()));
     }
     public App(AppRunner appRunner) {
         if (appRunner == null) {

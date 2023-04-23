@@ -5,11 +5,11 @@ import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
 
-public class JiraIssueFactoryConfiguration extends IssueFactoryConfiguration {
+public class JiraIssueFactoryConfig extends IssueFactoryConfig {
     private String issueMainPrefix;
     private final Set<String> issuePrefix;
 
-    public JiraIssueFactoryConfiguration(Builder bldr) {
+    public JiraIssueFactoryConfig(Builder bldr) {
         super(bldr.getSuperBuilder());
         issueMainPrefix = bldr.getIssueMainPrefix();
         issuePrefix = bldr.getIssuePrefix();
@@ -25,15 +25,15 @@ public class JiraIssueFactoryConfiguration extends IssueFactoryConfiguration {
 
 
     static class Builder {
-        private IssueFactoryConfiguration.Builder superBldr = new IssueFactoryConfiguration.Builder();
+        private IssueFactoryConfig.Builder superBldr = new IssueFactoryConfig.Builder();
         private String issueMainPrefix;
         private Set<String> issuePrefix = new HashSet<>();
 
-        public JiraIssueFactoryConfiguration create() {
-            return new JiraIssueFactoryConfiguration(this);
+        public JiraIssueFactoryConfig create() {
+            return new JiraIssueFactoryConfig(this);
         }
 
-        IssueFactoryConfiguration.Builder getSuperBuilder() {
+        IssueFactoryConfig.Builder getSuperBuilder() {
             return superBldr;
         }
 
