@@ -3,7 +3,11 @@ package nl.verhagen.atnb.command.task;
 import java.net.URI;
 import java.util.Arrays;
 
-import nl.verhagen.atnb.command.*;
+import com.github.verhagen.atnb.core.textfield.StringTextField;
+import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
+import com.github.verhagen.atnb.core.textfield.UriInformationExtractor;
+import com.github.verhagen.atnb.core.textfield.UriTextField;
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
 
 public class BookTaskConfig extends RepositoryTaskConfig {
 	private final URI baseUri;

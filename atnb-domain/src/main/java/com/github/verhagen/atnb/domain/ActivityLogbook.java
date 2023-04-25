@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class ActivityLogbook {
 	@JsonIgnore
 	private Logger logger = LoggerFactory.getLogger(ActivityLogbook.class);
-	private IdentifierCatalog registery = new IdentifierCatalog();
+	private IdentifierCatalog registery = new IdentifierCatalogImpl();
 	private List<Activity> logbook = new ArrayList<>();
 
 

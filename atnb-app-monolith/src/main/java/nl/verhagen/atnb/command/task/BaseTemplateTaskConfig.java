@@ -1,7 +1,7 @@
 package nl.verhagen.atnb.command.task;
 
-import nl.verhagen.atnb.command.IdentifierCatalog;
-import nl.verhagen.atnb.command.TextFieldExtractor;
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
 
 public class BaseTemplateTaskConfig extends TemplateTaskConfig {
 

@@ -2,23 +2,29 @@ package nl.verhagen.atnb.command.task;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nl.verhagen.atnb.command.IdentifierCatalog;
-import nl.verhagen.atnb.command.IdentifierCatalogMock;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.domain.Listener;
 
+@ExtendWith(MockitoExtension.class)
 public class OpportunityTaskTest {
 	private Logger logger = LoggerFactory.getLogger(OpportunityTaskTest.class);
-	private IdentifierCatalog idReg = new IdentifierCatalogMock();
+	@Mock
+	private IdentifierCatalog idCatalog;
 	private ActivityTrackerEventConfig atEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
-	private OpportunityTaskConfig bookTaskCfg = new OpportunityTaskConfig(idReg);
+	@InjectMocks
+	private OpportunityTaskConfig bookTaskCfg;
 
 	// app  opportunity  create  [date] <agency> <organisation> <role> <mail-url>
 	// app  opportunity  create  [date: 2021.12.20]; agent: <agent>; org: <organisation>; role: <role>; mail: <http://uri-to-mail.org/>

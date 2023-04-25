@@ -1,4 +1,6 @@
-package nl.verhagen.atnb.command;
+package com.github.verhagen.atnb.core.textfield;
+
+import com.github.verhagen.atnb.core.textfield.TextField;
 
 import java.util.stream.Stream;
 

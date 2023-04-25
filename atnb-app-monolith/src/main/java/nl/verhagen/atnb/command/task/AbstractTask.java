@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import nl.verhagen.atnb.command.IdentifierCatalog;
-import nl.verhagen.atnb.command.TextField;
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import com.github.verhagen.atnb.core.textfield.TextField;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventImpl;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;

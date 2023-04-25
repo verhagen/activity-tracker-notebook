@@ -3,7 +3,7 @@ package nl.verhagen.atnb.command;
 import java.util.Collections;
 import java.util.List;
 
-public class IdentifierCatalogMock implements IdentifierCatalog {
+public class IdentifierCatalogMock implements IdentifierCatalogC {
 
 	@Override
 	public void add(String[] identifierPath) {

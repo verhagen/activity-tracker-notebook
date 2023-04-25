@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command;
+package com.github.verhagen.atnb.core.textfield;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -11,6 +11,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.github.verhagen.atnb.core.textfield.StringTextField;
+import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
+import com.github.verhagen.atnb.core.textfield.UriTextField;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;

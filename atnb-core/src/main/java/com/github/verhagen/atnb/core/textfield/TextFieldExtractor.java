@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command;
+package com.github.verhagen.atnb.core.textfield;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nl.verhagen.atnb.command.domain.TextWithReferences;
+import com.github.verhagen.atnb.core.domain.TextWithReferences;
 
 public class TextFieldExtractor {
 	private Logger logger = LoggerFactory.getLogger(TextFieldExtractor.class);

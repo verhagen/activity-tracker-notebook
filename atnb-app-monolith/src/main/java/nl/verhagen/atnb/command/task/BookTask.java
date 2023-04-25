@@ -4,7 +4,9 @@ import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.TaskIdentifier;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventImpl;
@@ -45,7 +47,8 @@ public class BookTask extends RepositoryTask {
 
 	// FIXME [2023.04.05 TV]
 	public void execute(String[] identifierPath, String command, Map<String, Object> fields) {
-		List<String> foundIdentifiers = bookTaskCfg.getIdCatalog().search(identifierPath);
+		List<String> foundIdentifiers = bookTaskCfg.getIdCatalog().search(
+				Arrays.stream(identifierPath).collect(Collectors.joining(IdentifierCatalog.BY_DOT)));
 
 		TaskIdentifier taskId = null;
 		String xx = getTaskIdentifier();
@@ -70,7 +73,7 @@ public class BookTask extends RepositoryTask {
 //		}
 
 		if (foundIdentifiers.size() == 0) {
-			getIdentifierCatalog().add(identifierPath);
+			getIdentifierCatalog().add(Arrays.asList(identifierPath));
 		}
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);

@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command;
+package com.github.verhagen.atnb.core.textfield;
 
 import java.net.URI;
 import java.util.stream.Collectors;

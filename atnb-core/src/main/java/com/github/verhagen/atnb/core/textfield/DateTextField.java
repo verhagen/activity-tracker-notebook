@@ -1,8 +1,9 @@
-package nl.verhagen.atnb.command;
+package com.github.verhagen.atnb.core.textfield;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import com.github.verhagen.atnb.core.textfield.AbstractTextField;
 import org.apache.commons.lang3.StringUtils;
 
 public class DateTextField extends AbstractTextField {

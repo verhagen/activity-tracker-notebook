@@ -6,21 +6,31 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.net.URI;
 
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import nl.verhagen.atnb.command.AppException;
-import nl.verhagen.atnb.command.IdentifierCatalog;
-import nl.verhagen.atnb.command.IdentifierCatalogMock;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.domain.Listener;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+@ExtendWith(MockitoExtension.class)
 public class BookTaskTest {
-	private IdentifierCatalog idReg = new IdentifierCatalogMock();
+	@Mock
+	private IdentifierCatalog idCatalog;
 	private ActivityTrackerEventConfig activityEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
-	private BookTaskConfig bookTaskConfig = new BookTaskConfig(idReg, URI.create("https://www.manning.com/books/"));
+	private BookTaskConfig bookTaskConfig;
+
+	@BeforeEach
+	public void setUp() {
+		bookTaskConfig = new BookTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
+	}
 
 	// TODO [2022.01.14 TV] This should throw an Exception, as there is not enough information, about which specific book this is about.
 	// Identifier 'book' is a primary path key and can never be used as a unique identifier. And there is no identification information

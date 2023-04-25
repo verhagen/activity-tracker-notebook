@@ -3,6 +3,11 @@ package nl.verhagen.atnb.command.task;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
+import com.github.verhagen.atnb.core.textfield.DateTextField;
+import com.github.verhagen.atnb.core.textfield.StringTextField;
+import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
+import com.github.verhagen.atnb.core.textfield.UriTextField;
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import nl.verhagen.atnb.command.*;
 
 public class OpportunityTaskConfig extends TemplateTaskConfig {

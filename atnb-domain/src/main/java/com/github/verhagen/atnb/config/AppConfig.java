@@ -2,6 +2,7 @@ package com.github.verhagen.atnb.config;
 
 import com.github.verhagen.atnb.AtnbRuntimeException;
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import com.github.verhagen.atnb.domain.IdentifierCatalogImpl;
 import org.apache.commons.lang3.StringUtils;
 
 import java.nio.file.Path;
@@ -72,7 +73,8 @@ public class AppConfig {
     }
 
     private IdentifierCatalog create() {
-        IdentifierCatalog idCatalog = new IdentifierCatalog();
+        IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
+        // TODO [2023.04.25 TV] Remove default IdentifierCatalog filling
         List<String> ids = Arrays.asList(new String[] {
                 "programming.language.java"
                 , "programming.language.kotlin"

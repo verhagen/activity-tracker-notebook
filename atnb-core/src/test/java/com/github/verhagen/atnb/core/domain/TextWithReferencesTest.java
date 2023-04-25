@@ -1,7 +1,8 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.core.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.github.verhagen.atnb.core.domain.TextWithReferences;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 

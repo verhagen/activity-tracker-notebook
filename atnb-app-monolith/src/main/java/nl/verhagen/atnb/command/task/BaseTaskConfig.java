@@ -2,7 +2,8 @@ package nl.verhagen.atnb.command.task;
 
 import java.util.Arrays;
 import java.util.List;
-import nl.verhagen.atnb.command.IdentifierCatalog;
+
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
 
 public class BaseTaskConfig extends TaskConfig {
 	private static List<String> taskIdentifiers = Arrays.asList(

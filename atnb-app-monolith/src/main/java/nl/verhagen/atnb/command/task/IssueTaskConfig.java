@@ -3,11 +3,11 @@ package nl.verhagen.atnb.command.task;
 import java.net.URI;
 import java.util.Arrays;
 
-import nl.verhagen.atnb.command.IdentifierCatalog;
-import nl.verhagen.atnb.command.StringTextField;
-import nl.verhagen.atnb.command.TextFieldExtractor;
-import nl.verhagen.atnb.command.UriInformationExtractor;
-import nl.verhagen.atnb.command.UriTextField;
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import com.github.verhagen.atnb.core.textfield.StringTextField;
+import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
+import com.github.verhagen.atnb.core.textfield.UriInformationExtractor;
+import com.github.verhagen.atnb.core.textfield.UriTextField;
 
 public class IssueTaskConfig extends TaskConfig {
 

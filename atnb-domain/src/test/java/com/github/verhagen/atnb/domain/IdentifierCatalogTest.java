@@ -18,7 +18,7 @@ public class IdentifierCatalogTest {
 
 	@Test
 	void createSimpleIdentifiers() throws Exception {
-		IdentifierCatalog idCatalog = new IdentifierCatalog();
+		IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
 		List<String> ids = Arrays.asList(new String[] {"java", "kotlin", "type-script"});
 		idCatalog.add(ids);
 
@@ -30,7 +30,7 @@ public class IdentifierCatalogTest {
 
 	@Test
 	void createPathIdentifiers() throws Exception {
-		IdentifierCatalog idCatalog = new IdentifierCatalog();
+		IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
 		List<String> ids = Arrays.asList(new String[] {"programming.language.java", "programming.language.kotlin", "programming.language.type-script", "programming.language.java"});
 		idCatalog.add(ids);
 
@@ -66,7 +66,7 @@ public class IdentifierCatalogTest {
 
 
 	private IdentifierCatalog create() {
-		IdentifierCatalog idCatalog = new IdentifierCatalog();
+		IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
 		List<String> ids = Arrays.asList(new String[] {
 				  "programming.language.java" 
 //				, "programming.language.kotlin" 

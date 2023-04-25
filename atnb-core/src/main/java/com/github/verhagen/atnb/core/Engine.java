@@ -3,17 +3,13 @@ package com.github.verhagen.atnb.core;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.github.verhagen.atnb.domain.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.verhagen.atnb.domain.Activity;
-import com.github.verhagen.atnb.domain.ActivityLogbook;
-import com.github.verhagen.atnb.domain.IdentifierCatalog;
-import com.github.verhagen.atnb.domain.UnknownIdentifierException;
-
 public class Engine {
 	private Logger logger = LoggerFactory.getLogger(Engine.class);
-	private IdentifierCatalog registery = new IdentifierCatalog();
+	private IdentifierCatalog registery = new IdentifierCatalogImpl();
 	private ActivityLogbook activityLogbook = new ActivityLogbook();
 
 

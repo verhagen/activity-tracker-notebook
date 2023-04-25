@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.core.domain;
 
 import java.net.URI;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import nl.verhagen.atnb.command.InformationExtractor;
+import com.github.verhagen.atnb.core.textfield.InformationExtractor;
 
 /**
  * Extract and replace URI with references, each uri like {@code https://www.cnn.com} is replaced by a reference

@@ -1,7 +1,7 @@
 package nl.verhagen.atnb.command.task;
 
-import nl.verhagen.atnb.command.IdentifierCatalog;
-import nl.verhagen.atnb.command.TextFieldExtractor;
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
 
 public abstract class TaskConfig {
 	private final IdentifierCatalog idCatalog;
@@ -13,7 +13,7 @@ public abstract class TaskConfig {
 	}
 	public TaskConfig(IdentifierCatalog idCatalog, TextFieldExtractor textFieldExtractor) {
 		if (idCatalog == null) {
-			throw new IllegalArgumentException("Argument 'idRegistry' should not be null.");
+			throw new IllegalArgumentException("Argument 'idCatalogs' should not be null.");
 		}
 		this.idCatalog = idCatalog;
 		this.textFieldExtractor = textFieldExtractor;

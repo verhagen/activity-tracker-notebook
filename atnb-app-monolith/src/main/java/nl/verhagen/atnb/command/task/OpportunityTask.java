@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import org.slf4j.Logger;
@@ -44,9 +45,10 @@ public class OpportunityTask extends TemplateTask {
 	}
 
 	public void execute(String[] identifierPath, String command, Map<String, Object> fields) {
-		List<String> foundIdentifiers = opportunityTaskCfg.getIdCatalog().search(identifierPath);
+		List<String> foundIdentifiers = opportunityTaskCfg.getIdCatalog().search(
+				Arrays.stream(identifierPath).collect(Collectors.joining(IdentifierCatalog.BY_DOT)));
 		if (foundIdentifiers.size() == 0) {
-			getIdentifierCatalog().add(identifierPath);
+			getIdentifierCatalog().add(Arrays.asList(identifierPath));
 		}
 		else if (foundIdentifiers.size() > 1) {
 			throw CommandException.noUniqueIdentifier(identifierPath, foundIdentifiers);

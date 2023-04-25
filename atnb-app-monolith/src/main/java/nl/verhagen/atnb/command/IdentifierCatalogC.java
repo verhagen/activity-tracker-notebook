@@ -3,7 +3,7 @@ package nl.verhagen.atnb.command;
 import java.util.Arrays;
 import java.util.List;
 
-public interface IdentifierCatalog {
+public interface IdentifierCatalogC {
 	static final String BY_DOT = "\\.";
 
 	default List<String> search(String identifier) {

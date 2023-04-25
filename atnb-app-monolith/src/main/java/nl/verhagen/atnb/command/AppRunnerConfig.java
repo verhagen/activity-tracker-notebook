@@ -8,6 +8,8 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import com.github.verhagen.atnb.domain.IdentifierCatalogImpl;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.task.AbstractTask;
 import nl.verhagen.atnb.command.task.BookTask;
