@@ -20,10 +20,10 @@ import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 
 public class BookTask extends RepositoryTask {
 	private Logger logger = LoggerFactory.getLogger(BookTask.class);
-	private final BookTaskConfig bookTaskCfg;
+	private final BookAbstractTaskConfig bookTaskCfg;
 
 
-	public BookTask(ActivityTrackerEventConfig atEventCfg, BookTaskConfig bookTaskCfg) {
+	public BookTask(ActivityTrackerEventConfig atEventCfg, BookAbstractTaskConfig bookTaskCfg) {
 		super(atEventCfg, bookTaskCfg, createTaskIdentifier("book", Arrays.asList(CommandName.ADD.name())));
 		this.bookTaskCfg = bookTaskCfg;
 	}

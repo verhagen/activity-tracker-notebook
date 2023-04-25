@@ -3,23 +3,16 @@ package nl.verhagen.atnb.command.task;
 import java.net.URI;
 import java.util.Arrays;
 
+import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import com.github.verhagen.atnb.core.textfield.StringTextField;
 import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
 import com.github.verhagen.atnb.core.textfield.UriInformationExtractor;
 import com.github.verhagen.atnb.core.textfield.UriTextField;
-import com.github.verhagen.atnb.domain.IdentifierCatalog;
 
-public class BookTaskConfig extends RepositoryTaskConfig {
-	private final URI baseUri;
+public class IssueAbstractTaskConfig extends AbstractTaskConfig {
 
-	public BookTaskConfig(IdentifierCatalog idCatalog, URI baseUri) {
+	public IssueAbstractTaskConfig(IdentifierCatalog idCatalog) {
 		super(idCatalog, createTextFieldExtractor());
-		this.baseUri = baseUri;
-	}
-
-
-	public URI getBaseUri() {
-		return baseUri;
 	}
 
 
@@ -30,8 +23,9 @@ public class BookTaskConfig extends RepositoryTaskConfig {
 					, new UriTextField("uri|url")
 				)
 				, Arrays.asList(
-						new UriInformationExtractor(URI.create("https://www.manning.com/books/"))
+						new UriInformationExtractor(URI.create("https://jira.organisation.org/browse/"))
 				)
 		);
 	}
+
 }

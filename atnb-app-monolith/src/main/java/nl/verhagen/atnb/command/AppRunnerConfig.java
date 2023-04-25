@@ -13,23 +13,23 @@ import com.github.verhagen.atnb.domain.IdentifierCatalogImpl;
 import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 import nl.verhagen.atnb.command.task.AbstractTask;
 import nl.verhagen.atnb.command.task.BookTask;
-import nl.verhagen.atnb.command.task.BookTaskConfig;
+import nl.verhagen.atnb.command.task.BookAbstractTaskConfig;
 import nl.verhagen.atnb.command.task.IssueTask;
-import nl.verhagen.atnb.command.task.IssueTaskConfig;
+import nl.verhagen.atnb.command.task.IssueAbstractTaskConfig;
 import nl.verhagen.atnb.command.task.OpportunityTask;
-import nl.verhagen.atnb.command.task.OpportunityTaskConfig;
+import nl.verhagen.atnb.command.task.OpportunityAbstractTaskConfig;
 
 public class AppRunnerConfig {
 
 	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
 	private ActivityTrackerEventConfig atEventCfg;
-	private BookTaskConfig bookTaskCfg = new BookTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
+	private BookAbstractTaskConfig bookTaskCfg = new BookAbstractTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
 
 	// TODO [2023.04.05 TV] Make loading of task handler dynamic
 	private List<AbstractTask> taskHandlers  = Arrays.asList(
 			new BookTask(atEventCfg, bookTaskCfg)
-			, new OpportunityTask(atEventCfg, new OpportunityTaskConfig(idCatalog))
-			, new IssueTask(atEventCfg, new IssueTaskConfig(idCatalog))
+			, new OpportunityTask(atEventCfg, new OpportunityAbstractTaskConfig(idCatalog))
+			, new IssueTask(atEventCfg, new IssueAbstractTaskConfig(idCatalog))
 	);
 	private Map<String, AbstractTask> taskHandlerMap;
     

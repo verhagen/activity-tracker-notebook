@@ -24,7 +24,7 @@ public class BaseTaskTest {
 	private Logger logger = LoggerFactory.getLogger(BaseTaskTest.class);
 	private ActivityTrackerEventConfig activityEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
 	@InjectMocks
-	private BaseTaskConfig baseTaskCfg;// = new BaseTaskConfig(idCatalog);
+	private BaseAbstractTaskConfig baseTaskCfg;// = new BaseTaskConfig(idCatalog);
 
 
 	@ParameterizedTest

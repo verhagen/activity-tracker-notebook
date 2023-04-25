@@ -25,11 +25,11 @@ public class BookTaskTest {
 	@Mock
 	private IdentifierCatalog idCatalog;
 	private ActivityTrackerEventConfig activityEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
-	private BookTaskConfig bookTaskConfig;
+	private BookAbstractTaskConfig bookTaskConfig;
 
 	@BeforeEach
 	public void setUp() {
-		bookTaskConfig = new BookTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
+		bookTaskConfig = new BookAbstractTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
 	}
 
 	// TODO [2022.01.14 TV] This should throw an Exception, as there is not enough information, about which specific book this is about.

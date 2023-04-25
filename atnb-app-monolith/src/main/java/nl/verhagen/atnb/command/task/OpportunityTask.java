@@ -15,9 +15,9 @@ import nl.verhagen.atnb.command.CommandException;
 
 public class OpportunityTask extends TemplateTask {
 	private Logger logger = LoggerFactory.getLogger(OpportunityTask.class);
-	private OpportunityTaskConfig opportunityTaskCfg;
+	private OpportunityAbstractTaskConfig opportunityTaskCfg;
 
-	public OpportunityTask(ActivityTrackerEventConfig atEventCfg, OpportunityTaskConfig opportunityTaskCfg) {
+	public OpportunityTask(ActivityTrackerEventConfig atEventCfg, OpportunityAbstractTaskConfig opportunityTaskCfg) {
 		super(atEventCfg, opportunityTaskCfg, createTaskIdentifier("opportunity", Arrays.asList("create")));
 		this.opportunityTaskCfg = opportunityTaskCfg;
 	}

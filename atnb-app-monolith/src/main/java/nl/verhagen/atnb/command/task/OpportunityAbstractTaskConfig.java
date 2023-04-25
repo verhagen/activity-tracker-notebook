@@ -8,12 +8,11 @@ import com.github.verhagen.atnb.core.textfield.StringTextField;
 import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
 import com.github.verhagen.atnb.core.textfield.UriTextField;
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
-import nl.verhagen.atnb.command.*;
 
-public class OpportunityTaskConfig extends TemplateTaskConfig {
+public class OpportunityAbstractTaskConfig extends TemplateAbstractTaskConfig {
 
 
-	public OpportunityTaskConfig(IdentifierCatalog idRegistery) {
+	public OpportunityAbstractTaskConfig(IdentifierCatalog idRegistery) {
 		super(idRegistery, createTextFieldExtractor());
 	}
 

@@ -8,7 +8,7 @@ import nl.verhagen.atnb.command.domain.TaskIdentifier;
 
 public class BaseTemplateTask extends TemplateTask {
 
-	public BaseTemplateTask(ActivityTrackerEventConfig atEventCfg, BaseTemplateTaskConfig baseTempTaskCfg) {
+	public BaseTemplateTask(ActivityTrackerEventConfig atEventCfg, BaseTemplateAbstractTaskConfig baseTempTaskCfg) {
 		super(atEventCfg, baseTempTaskCfg, createTaskIdentifierCollection());
 	}
 

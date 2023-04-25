@@ -24,7 +24,7 @@ public class OpportunityTaskTest {
 	private IdentifierCatalog idCatalog;
 	private ActivityTrackerEventConfig atEventCfg = new ActivityTrackerEventConfig("miss-piggy", "london");
 	@InjectMocks
-	private OpportunityTaskConfig bookTaskCfg;
+	private OpportunityAbstractTaskConfig bookTaskCfg;
 
 	// app  opportunity  create  [date] <agency> <organisation> <role> <mail-url>
 	// app  opportunity  create  [date: 2021.12.20]; agent: <agent>; org: <organisation>; role: <role>; mail: <http://uri-to-mail.org/>

@@ -28,16 +28,16 @@ public abstract class AbstractTask {
 	protected final Map<String, TaskIdentifier> taskIdentifiers = new HashMap<>();
 	private final ActivityTrackerEventConfig atEventCfg;
 	private final List<Listener<ActivityTrackerEvent>> listeners = new LinkedList<>();
-	private final TaskConfig taskCfg;
+	private final AbstractTaskConfig taskCfg;
 
 
-	public AbstractTask(TaskConfig taskCfg, ActivityTrackerEventConfig atEventCfg
+	public AbstractTask(AbstractTaskConfig taskCfg, ActivityTrackerEventConfig atEventCfg
 			, TaskIdentifier taskIdentifier) {
 		this(taskCfg, atEventCfg, Arrays.asList(taskIdentifier));
 	}
 
 
-	public AbstractTask(TaskConfig taskCfg, ActivityTrackerEventConfig atEventCfg
+	public AbstractTask(AbstractTaskConfig taskCfg, ActivityTrackerEventConfig atEventCfg
 			, Collection<TaskIdentifier> taskIdentifierColl) {
 		this.taskCfg = taskCfg;
 		this.atEventCfg = atEventCfg;

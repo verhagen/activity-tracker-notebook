@@ -9,12 +9,12 @@ import nl.verhagen.atnb.command.domain.TaskIdentifier;
 public abstract class TemplateTask extends AbstractTask {
 
 	public TemplateTask(ActivityTrackerEventConfig atEventCfg,
-						TemplateTaskConfig tempTaskCfg, TaskIdentifier taskIdentifier) {
+                        TemplateAbstractTaskConfig tempTaskCfg, TaskIdentifier taskIdentifier) {
 		this(atEventCfg, tempTaskCfg, Arrays.asList(taskIdentifier));
 	}
 
 	public TemplateTask(ActivityTrackerEventConfig atEventCfg,
-						TemplateTaskConfig tempTaskCfg, Collection<TaskIdentifier> taskIdentifierColl) {
+                        TemplateAbstractTaskConfig tempTaskCfg, Collection<TaskIdentifier> taskIdentifierColl) {
 		super(tempTaskCfg, atEventCfg, taskIdentifierColl);
 	}
 

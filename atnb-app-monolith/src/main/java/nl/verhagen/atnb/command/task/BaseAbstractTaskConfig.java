@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
 
-public class BaseTaskConfig extends TaskConfig {
+public class BaseAbstractTaskConfig extends AbstractTaskConfig {
 	private static List<String> taskIdentifiers = Arrays.asList(
 			"break"
 			, "pause"
@@ -27,7 +27,7 @@ public class BaseTaskConfig extends TaskConfig {
 			);
 
 
-	public BaseTaskConfig(IdentifierCatalog idCatalog) {
+	public BaseAbstractTaskConfig(IdentifierCatalog idCatalog) {
 		super(idCatalog);
 	}
 

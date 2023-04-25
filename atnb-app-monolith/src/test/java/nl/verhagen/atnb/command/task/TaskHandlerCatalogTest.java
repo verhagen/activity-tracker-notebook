@@ -19,7 +19,7 @@ public class TaskHandlerCatalogTest {
 			"first parameter value | second parameter value"
 	})
 	public void create(String first, String second) {
-		CommunityTaskConfig communityTaskCfg = new CommunityTaskConfig(idCatalog);
+		CommunityAbstractTaskConfig communityTaskCfg = new CommunityAbstractTaskConfig(idCatalog);
 		ActivityTrackerEventConfig activityEventCfg = new ActivityTrackerEventConfig("eddy-the-eagle", "london");
 		CommunityTask task = new CommunityTask(communityTaskCfg, activityEventCfg);
 

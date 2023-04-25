@@ -6,7 +6,7 @@ import nl.verhagen.atnb.command.domain.TaskIdentifier;
 public abstract class RepositoryTask extends AbstractTask {
 
 	
-	public RepositoryTask(ActivityTrackerEventConfig atEventCfg, RepositoryTaskConfig repoTaskCfg
+	public RepositoryTask(ActivityTrackerEventConfig atEventCfg, RepositoryAbstractTaskConfig repoTaskCfg
 			, TaskIdentifier taskIdentifier) {
 		super(repoTaskCfg, atEventCfg, taskIdentifier);
 	}
