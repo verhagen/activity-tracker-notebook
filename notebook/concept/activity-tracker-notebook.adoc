@@ -1,9 +1,35 @@
-= Activity Tracker - Notebook
+= Activity Tracker and Notebook
 
-This application is there to make tracking of activities and time _very easy_.
+This application contains two primary functionalities:
 
-> The **very easy** here is important, it should take almost no time and effort, in doing so.
-> Therefor the choice was to create at least a _command line interface (cli)_.
+- Activity Tracker +
+  Quick and easily keep track of activities and time spent on them.
+- Notebook +
+  Make notes on all kind of things, in plain text.
+
+The secondary functionalities are:
+
+- Content Creation +
+Making noted in plain text is easy, but can sometimes cumbersome, when you need to create the documents all from scratch each time.
++
+This is where the _Content Creators_ help out. They use templates and some user input, the create documents.
+- Content Generation +
+  Uses the Activity Tracker events and / or the Notebook content to generated output.
++
+Think on:
+
+** Overview of hours worked on a project
+** Overviews of hours spent on studying in total or per subject or per day/month/weer/etc
+** Create a csv file for the hours spent on a project
+** Create an invoice pdf file for the hours spent on a project
+** Create an overview of meals cooked this month
+
+
+== Activity Tracker
+This application is there to make tracking of _activities_ and _time_ as simple as possible.
+
+> The **simple as possible** is very important, it should take almost no time and effort, in doing so.
+> Therefor the choice is to create at least a _command line interface (cli)_.
 
 Some examples of starting and stopping activities, from the command line:
 ----
@@ -14,7 +40,7 @@ $ at  issue.AAA-123  start
 $ at  issue.AAA-123  stop
 ----
 
-Each of these above commands will generate an activity tracker event.
+Each of these above commands will generate an activity tracker event. Which might look like:
 
 ----
 2023.03.02-09:45  reading.fast-microservices-with-kotlin  start
@@ -28,31 +54,39 @@ These entries of activities in time, can be seen as a logbook.
 
 > A https://en.wikipedia.org/wiki/Logbook[logbook] (a ship's logs or simply log) is a record of important events in the management, operation, and navigation of a ship. It is essential to traditional navigation, and must be filled in at least daily.
 
+With the _Content Generators_ smart things can be done with these _Activity Tracker Events_ one thing is for example generating a logbook. In this logbook the amount of time spent on each activity can be read easily.
 
-The most important parts are:
+== Notebook
 
-- **Activity Tracker**
+Contains documents in plain text, like:
+
+- markdown
+- asciidoc
+- reStructuredText
+- https://docbook.org/[DocBook]
+- yaml
+- xml
+- csv
+- etc, etc
+
+Create a notebook for each _main activity_ you like to keep track of or for each subject you like to make notes about.
+
+
+== Further Reading
+
+- xref:activity-tracker.adoc[Activity Tracker]
 +
-Creates Activity Tracker Events which are stored, so they can be used to extract
+Creates _Activity Tracker Events_ which are stored, so they can be used to extract
 information from.
 
-- **Content Creators**
+- xref:notebook.adoc[Notebook]
 +
-Creates documents with predefined content.
+A structured collection of documents.
 
-- **Content Generators**
+- xref:content-creators.adoc[Content Creators]
 +
-Generate documents based on the entries of activities and time.
+Creates new documents with predefined content, based on templates and user input. Which are placed in a notebook.
 
-
-== Activity Tracker Part
-
-
-== Generator Part
-
-
-== Notebook Part
-
-
-== Text Template Part
-
+- xref:content-generators.adoc[Content Generators]
++
+Generate new documents based on the activities and time, or other content documents, from the notebook. These are placed in th directory `generated-content` inside a notebook.
