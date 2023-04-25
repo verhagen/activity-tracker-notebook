@@ -7,6 +7,6 @@ plugins {
 }
 
 dependencies {
-    api(project(":atnb-domain"))
+    api(project(":atnb-core"))
     implementation("commons-io:commons-io:2.11.0")
 }

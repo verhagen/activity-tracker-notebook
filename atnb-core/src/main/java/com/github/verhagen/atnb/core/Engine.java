@@ -22,7 +22,7 @@ public class Engine {
 	}
 
 
-	public void execute(Command command, String identifier, String note) {
+	public void execute(CommandName command, String identifier, String note) {
 		if (! registery.isKnownIdentifier(identifier)) {
 			logger.error("Unkown identifier '" + identifier + "'");
 			throw new UnknownIdentifierException(identifier);
@@ -44,7 +44,7 @@ public class Engine {
 //		activityLogbook.add(activity);
 	}
 
-	public void execute(Command command, String identifier) {
+	public void execute(CommandName command, String identifier) {
 		execute(command, identifier, null);
 	}
 

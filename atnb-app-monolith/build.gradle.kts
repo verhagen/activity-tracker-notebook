@@ -6,7 +6,9 @@ dependencies {
     implementation(project(":atnb-core"))
     implementation(project(":atnb-domain"))
     implementation(project(":atnb-book"))
+    implementation(project(":atnb-issue"))
     implementation(project(":atnb-project"))
+    implementation(project(":atnb-opportunity"))
 }
 
 tasks.withType<JavaCompile> {

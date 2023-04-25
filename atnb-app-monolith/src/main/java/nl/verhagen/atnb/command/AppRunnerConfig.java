@@ -12,24 +12,24 @@ import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import com.github.verhagen.atnb.domain.IdentifierCatalogImpl;
 import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
 import com.github.verhagen.atnb.core.task.AbstractTask;
-import nl.verhagen.atnb.command.task.BookTask;
-import nl.verhagen.atnb.command.task.BookAbstractTaskConfig;
-import nl.verhagen.atnb.command.task.IssueTask;
-import nl.verhagen.atnb.command.task.IssueAbstractTaskConfig;
-import nl.verhagen.atnb.command.task.OpportunityTask;
-import nl.verhagen.atnb.command.task.OpportunityAbstractTaskConfig;
+import com.github.verhagen.atnb.book.task.BookTask;
+import com.github.verhagen.atnb.book.task.BookTaskConfig;
+import com.github.verhagen.atnb.issue.task.IssueTaskConfig;
+import com.github.verhagen.atnb.issue.task.IssueTask;
+import com.github.verhagen.atnb.opportunity.task.OpportunityTaskConfig;
+import com.github.verhagen.atnb.opportunity.task.OpportunityTask;
 
 public class AppRunnerConfig {
 
 	private IdentifierCatalog idCatalog = new IdentifierCatalogImpl();
 	private ActivityTrackerEventConfig atEventCfg;
-	private BookAbstractTaskConfig bookTaskCfg = new BookAbstractTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
+	private BookTaskConfig bookTaskCfg = new BookTaskConfig(idCatalog, URI.create("https://www.manning.com/books/"));
 
 	// TODO [2023.04.05 TV] Make loading of task handler dynamic
 	private List<AbstractTask> taskHandlers  = Arrays.asList(
 			new BookTask(atEventCfg, bookTaskCfg)
-			, new OpportunityTask(atEventCfg, new OpportunityAbstractTaskConfig(idCatalog))
-			, new IssueTask(atEventCfg, new IssueAbstractTaskConfig(idCatalog))
+			, new OpportunityTask(atEventCfg, new OpportunityTaskConfig(idCatalog))
+			, new IssueTask(atEventCfg, new IssueTaskConfig(idCatalog))
 	);
 	private Map<String, AbstractTask> taskHandlerMap;
     

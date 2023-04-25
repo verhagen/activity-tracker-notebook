@@ -14,8 +14,9 @@ include(
 	, "atnb-core"
 	, "atnb-cucumber"
 	, "atnb-domain"
-	, "atnb-project"
-	, "atnb-opportunity"
 	, "atnb-grammar"
+	, "atnb-issue"
+	, "atnb-opportunity"
+	, "atnb-project"
 	, "atnb-app-monolith"
 )

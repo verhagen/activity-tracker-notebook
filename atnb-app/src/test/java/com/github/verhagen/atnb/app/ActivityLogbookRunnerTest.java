@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 
+import com.github.verhagen.atnb.core.CommandName;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import com.github.verhagen.atnb.core.Command;
 import com.github.verhagen.atnb.domain.UnknownIdentifierException;
 
 public class ActivityLogbookRunnerTest {
@@ -20,7 +20,7 @@ public class ActivityLogbookRunnerTest {
 	@Test
 	void unknownIdentifier() {
 		try {
-			runner.execute(Command.START, "test");
+			runner.execute(CommandName.START, "test");
 			fail("Expecting an exception");
 		}
 		catch (UnknownIdentifierException uie) {
@@ -32,7 +32,7 @@ public class ActivityLogbookRunnerTest {
 	@Test
 	void startActivity() {
 		// TODO Add implementation
-		runner.execute(Command.START, "reading.book.abc");
+		runner.execute(CommandName.START, "reading.book.abc");
 	}
 
 }

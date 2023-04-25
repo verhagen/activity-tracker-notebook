@@ -4,8 +4,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import com.github.verhagen.atnb.book.Publisher;
-import com.github.verhagen.atnb.core.Command;
+import com.github.verhagen.atnb.book.domain.Publisher;
+import com.github.verhagen.atnb.core.CommandName;
 import com.github.verhagen.atnb.domain.ActivityLogbook;
 import com.github.verhagen.atnb.domain.UnknownIdentifierException;
 
@@ -25,7 +25,7 @@ public class ActivityLogbookRunner {
 	}
 
 
-	public void execute(Command command, String identifier, String note) {
+	public void execute(CommandName command, String identifier, String note) {
 		if (! logbook.isKnownIdentifier(identifier)) {
 			throw new UnknownIdentifierException(identifier); 
 		}
@@ -33,7 +33,7 @@ public class ActivityLogbookRunner {
 		throw new RuntimeException("Not yet implemented...");
 	}
 
-	public void execute(Command command, String identifier) {
+	public void execute(CommandName command, String identifier) {
 		if (! logbook.isKnownIdentifier(identifier)) {
 			throw new UnknownIdentifierException(identifier); 
 		}

@@ -29,6 +29,5 @@ public class AppTest {
 		app.execute(new String[] { "2022.01.06", "Enzo Tech", "Tennet", "Java Developer" } );
 		app.execute(new String[] { "Hasvey Nash", "Tennet", "Java Developer" } );
 	}
-	
-	// /Users/tjeerdverhagen/git/github/activity-logbook/activity-logbook-opportunity/build/generated-activity-logbook/opportunity/
+
 }
