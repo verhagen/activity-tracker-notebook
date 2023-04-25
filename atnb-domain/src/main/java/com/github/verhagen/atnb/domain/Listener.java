@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.domain;
 
 public interface Listener<T> {
 

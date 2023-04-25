@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command.task;
+package com.github.verhagen.atnb.core.task;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,7 +1,8 @@
 package nl.verhagen.atnb.command.task;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
-import nl.verhagen.atnb.command.domain.TaskIdentifier;
+import com.github.verhagen.atnb.core.task.AbstractTask;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.core.domain.TaskIdentifier;
 
 public abstract class RepositoryTask extends AbstractTask {
 

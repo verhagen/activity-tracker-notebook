@@ -1,10 +1,10 @@
-package nl.verhagen.atnb.command.task;
+package com.github.verhagen.atnb.core.task;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
-import nl.verhagen.atnb.command.domain.TaskIdentifier;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.core.domain.TaskIdentifier;
 
 public abstract class TemplateTask extends AbstractTask {
 

@@ -1,14 +1,15 @@
 package nl.verhagen.atnb.command;
 
 import com.github.verhagen.atnb.config.AppMetaConfig;
+import com.github.verhagen.atnb.core.AppException;
 import com.github.verhagen.atnb.core.FileUtils;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.TaskIdentifier;
+import com.github.verhagen.atnb.domain.ActivityTrackerEvent;
+import com.github.verhagen.atnb.core.domain.TaskIdentifier;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nl.verhagen.atnb.command.domain.Listener;
+import com.github.verhagen.atnb.domain.Listener;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -3,6 +3,7 @@ package nl.verhagen.atnb.command.task;
 import java.net.URI;
 import java.util.Arrays;
 
+import com.github.verhagen.atnb.core.task.AbstractTaskConfig;
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import com.github.verhagen.atnb.core.textfield.StringTextField;
 import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;

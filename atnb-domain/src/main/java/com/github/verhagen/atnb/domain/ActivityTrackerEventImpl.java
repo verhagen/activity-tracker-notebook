@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

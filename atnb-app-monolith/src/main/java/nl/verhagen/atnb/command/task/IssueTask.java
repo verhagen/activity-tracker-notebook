@@ -2,7 +2,8 @@ package nl.verhagen.atnb.command.task;
 
 import java.util.Arrays;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.core.task.AbstractTask;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
 
 public class IssueTask extends AbstractTask {
 

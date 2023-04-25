@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import com.github.verhagen.atnb.domain.IdentifierCatalogImpl;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
-import nl.verhagen.atnb.command.task.AbstractTask;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.core.task.AbstractTask;
 import nl.verhagen.atnb.command.task.BookTask;
 import nl.verhagen.atnb.command.task.BookAbstractTaskConfig;
 import nl.verhagen.atnb.command.task.IssueTask;

@@ -1,4 +1,9 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.core.domain;
+
+import com.github.verhagen.atnb.domain.ActivityTrackerEvent;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventImpl;
+import com.github.verhagen.atnb.domain.Visitor;
+import com.github.verhagen.atnb.domain.VisitorAcceptor;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.domain;
 
 public class ActivityTrackerEventConfig {
 	/** The Person or System that uses the <i>Activity Tracker and Notebook App<i>, and triggers the creation of events. */

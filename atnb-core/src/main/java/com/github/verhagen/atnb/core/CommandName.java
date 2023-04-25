@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command;
+package com.github.verhagen.atnb.core;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

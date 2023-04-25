@@ -7,16 +7,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.TaskIdentifier;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventImpl;
+import com.github.verhagen.atnb.domain.ActivityTrackerEvent;
+import com.github.verhagen.atnb.core.domain.TaskIdentifier;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import nl.verhagen.atnb.command.CommandException;
-import nl.verhagen.atnb.command.CommandName;
+import com.github.verhagen.atnb.core.CommandName;
 import nl.verhagen.atnb.command.UriIdentifierConverter;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
 
 public class BookTask extends RepositoryTask {
 	private Logger logger = LoggerFactory.getLogger(BookTask.class);

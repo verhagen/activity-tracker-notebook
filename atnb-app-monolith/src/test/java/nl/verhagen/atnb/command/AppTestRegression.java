@@ -1,7 +1,5 @@
 package nl.verhagen.atnb.command;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.Listener;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

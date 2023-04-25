@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.core.domain;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventImpl;
 import org.junit.jupiter.api.Test;
 
 public class ActivityRegisteryTest {

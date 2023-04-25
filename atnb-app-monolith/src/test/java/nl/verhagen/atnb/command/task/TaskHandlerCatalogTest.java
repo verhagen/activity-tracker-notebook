@@ -1,11 +1,13 @@
 package nl.verhagen.atnb.command.task;
 
+import com.github.verhagen.atnb.core.task.TaskHandlerCatalog;
+import com.github.verhagen.atnb.core.task.TaskHandlerCatalogConfig;
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 

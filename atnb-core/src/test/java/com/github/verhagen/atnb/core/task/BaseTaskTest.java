@@ -1,9 +1,12 @@
-package nl.verhagen.atnb.command.task;
+package com.github.verhagen.atnb.core.task;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import com.github.verhagen.atnb.core.AppException;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -14,8 +17,6 @@ import org.slf4j.LoggerFactory;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import nl.verhagen.atnb.command.AppException;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
 
 @ExtendWith(MockitoExtension.class)
 public class BaseTaskTest {
@@ -41,7 +42,7 @@ public class BaseTaskTest {
 			fail("Expecting an " + AppException.class.getSimpleName() + " will be thrown.");
 		}
 		catch (TaskHandlerException te) {
-			assertEquals(expException, te.getMessage());
+			Assertions.assertEquals(expException, te.getMessage());
 		}
 		catch (RuntimeException re) {
 			if (re.getMessage().startsWith("java.lang.RuntimeException: To be implemented...")) {

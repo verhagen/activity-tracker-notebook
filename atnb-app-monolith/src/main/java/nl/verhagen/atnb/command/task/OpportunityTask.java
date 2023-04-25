@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.github.verhagen.atnb.core.task.TemplateTask;
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.domain.ActivityTrackerEvent;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

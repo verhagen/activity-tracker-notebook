@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.core.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;

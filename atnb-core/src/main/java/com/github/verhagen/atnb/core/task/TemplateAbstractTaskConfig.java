@@ -1,5 +1,6 @@
-package nl.verhagen.atnb.command.task;
+package com.github.verhagen.atnb.core.task;
 
+import com.github.verhagen.atnb.core.task.AbstractTaskConfig;
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;
 

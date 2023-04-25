@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.net.URI;
 
+import com.github.verhagen.atnb.core.task.TaskHandlerException;
 import com.github.verhagen.atnb.domain.IdentifierCatalog;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -13,10 +14,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import nl.verhagen.atnb.command.AppException;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
-import nl.verhagen.atnb.command.domain.Listener;
+import com.github.verhagen.atnb.core.AppException;
+import com.github.verhagen.atnb.domain.ActivityTrackerEvent;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.domain.Listener;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 

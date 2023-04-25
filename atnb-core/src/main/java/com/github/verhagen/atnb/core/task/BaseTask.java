@@ -1,6 +1,7 @@
-package nl.verhagen.atnb.command.task;
+package com.github.verhagen.atnb.core.task;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
+
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
 
 public class BaseTask extends AbstractTask {
 	

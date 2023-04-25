@@ -1,5 +1,7 @@
 package nl.verhagen.atnb.command;
 
+import com.github.verhagen.atnb.core.AppException;
+
 @SuppressWarnings("serial")
 public class AppRunnerException extends AppException {
 

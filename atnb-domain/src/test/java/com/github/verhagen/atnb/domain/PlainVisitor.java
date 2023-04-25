@@ -1,4 +1,6 @@
-package nl.verhagen.atnb.command.domain;
+package com.github.verhagen.atnb.domain;
+
+import com.github.verhagen.atnb.domain.ActivityTrackerEvent;
 
 public class PlainVisitor implements Visitor<ActivityTrackerEvent> {
 	

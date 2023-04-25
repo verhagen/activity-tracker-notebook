@@ -3,6 +3,7 @@ package nl.verhagen.atnb.command.task;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
+import com.github.verhagen.atnb.core.task.TemplateAbstractTaskConfig;
 import com.github.verhagen.atnb.core.textfield.DateTextField;
 import com.github.verhagen.atnb.core.textfield.StringTextField;
 import com.github.verhagen.atnb.core.textfield.TextFieldExtractor;

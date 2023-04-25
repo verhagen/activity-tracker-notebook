@@ -1,7 +1,8 @@
 package nl.verhagen.atnb.command;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.Listener;
+import com.github.verhagen.atnb.core.AppException;
+import com.github.verhagen.atnb.domain.ActivityTrackerEvent;
+import com.github.verhagen.atnb.domain.Listener;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

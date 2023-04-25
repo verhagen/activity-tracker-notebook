@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command;
+package com.github.verhagen.atnb.core;
 
 @SuppressWarnings("serial")
 public class AppException extends RuntimeException {

@@ -2,7 +2,9 @@ package nl.verhagen.atnb.command.task;
 
 import java.util.Arrays;
 
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
+import com.github.verhagen.atnb.core.task.AbstractTask;
+import com.github.verhagen.atnb.core.task.AbstractTaskConfig;
+import com.github.verhagen.atnb.domain.ActivityTrackerEventConfig;
 
 /**
  * This is a special task, as all other tasks will get registered underneath this task <i>community</i>.

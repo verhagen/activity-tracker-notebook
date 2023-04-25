@@ -1,4 +1,4 @@
-package nl.verhagen.atnb.command.task;
+package com.github.verhagen.atnb.core.task;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -9,17 +9,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import com.github.verhagen.atnb.domain.IdentifierCatalog;
+import com.github.verhagen.atnb.core.domain.TaskIdentifier;
+import com.github.verhagen.atnb.domain.*;
 import com.github.verhagen.atnb.core.textfield.TextField;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEvent;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventImpl;
-import nl.verhagen.atnb.command.domain.ActivityTrackerEventConfig;
-import nl.verhagen.atnb.command.domain.TaskIdentifier;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nl.verhagen.atnb.command.domain.Listener;
 
 public abstract class AbstractTask {
 	private Logger logger = LoggerFactory.getLogger(AbstractTask.class);
